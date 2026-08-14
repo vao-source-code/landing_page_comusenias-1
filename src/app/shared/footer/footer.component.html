@@ -1,53 +1,13 @@
-<footer id="contacto" class="bg-dark text-white">
-  <div class="text-center mb-5">
-    <h2 class="title-white my-4">¿Qué estás esperando? ¡Descárgala ahora!</h2>
-    <a target="_blank" href="https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR">
-    <img
-      class="download-button"
-      src="assets/playstore.svg"
-      alt="Descargar desde Play Store"
-    />
-    </a>
-  </div>
-  <div class="d-flex justify-content-between flex-wrap gap-5 pb-4 mt-5">
-    <div>
-      <p class="fw-bold violeta">Comuseñas</p>
-      <p>Seguinos en nuestras redes.</p>
-      <div class="redes d-flex justify-content-center">
-        <a href="https://www.facebook.com/comusenas.ok/" target="_blank">
-          <img src="assets/footer/facebook.svg" alt="icon-facebook" />
-        </a>
-        <a href="https://www.instagram.com/comusenias/" target="_blank">
-          <img src="assets/footer/instagram.svg" alt="icon-instagram" />
-        </a>
-        <a href="https://www.linkedin.com/in/comuse%C3%B1as/" target="_blank">
-          <img src="assets/footer/linkedin.svg" alt="icon-linkedin" />
-        </a>
-        <a href="https://www.youtube.com/@Comusenias" target="_blank">
-          <img src="assets/footer/youtube.svg" alt="icon-youtube" />
-        </a>
-      </div>
+<footer class="bg-white py-4 mt-auto" style="color: #494551; border-top: 1px solid rgba(0,0,0,0.05);">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+    <div class="text-center text-md-start">
+      <h5 class="font-title-md mb-1" style="color: #4a3b8d;">Comuseñas</h5>
+      <p class="small mb-0 text-on-surface-variant">&copy; 2024 Comuseñas. Aprendizaje guiado y divertido.</p>
     </div>
-    <!-- <div>
-            <h3 class="text-uppercase">Noticias</h3>
-            <p>Suscríbete a nuestro boletín para recibir nuestras últimas
-               novedades.</p>
-            <form  [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-                <div class="position-relative">
-                    <input class="w-100 px-4 rounded"  formControlName="email" type="email" placeholder="correo electrónico">
-                    <button class="btn btn-violeta" type="submit">
-                        <img src="assets/footer/send-plane.svg" alt="icono-enviar">
-                    </button>
-                </div>
-                <div *ngIf="contactForm.get('email')!.hasError('email')">
-                    Ingresa un correo electrónico válido.
-                </div>
-                <div *ngIf="showMessage">{{ message }}</div>
-            </form>
-        </div> -->
-  </div>
-  <div class="ocean">
-    <div class="wave"></div>
-    <div class="wave"></div>
+    <div class="d-flex gap-4">
+      <a routerLink="/privacidad" class="text-decoration-none text-on-surface-variant small transition">Privacidad</a>
+      <a routerLink="/terminos" class="text-decoration-none text-on-surface-variant small transition">Términos</a>
+      <a routerLink="/contacto" class="text-decoration-none text-on-surface-variant small transition">Contacto</a>
+    </div>
   </div>
 </footer>

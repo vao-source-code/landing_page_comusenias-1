@@ -9,10 +9,11 @@ export class NavbarComponent implements OnInit {
   activeSection: string = '';
 
   public sidebarItems = [
-    {label:'Nuestra App',url:'#nuestraApp'},
-    {label:'Sobre nosotros', url:'#nosotros'},
-    {label:'Funcionamiento', url:'#funcionamiento'},
-    {label:'Contacto', url:'#contacto'},
+    {label:'Inicio',url:'/'},
+    {label:'Características',url:'/#caracteristicas'},
+    {label:'Cómo Funciona', url:'/#funcionamiento'},
+    {label:'Testimonios', url:'/#testimonios'},
+    {label:'Contacto', url:'/contacto'},
   ];
 
   constructor() { }

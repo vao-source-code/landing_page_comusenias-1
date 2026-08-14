@@ -5,27 +5,64 @@ body {
 }
 body {
   margin: 0 !important;
-  font-family: "Lato", sans-serif !important;
+  font-family: "Nunito Sans", sans-serif !important;
   overflow-x: hidden;
+  background-color: #f7f5fa;
+  background-image: radial-gradient(at 0% 0%, hsla(258,44%,85%,0.8) 0px, transparent 50%),
+                    radial-gradient(at 100% 100%, hsla(258,44%,85%,0.5) 0px, transparent 50%);
+  background-attachment: fixed;
 }
 
 :root {
-  --color-primary: #7584f2; /* Color primario */
-  --color-secondary: #6c55b7; /* Color secundario */
-  --color-light-blue: #b2ebf2;
-  --color-dark-grey: #3d3d3d;
-  --color-light-grey: #757575;
+  --color-primary: #543c9d; /* from Stitch */
+  --color-primary-fixed: #e7deff;
+  --color-secondary: #4453bf;
+  --color-on-surface-variant: #494551;
+  --color-surface: #fbf9f9;
+  --color-soft-yellow: #FFF4A3;
 }
+
+.text-primary-custom { color: var(--color-primary) !important; }
+.bg-primary-fixed { background-color: var(--color-primary-fixed) !important; }
+.text-on-surface-variant { color: var(--color-on-surface-variant) !important; }
+.bg-soft-yellow { background-color: var(--color-soft-yellow) !important; }
 
 img {
   max-width: 100%;
 }
 
 .title {
-  font-weight: 600;
+  font-weight: 800;
+  color: var(--color-primary);
 }
 
 .title-white {
-  font-weight: 600;
+  font-weight: 800;
   color: white;
 }
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary-shadow {
+  box-shadow: 0 10px 24px -5px rgba(84, 60, 157, 0.3);
+}
+
+.font-display-lg { font-size: 48px; line-height: 56px; font-weight: 800; letter-spacing: -0.02em; }
+.font-headline-lg { font-size: 32px; line-height: 40px; font-weight: 700; }
+.font-title-md { font-size: 20px; line-height: 28px; font-weight: 600; }
+.font-body-lg { font-size: 18px; line-height: 26px; font-weight: 400; }
+.font-label-bold { font-size: 14px; line-height: 20px; font-weight: 700; letter-spacing: 0.05em; }

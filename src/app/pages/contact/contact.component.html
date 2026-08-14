@@ -1,0 +1,38 @@
+<div class="container py-5 my-5">
+  <div class="glass-card bg-white p-5 mx-auto shadow-sm text-center" style="max-width: 600px;">
+    
+    <span class="material-symbols-outlined mb-3" style="font-size: 3rem; color: #4a3b8d;">mail</span>
+    <h1 class="font-display-md mb-3" style="color: #4a3b8d;">Contáctanos</h1>
+    <p class="font-body-md text-muted mb-5">
+      ¿Tienes dudas o sugerencias? Déjanos un mensaje y te responderemos pronto a tu correo.
+    </p>
+
+    <form action="https://formsubmit.co/comusenias&#64;gmail.com" method="POST" class="text-start">
+      
+      <!-- Hides ReCaptcha v2 -->
+      <input type="hidden" name="_captcha" value="false">
+      <!-- Disables formsubmit default thanks page (we can set our own later if needed) -->
+      <input type="hidden" name="_next" value="http://localhost:4200/contacto">
+
+      <div class="mb-4">
+        <label for="name" class="form-label font-label-bold" style="color: #4a3b8d;">Nombre Completo</label>
+        <input type="text" class="form-control p-3 bg-light border-0 rounded-3 shadow-none" id="name" name="name" placeholder="Ej. Juan Pérez" required>
+      </div>
+
+      <div class="mb-4">
+        <label for="email" class="form-label font-label-bold" style="color: #4a3b8d;">Correo Electrónico</label>
+        <input type="email" class="form-control p-3 bg-light border-0 rounded-3 shadow-none" id="email" name="email" placeholder="ejemplo&#64;correo.com" required>
+      </div>
+
+      <div class="mb-4">
+        <label for="message" class="form-label font-label-bold" style="color: #4a3b8d;">Mensaje</label>
+        <textarea class="form-control p-3 bg-light border-0 rounded-3 shadow-none" id="message" name="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn w-100 py-3 text-white font-label-bold transition mt-2" style="background-color: #4a3b8d; border-radius: 0.5rem;">
+        Enviar Mensaje
+      </button>
+
+    </form>
+  </div>
+</div>
