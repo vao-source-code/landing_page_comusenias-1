@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LottiePlayer } from 'lottie-web'; // Asegúrate de que esté instalado correctamente
+declare var require: any;
 
 @Component({
   selector: 'app-landing-page',

@@ -23,11 +23,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    BrowserModule,
+    BrowserModule
+  ],
+  providers: [
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
