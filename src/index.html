@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <title>ComuSeñas: App Educativa para Aprender LSA</title>
@@ -26,8 +26,8 @@
   <link rel="preload" href="assets/nina.webp" as="image">
 
   <!-- Smart App Banner para Android (Deep Linking / Play Store) -->
-  <meta name="google-play-app" content="app-id=com.comusenas.app" />
-  <link rel="alternate" href="android-app://com.comusenas.app/https/xn--comuseas-i3a.com.ar" />
+  <meta name="google-play-app" content="app-id=com.ars.comusenias" />
+  <link rel="alternate" href="android-app://com.ars.comusenias/https/xn--comuseas-i3a.com.ar" />
 
   <link rel="icon" type="image/x-icon" href="assets/logo_con_bordes.png">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -49,8 +49,8 @@
         "logo": "https://xn--comuseas-i3a.com.ar/assets/logo_con_bordes.png",
         "description": "Proyecto y plataforma enfocada en la enseñanza accesible de Lengua de Señas Argentina (LSA) e inclusión digital.",
         "sameAs": [
-          "https://www.instagram.com/comusenas",
-          "https://www.linkedin.com/company/comusenas"
+          "https://www.instagram.com/comusenias",
+          "https://www.linkedin.com/in/comuse%C3%B1as/"
         ]
       },
       {
@@ -69,7 +69,7 @@
         "publisher": {
           "@id": "https://xn--comuseas-i3a.com.ar/#organization"
         },
-        "installUrl": "https://play.google.com/store/apps/details?id=com.comusenas.app",
+        "installUrl": "https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR",
         "screenshot": "https://xn--comuseas-i3a.com.ar/assets/screenshots/preview-1.webp",
         "featureList": [
           "Diccionario interactivo de Lengua de Señas Argentina",
@@ -83,6 +83,27 @@
   </script>
 </head>
 <body>
-  <app-root style="display: flex;flex-direction: column;min-height: 100%; overflow-x: hidden;"></app-root>
+  <!-- Contenido semántico inicial dentro de app-root para bots y motores de búsqueda -->
+  <app-root style="display: flex;flex-direction: column;min-height: 100%; overflow-x: hidden;">
+    <div style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;">
+      <header>
+        <h1>ComuSeñas: Aprendé Lengua de Señas Argentina (LSA)</h1>
+        <p>Plataforma y aplicación móvil interactiva diseñada para la enseñanza accesible e inclusiva de la Lengua de Señas Argentina mediante juegos, inteligencia artificial y retroalimentación profesional.</p>
+      </header>
+      <main>
+        <h2>Aprender LSA de forma dinámica e interactiva</h2>
+        <p>Comuseñas transforma el proceso de aprendizaje del alfabeto dactilológico, vocabulario y señas cotidianas en una experiencia lúdica para niños, adultos y educadores.</p>
+        
+        <h2>Descargá la app en Google Play</h2>
+        <p>Accedé a lecciones guiadas, prácticas visuales y seguimiento de progreso desde tu dispositivo móvil.</p>
+        <p><a href="https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR">Descargar ComuSeñas en Google Play Store</a></p>
+      </main>
+      <footer>
+        <p>Seguinos en nuestras redes oficiales:</p>
+        <a href="https://www.instagram.com/comusenias" target="_blank" rel="noopener noreferrer">Instagram</a> | 
+        <a href="https://www.linkedin.com/in/comuse%C3%B1as/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </footer>
+    </div>
+  </app-root>
 </body>
 </html>

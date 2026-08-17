@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
     {label:'Inicio',url:'/'},
     {label:'Características',url:'/#caracteristicas'},
     {label:'Cómo Funciona', url:'/#funcionamiento'},
+    {label:'Prensa', url:'/#prensa'},
     {label:'Testimonios', url:'/#testimonios'},
     {label:'Contacto', url:'/contacto'},
   ];
