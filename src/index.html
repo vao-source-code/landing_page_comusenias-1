@@ -2,10 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Comuseñas</title>
+  <title>ComuSeñas: App Educativa para Aprender LSA</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Comuseñas es una aplicación móvil diseñada con el propósito de enseñar la lengua de señas de una manera dinámica y divertida a niños sordos. Además, ofrece la posibilidad de contar con el apoyo de un profesional que guiará y ayudará a los niños en su proceso de aprendizaje.">
+  <meta name="description" content="Aprende Lengua de Señas Argentina (LSA) con ComuSeñas. Una app educativa e interactiva diseñada para la inclusión y aprendizaje.">
+  
+  <link rel="canonical" href="https://xn--comuseas-i3a.com.ar/"> <!-- Usando punycode recomendado -->
+
+  <!-- Open Graph / Redes -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ComuSeñas | Aprendé Lengua de Señas Argentina" />
+  <meta property="og:description" content="Plataforma y app móvil interactiva para aprender LSA de forma accesible e inclusiva." />
+  <meta property="og:image" content="https://xn--comuseas-i3a.com.ar/assets/og-banner.jpg" />
+  <meta property="og:url" content="https://xn--comuseas-i3a.com.ar" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ComuSeñas: App para Aprender LSA">
+  <meta name="twitter:description" content="Aprende Lengua de Señas Argentina (LSA) con ComuSeñas. Una app educativa inclusiva.">
+  <meta name="twitter:image" content="https://xn--comuseas-i3a.com.ar/assets/logo_con_bordes.png">
+
+  <!-- Precargar imagen Hero para mejorar LCP -->
+  <link rel="preload" href="assets/nina.webp" as="image">
+
+  <!-- Smart App Banner para Android (Deep Linking / Play Store) -->
+  <meta name="google-play-app" content="app-id=com.comusenas.app" />
+  <link rel="alternate" href="android-app://com.comusenas.app/https/xn--comuseas-i3a.com.ar" />
+
   <link rel="icon" type="image/x-icon" href="assets/logo_con_bordes.png">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +36,51 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://xn--comuseas-i3a.com.ar/#organization",
+        "name": "ComuSeñas",
+        "url": "https://xn--comuseas-i3a.com.ar/",
+        "logo": "https://xn--comuseas-i3a.com.ar/assets/logo_con_bordes.png",
+        "description": "Proyecto y plataforma enfocada en la enseñanza accesible de Lengua de Señas Argentina (LSA) e inclusión digital.",
+        "sameAs": [
+          "https://www.instagram.com/comusenas",
+          "https://www.linkedin.com/company/comusenas"
+        ]
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://xn--comuseas-i3a.com.ar/#app",
+        "name": "ComuSeñas",
+        "operatingSystem": "Android",
+        "applicationCategory": "EducationalApplication",
+        "inLanguage": "es",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "ARS"
+        },
+        "description": "Aplicación móvil interactiva para aprender Lengua de Señas Argentina (LSA) de forma práctica, inclusiva y dinámica.",
+        "publisher": {
+          "@id": "https://xn--comuseas-i3a.com.ar/#organization"
+        },
+        "installUrl": "https://play.google.com/store/apps/details?id=com.comusenas.app",
+        "screenshot": "https://xn--comuseas-i3a.com.ar/assets/screenshots/preview-1.webp",
+        "featureList": [
+          "Diccionario interactivo de Lengua de Señas Argentina",
+          "Módulos educativos progresivos",
+          "Prácticas visuales y reconocimiento de gestos",
+          "Acceso offline a contenidos esenciales"
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <app-root style="display: flex;flex-direction: column;min-height: 100%; overflow-x: hidden;"></app-root>
