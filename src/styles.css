@@ -66,3 +66,23 @@ img {
 .font-title-md { font-size: 20px; line-height: 28px; font-weight: 600; }
 .font-body-lg { font-size: 18px; line-height: 26px; font-weight: 400; }
 .font-label-bold { font-size: 14px; line-height: 20px; font-weight: 700; letter-spacing: 0.05em; }
+
+.cafecito-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #6b4cce, #543c9d);
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 8px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(84, 60, 157, 0.3);
+  transition: all 0.3s ease;
+}
+
+.cafecito-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(84, 60, 157, 0.5);
+}

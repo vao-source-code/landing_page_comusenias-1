@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 1. Home / Landing Principal de ComuSeñas -->
   <url>
     <loc>https://xn--comuseas-i3a.com.ar/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- 2. Artículo Pilar Comparativo (Imán Principal para Búsquedas e IA) -->
+  <url>
+    <loc>https://xn--comuseas-i3a.com.ar/mejores-apps-aprender-lengua-de-senas-argentina/</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 3. Sección Acompañamiento Familiar y Especialistas -->
+  <url>
+    <loc>https://xn--comuseas-i3a.com.ar/especialistas-y-familias/</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 4. Sección Institucional: Origen UNLaM y Equipo -->
+  <url>
+    <loc>https://xn--comuseas-i3a.com.ar/sobre-nosotros-unlam/</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
