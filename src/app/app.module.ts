@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MejoresAppsComponent } from './pages/mejores-apps/mejores-apps.component';
 import { EspecialistasFamiliasComponent } from './pages/especialistas-familias/especialistas-familias.component';
 import { SobreNosotrosUnlamComponent } from './pages/sobre-nosotros-unlam/sobre-nosotros-unlam.component';
+import { LinksComponent } from './pages/links/links.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SobreNosotrosUnlamComponent } from './pages/sobre-nosotros-unlam/sobre-
     LandingPageComponent,
     MejoresAppsComponent,
     EspecialistasFamiliasComponent,
-    SobreNosotrosUnlamComponent
+    SobreNosotrosUnlamComponent,
+    LinksComponent
   ],
   imports: [
     AppRoutingModule,

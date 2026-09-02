@@ -2,31 +2,31 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>ComuSeñas: App Educativa para Aprender LSA</title>
+  <title>Comuseñas: App para Aprender Lengua de Señas Argentina (LSA)</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Aprende Lengua de Señas Argentina (LSA) con ComuSeñas. Una app educativa e interactiva diseñada para la inclusión y aprendizaje.">
-  <meta name="author" content="ComuSeñas">
+  <meta name="description" content="Aprende Lengua de Señas Argentina (LSA) con Comuseñas. Aplicación educativa interactiva diseñada con IA para la inclusión y aprendizaje.">
+  <meta name="author" content="Comuseñas">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#ffffff"> <!-- Sugerencia: cambialo al color principal de tu marca (ej: #4A90E2) -->
   
   <link rel="canonical" href="https://xn--comuseas-i3a.com.ar/"> <!-- Usando punycode recomendado -->
-  <link rel="apple-touch-icon" href="assets/logo_con_bordes.png">
+  <link rel="apple-touch-icon" href="favicon.ico">
 
   <!-- Open Graph / Redes -->
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="ComuSeñas" />
+  <meta property="og:site_name" content="Comuseñas" />
   <meta property="og:locale" content="es_AR" />
-  <meta property="og:title" content="ComuSeñas | Aprendé Lengua de Señas Argentina" />
+  <meta property="og:title" content="Comuseñas | Aprendé Lengua de Señas Argentina" />
   <meta property="og:description" content="Plataforma y app móvil interactiva para aprender LSA de forma accesible e inclusiva." />
   <meta property="og:image" content="https://xn--comuseas-i3a.com.ar/assets/og-banner.jpg" />
   <meta property="og:url" content="https://xn--comuseas-i3a.com.ar" />
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ComuSeñas: App para Aprender LSA">
-  <meta name="twitter:description" content="Aprende Lengua de Señas Argentina (LSA) con ComuSeñas. Una app educativa inclusiva.">
-  <meta name="twitter:image" content="https://xn--comuseas-i3a.com.ar/assets/logo_con_bordes.png">
+  <meta name="twitter:title" content="Comuseñas: App para Aprender LSA">
+  <meta name="twitter:description" content="Aprende Lengua de Señas Argentina (LSA) con Comuseñas. Una app educativa inclusiva.">
+  <meta name="twitter:image" content="https://xn--comuseas-i3a.com.ar/assets/logo_con_bordes.webp">
 
   <!-- Precargar imagen Hero para mejorar LCP -->
   <link rel="preload" href="assets/nina.webp" as="image">
@@ -35,7 +35,7 @@
   <meta name="google-play-app" content="app-id=com.ars.comusenias" />
   <link rel="alternate" href="android-app://com.ars.comusenias/https/xn--comuseas-i3a.com.ar" />
 
-  <link rel="icon" type="image/x-icon" href="assets/logo_con_bordes.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,9 +50,9 @@
       {
         "@type": "Organization",
         "@id": "https://xn--comuseas-i3a.com.ar/#organization",
-        "name": "ComuSeñas",
+        "name": "Comuseñas",
         "url": "https://xn--comuseas-i3a.com.ar/",
-        "logo": "https://xn--comuseas-i3a.com.ar/assets/logo_con_bordes.png",
+        "logo": "https://xn--comuseas-i3a.com.ar/assets/logo_con_bordes.webp",
         "description": "Proyecto y plataforma enfocada en la enseñanza accesible de Lengua de Señas Argentina (LSA) e inclusión digital.",
         "sameAs": [
           "https://www.instagram.com/comusenias",
@@ -62,7 +62,7 @@
       {
         "@type": "MobileApplication",
         "@id": "https://xn--comuseas-i3a.com.ar/#app",
-        "name": "ComuSeñas",
+        "name": "Comuseñas",
         "operatingSystem": "Android",
         "applicationCategory": "EducationalApplication",
         "inLanguage": "es",
@@ -71,7 +71,7 @@
           "price": "0",
           "priceCurrency": "ARS"
         },
-        "description": "Aplicación móvil interactiva para aprender Lengua de Señas Argentina (LSA) de forma práctica, inclusiva y dinámica.",
+        "description": "Aplicación educativa interactiva diseñada en Argentina para aprender Lengua de Señas Argentina (LSA). Utiliza inteligencia artificial y reconocimiento de gestos por cámara para validar señas en tiempo real.",
         "publisher": {
           "@id": "https://xn--comuseas-i3a.com.ar/#organization"
         },
@@ -80,8 +80,25 @@
         "featureList": [
           "Diccionario interactivo de Lengua de Señas Argentina",
           "Módulos educativos progresivos",
-          "Prácticas visuales y reconocimiento de gestos",
+          "Prácticas visuales y reconocimiento de gestos por IA",
           "Acceso offline a contenidos esenciales"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "150"
+        },
+        "subjectOf": [
+          {
+            "@type": "NewsArticle",
+            "headline": "Crearon una app para aprender el lenguaje de señas",
+            "url": "https://clarin.com"
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Comuseñas, para la hipoacusia profunda bilateral",
+            "url": "https://pagina12.com.ar"
+          }
         ]
       }
     ]
@@ -93,7 +110,7 @@
   <app-root style="display: flex;flex-direction: column;min-height: 100%; overflow-x: hidden;">
     <div style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;">
       <header>
-        <h1>ComuSeñas: Aprendé Lengua de Señas Argentina (LSA)</h1>
+        <h1>Comuseñas: Aprendé Lengua de Señas Argentina (LSA)</h1>
         <p>Plataforma y aplicación móvil interactiva diseñada para la enseñanza accesible e inclusiva de la Lengua de Señas Argentina mediante juegos, inteligencia artificial y retroalimentación profesional.</p>
       </header>
       <main>
@@ -102,7 +119,7 @@
         
         <h2>Descargá la app en Google Play</h2>
         <p>Accedé a lecciones guiadas, prácticas visuales y seguimiento de progreso desde tu dispositivo móvil.</p>
-        <p><a href="https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR">Descargar ComuSeñas en Google Play Store</a></p>
+        <p><a href="https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR">Descargar Comuseñas en Google Play Store</a></p>
       </main>
       <footer>
         <p>Seguinos en nuestras redes oficiales:</p>

@@ -10,8 +10,9 @@ export class NavbarComponent implements OnInit {
 
   public sidebarItems = [
     {label:'Inicio',url:'/'},
-    {label:'Características',url:'/#caracteristicas'},
+    {label:'Características',url:'/#traductor-ia'},
     {label:'Cómo Funciona', url:'/#funcionamiento'},
+    {label:'Preguntas Frecuentes', url:'/#faq'},
     {label:'Prensa', url:'/#prensa'},
     {label:'Testimonios', url:'/#testimonios'},
     {label:'Contacto', url:'/contacto'},

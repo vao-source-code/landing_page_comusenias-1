@@ -8,6 +8,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { MejoresAppsComponent } from './pages/mejores-apps/mejores-apps.component';
 import { EspecialistasFamiliasComponent } from './pages/especialistas-familias/especialistas-familias.component';
 import { SobreNosotrosUnlamComponent } from './pages/sobre-nosotros-unlam/sobre-nosotros-unlam.component';
+import { LinksComponent } from './pages/links/links.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'mejores-apps-aprender-lengua-de-senas-argentina', component: MejoresAppsComponent },
   { path: 'especialistas-y-familias', component: EspecialistasFamiliasComponent },
   { path: 'sobre-nosotros-unlam', component: SobreNosotrosUnlamComponent },
+  { path: 'links', component: LinksComponent },
   { path: '**', redirectTo: '' }
 ];
 
