@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { LottiePlayer } from 'lottie-web'; // Asegúrate de que esté instalado correctamente
 declare var require: any;
 
@@ -7,7 +7,9 @@ declare var require: any;
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.css']
 })
-export class LandingPageComponent implements OnInit {
+export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
+
+  private observer?: IntersectionObserver;
 
   public cards = [
     {
@@ -25,8 +27,7 @@ export class LandingPageComponent implements OnInit {
       description:'Incorpora elementos visuales y recursos interactivos que hacen que el proceso de aprendizaje sea atractivo y memorable. La atención al detalle en el diseño refuerza la autenticidad de la aplicación y su compromiso con la accesibilidad.',
       icon:'assets/check.svg'
     }
-  ]
-
+  ];
 
   constructor() { }
 
@@ -36,20 +37,55 @@ export class LandingPageComponent implements OnInit {
     this.loadAnimation('animation-clock', 'assets/animations/Animation-clock.json');
   }
 
-  loadAnimation(containerId: string, path: string) {
-    const lottie: LottiePlayer = require('lottie-web'); // Cargar lottie-web correctamente
+  ngAfterViewInit(): void {
+    this.setupScrollAnimations();
+  }
 
-    const container = document.getElementById(containerId);
-    if (container) {
-      lottie.loadAnimation({
-        container: container, // ID del contenedor
-        path: path, // Ruta del archivo de animación JSON
-        renderer: 'svg',
-        loop: true,
-        autoplay: true
+  ngOnDestroy(): void {
+    if (this.observer) {
+      this.observer.disconnect();
+    }
+  }
+
+  private setupScrollAnimations(): void {
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+      // Fallback si IntersectionObserver no está soportado: mostrar todo directamente
+      const elements = document.querySelectorAll('.reveal-on-scroll');
+      elements.forEach(el => el.classList.add('is-visible'));
+      return;
+    }
+
+    this.observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
       });
-    } else {
-      console.error(`El contenedor con ID ${containerId} no se encontró.`);
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    const elements = document.querySelectorAll('.reveal-on-scroll');
+    elements.forEach(el => this.observer?.observe(el));
+  }
+
+  loadAnimation(containerId: string, path: string) {
+    try {
+      const container = document.getElementById(containerId);
+      if (container) {
+        const lottie: LottiePlayer = require('lottie-web');
+        lottie.loadAnimation({
+          container: container,
+          path: path,
+          renderer: 'svg',
+          loop: true,
+          autoplay: true
+        });
+      }
+    } catch (e) {
+      // Elemento opcional no presente
     }
   }
 

@@ -7,7 +7,7 @@
       <div class="row align-items-center">
         
         <!-- Text Content -->
-        <div class="col-12 col-md-6 text-center text-md-start mb-5 mb-md-0">
+        <div class="col-12 col-md-6 text-center text-md-start mb-5 mb-md-0 reveal-on-scroll">
           <h1 class="font-display-lg mb-4" style="color: #4a3b8d;">
             Comuseñas: App de Lengua de Señas Argentina con Inteligencia Artificial
           </h1>
@@ -16,7 +16,7 @@
           </p>
           <div class="d-flex justify-content-center justify-content-md-start">
             <a target="_blank" href="https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR" class="text-decoration-none">
-              <div class="bg-dark text-white font-label-bold py-2 px-3 d-flex align-items-center gap-2 transition" style="cursor: pointer; border-radius: 0.5rem; width: fit-content;">
+              <div class="bg-dark text-white font-label-bold py-2 px-3 d-flex align-items-center gap-2 transition btn-store-interactive" style="cursor: pointer; border-radius: 0.5rem; width: fit-content;">
                 <span class="material-symbols-outlined fs-2">shop</span>
                 <div class="text-start">
                   <div class="text-uppercase" style="font-size: 8px; opacity: 0.8; line-height: 1;">Disponible en</div>
@@ -28,12 +28,12 @@
         </div>
 
         <!-- Hero Image -->
-        <div class="col-12 col-md-6 d-flex justify-content-center position-relative">
-            <div class="position-relative rounded-5 overflow-hidden shadow-sm" style="width: 100%; max-width: 450px; background-color: #fff; border: 1px solid rgba(255,255,255,0.8); aspect-ratio: 1/1;">
+        <div class="col-12 col-md-6 d-flex justify-content-center position-relative reveal-on-scroll delay-200">
+            <div class="position-relative rounded-5 overflow-hidden shadow-sm float-hero-img" style="width: 100%; max-width: 450px; background-color: #fff; border: 1px solid rgba(255,255,255,0.8); aspect-ratio: 1/1;">
               <img src="assets/nina.webp" alt="Niña sonriendo mientras aprende Lengua de Señas Argentina con un teléfono móvil" width="450" height="450" fetchpriority="high" class="w-100 h-100 object-fit-cover" />
             </div>
             <!-- Decorative light blob -->
-            <div class="position-absolute bg-soft-yellow rounded-circle opacity-50" style="top: -20px; right: 0; width: 150px; height: 150px; filter: blur(40px);"></div>
+            <div class="position-absolute bg-soft-yellow rounded-circle opacity-50 ambient-blob" style="top: -20px; right: 0; width: 150px; height: 150px; filter: blur(40px);"></div>
         </div>
       </div>
     </div>
@@ -42,16 +42,18 @@
   <!-- Validador y Traductor IA -->
   <section id="traductor-ia" class="py-5 text-center">
     <div class="container">
-      <h2 class="font-headline-lg mb-3" style="color: #4a3b8d;">¿Cómo funciona nuestro validador y traductor de señas por IA?</h2>
-      <p class="font-body-lg mb-5 mx-auto" style="max-width: 700px;">
-        Nuestra aplicación integra tecnología avanzada para facilitar la comunicación inclusiva en Argentina.
-      </p>
+      <div class="reveal-on-scroll">
+        <h2 class="font-headline-lg mb-3" style="color: #4a3b8d;">¿Cómo funciona nuestro validador y traductor de señas por IA?</h2>
+        <p class="font-body-lg mb-5 mx-auto" style="max-width: 700px;">
+          Nuestra aplicación integra tecnología avanzada para facilitar la comunicación inclusiva en Argentina.
+        </p>
+      </div>
 
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <!-- Sub-bloque 1 -->
-        <div class="col">
+        <div class="col reveal-on-scroll delay-100">
           <div class="glass-card feature-card h-100 d-flex flex-column align-items-center text-center p-4">
-            <span class="material-symbols-outlined mb-3" style="font-size: 3rem; color: #4a3b8d;">photo_camera</span>
+            <span class="material-symbols-outlined mb-3 feature-icon-anim" style="font-size: 3rem; color: #4a3b8d;">photo_camera</span>
             <h3 class="font-title-md mb-3" style="color: #4a3b8d;">Reconocimiento de gestos en tiempo real</h3>
             <p class="font-body-md small">
               Usamos la cámara de tu celular para analizar la posición de tus manos y expresiones, dándote devoluciones instantáneas.
@@ -59,9 +61,9 @@
           </div>
         </div>
         <!-- Sub-bloque 2 -->
-        <div class="col">
+        <div class="col reveal-on-scroll delay-200">
           <div class="glass-card feature-card h-100 d-flex flex-column align-items-center text-center p-4">
-            <span class="material-symbols-outlined mb-3" style="font-size: 3rem; color: #4a3b8d;">menu_book</span>
+            <span class="material-symbols-outlined mb-3 feature-icon-anim" style="font-size: 3rem; color: #4a3b8d;">menu_book</span>
             <h3 class="font-title-md mb-3" style="color: #4a3b8d;">Diccionario visual e interactivo de LSA</h3>
             <p class="font-body-md small">
               Accedé a módulos educativos clasificados por categorías para traducir conceptos cotidianos al lenguaje de señas de forma visual.
@@ -69,9 +71,9 @@
           </div>
         </div>
         <!-- Sub-bloque 3 -->
-        <div class="col">
+        <div class="col reveal-on-scroll delay-300">
           <div class="glass-card feature-card h-100 d-flex flex-column align-items-center text-center p-4">
-            <span class="material-symbols-outlined mb-3" style="font-size: 3rem; color: #4a3b8d;">sports_esports</span>
+            <span class="material-symbols-outlined mb-3 feature-icon-anim" style="font-size: 3rem; color: #4a3b8d;">sports_esports</span>
             <h3 class="font-title-md mb-3" style="color: #4a3b8d;">Aprendizaje lúdico y accesible</h3>
             <p class="font-body-md small">
               Diseñado para romper barreras de comunicación mediante la gamificación, ideal tanto para entornos educativos como familiares.
@@ -87,47 +89,77 @@
     <div class="container">
       <div class="row align-items-center">
         <!-- List side -->
-        <div class="col-12 col-md-6 mb-4 mb-md-0">
+        <div class="col-12 col-md-6 mb-4 mb-md-0 reveal-on-scroll delay-100">
           <div class="glass-card p-4 d-flex flex-column gap-4" style="background-color: #fff;">
             
+            <!-- Item 1: Categorías Temáticas -->
             <div class="d-flex align-items-start gap-3">
-              <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 40px; height: 40px; background-color: #ede7f6;">
-                <span class="material-symbols-outlined" style="color: #4a3b8d;">category</span>
+              <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 44px; height: 44px; background-color: #ede7f6;">
+                <span class="material-symbols-outlined feature-icon-anim" style="color: #4a3b8d;">category</span>
               </div>
               <div>
-                <h4 class="font-label-bold mb-1" style="color: #4a3b8d;">Categorías Temáticas</h4>
-                <p class="small mb-0">Aprende vocabulario agrupado por temas como animales, familia, colores y más.</p>
+                <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
+                  <h4 class="font-label-bold mb-0" style="color: #4a3b8d;">Categorías Temáticas y Rutinas Cotidianas</h4>
+                  <span class="badge rounded-pill" style="background-color: #ede7f6; color: #4a3b8d; font-size: 11px;">100% LSA Oficial</span>
+                </div>
+                <p class="small text-muted mb-0">
+                  Vocabulario enfocado en situaciones prácticas y rutinas del día a día (comida, baño, juego, emociones) para conectar al niño con su familia de forma inmediata. Todo el léxico está basado exclusivamente en la Lengua de Señas Argentina (LSA) validada por especialistas.
+                </p>
               </div>
             </div>
 
+            <!-- Item 2: Videos Demostrativos -->
             <div class="d-flex align-items-start gap-3">
-              <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 40px; height: 40px; background-color: #ede7f6;">
-                <span class="material-symbols-outlined" style="color: #4a3b8d;">video_library</span>
+              <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 44px; height: 44px; background-color: #ede7f6;">
+                <span class="material-symbols-outlined feature-icon-anim" style="color: #4a3b8d;">video_library</span>
               </div>
               <div>
-                <h4 class="font-label-bold mb-1" style="color: #4a3b8d;">Videos Demostrativos</h4>
-                <p class="small mb-0">Videos claros y precisos para cada seña, facilitando la imitación y memorización.</p>
+                <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
+                  <h4 class="font-label-bold mb-0" style="color: #4a3b8d;">Videos Demostrativos y Validación IA</h4>
+                  <span class="badge rounded-pill" style="background-color: #ede7f6; color: #4a3b8d; font-size: 11px;">Cámara + IA</span>
+                </div>
+                <p class="small text-muted mb-0">
+                  Modelos visuales claros complementados con el mayor diferencial de Comuseñas: aprendizaje con validación en tiempo real por Inteligencia Artificial, utilizando la cámara del celular para corregir la postura de las manos al instante y asegurar una ejecución precisa de la seña.
+                </p>
               </div>
             </div>
 
+            <!-- Item 3: Seguimiento de Progreso y Rol Especialista -->
             <div class="d-flex align-items-start gap-3">
-              <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 40px; height: 40px; background-color: #ede7f6;">
-                <span class="material-symbols-outlined" style="color: #4a3b8d;">query_stats</span>
+              <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 44px; height: 44px; background-color: #ede7f6;">
+                <span class="material-symbols-outlined feature-icon-anim" style="color: #4a3b8d;">qr_code_scanner</span>
               </div>
               <div>
-                <h4 class="font-label-bold mb-1" style="color: #4a3b8d;">Seguimiento de Progreso</h4>
-                <p class="small mb-0">Padres y maestros pueden ver el avance del niño a través de estadísticas sencillas.</p>
+                <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
+                  <h4 class="font-label-bold mb-0" style="color: #4a3b8d;">Seguimiento de Progreso y Rol Especialista</h4>
+                  <span class="badge rounded-pill" style="background-color: #ede7f6; color: #4a3b8d; font-size: 11px;">Escaneo QR</span>
+                </div>
+                <p class="small text-muted mb-0">
+                  Integración explícita para el Rol Especialista mediante un escaneo rápido de código QR. Permite a fonoaudiólogos, docentes integradores y familiares no solo ver estadísticas de juego, sino también dejar observaciones y notas personalizadas para guiar el aprendizaje.
+                </p>
               </div>
             </div>
 
           </div>
         </div>
         <!-- Text side -->
-        <div class="col-12 col-md-6 px-md-5">
-          <h4 class="font-label-bold mb-3" style="color: #4a3b8d;">Mucho más que un juego</h4>
-          <p class="font-body-md mb-0">
+        <div class="col-12 col-md-6 px-md-5 reveal-on-scroll delay-200">
+          <div class="d-inline-block px-3 py-1 rounded-pill mb-3" style="background-color: rgba(84, 60, 157, 0.08); color: #4a3b8d; font-size: 12px; font-weight: 700; letter-spacing: 0.04em;">
+            BASE PEDAGÓGICA Y TERAPÉUTICA
+          </div>
+          <h3 class="font-headline-lg mb-3" style="color: #4a3b8d;">Mucho más que un juego</h3>
+          <p class="font-body-md mb-3" style="color: #494551;">
             Comuseñas está construida con una base pedagógica sólida. Cada interacción está diseñada para fomentar la inclusión y el desarrollo del lenguaje en un entorno seguro y estimulante.
           </p>
+          <p class="font-body-md small text-muted mb-4">
+            Un puente pensado para que padres, cuidadores y profesionales de la salud o educación acompañen la evolución comunicativa del niño con métricas claras y seguimiento continuo.
+          </p>
+          <div>
+            <a routerLink="/especialistas-y-familias" class="text-decoration-none fw-bold d-inline-flex align-items-center gap-2 transition" style="color: #4a3b8d;">
+              <span>Conocé más sobre el rol para especialistas y familias</span>
+              <span class="material-symbols-outlined fs-5">arrow_forward</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -136,32 +168,34 @@
   <!-- Cómo funciona -->
   <section id="funcionamiento" class="py-5 text-center">
     <div class="container">
-      <h2 class="font-headline-lg mb-3" style="color: #4a3b8d;">¿Cómo funciona?</h2>
-      <p class="font-body-lg mb-5 mx-auto" style="max-width: 600px;">
-        Tres sencillos pasos para empezar a aprender y jugar.
-      </p>
+      <div class="reveal-on-scroll">
+        <h2 class="font-headline-lg mb-3" style="color: #4a3b8d;">¿Cómo funciona?</h2>
+        <p class="font-body-lg mb-5 mx-auto" style="max-width: 600px;">
+          Tres sencillos pasos para empezar a aprender y jugar.
+        </p>
+      </div>
       
       <div class="row row-cols-1 row-cols-md-3 g-5">
-        <div class="col">
-          <div class="position-relative mx-auto rounded-circle bg-white shadow-sm d-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+        <div class="col step-card reveal-on-scroll delay-100">
+          <div class="step-circle position-relative mx-auto rounded-circle bg-white shadow-sm d-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
             <span class="material-symbols-outlined" style="font-size: 2rem; color: #4a3b8d;">download</span>
-            <div class="position-absolute text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="top: -5px; right: -5px; width: 25px; height: 25px; background-color: #4a3b8d; font-size: 12px;">1</div>
+            <div class="step-badge position-absolute text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="top: -5px; right: -5px; width: 25px; height: 25px; background-color: #4a3b8d; font-size: 12px;">1</div>
           </div>
           <h4 class="font-title-md mb-2" style="color: #4a3b8d;">Descarga la App</h4>
           <p class="small mx-auto" style="max-width: 200px;">Disponible en las principales tiendas de aplicaciones para tu dispositivo móvil o tablet.</p>
         </div>
-        <div class="col">
-          <div class="position-relative mx-auto rounded-circle bg-white shadow-sm d-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+        <div class="col step-card reveal-on-scroll delay-200">
+          <div class="step-circle position-relative mx-auto rounded-circle bg-white shadow-sm d-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
             <span class="material-symbols-outlined" style="font-size: 2rem; color: #4a3b8d;">face</span>
-            <div class="position-absolute text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="top: -5px; right: -5px; width: 25px; height: 25px; background-color: #4a3b8d; font-size: 12px;">2</div>
+            <div class="step-badge position-absolute text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="top: -5px; right: -5px; width: 25px; height: 25px; background-color: #4a3b8d; font-size: 12px;">2</div>
           </div>
           <h4 class="font-title-md mb-2" style="color: #4a3b8d;">Crea un Perfil</h4>
           <p class="small mx-auto" style="max-width: 250px;">Personaliza el avatar y selecciona el nivel inicial para adaptar el aprendizaje.</p>
         </div>
-        <div class="col">
-          <div class="position-relative mx-auto rounded-circle bg-white shadow-sm d-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+        <div class="col step-card reveal-on-scroll delay-300">
+          <div class="step-circle position-relative mx-auto rounded-circle bg-white shadow-sm d-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
             <span class="material-symbols-outlined" style="font-size: 2rem; color: #4a3b8d;">smart_toy</span>
-            <div class="position-absolute text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="top: -5px; right: -5px; width: 25px; height: 25px; background-color: #4a3b8d; font-size: 12px;">3</div>
+            <div class="step-badge position-absolute text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="top: -5px; right: -5px; width: 25px; height: 25px; background-color: #4a3b8d; font-size: 12px;">3</div>
           </div>
           <h4 class="font-title-md mb-2" style="color: #4a3b8d;">¡Empieza a Jugar!</h4>
           <p class="small mx-auto" style="max-width: 250px;">Explora los diferentes mundos, aprende nuevas señas y gana recompensas.</p>
@@ -173,12 +207,14 @@
   <!-- FAQ Schema -->
   <section id="faq" class="py-5 bg-white">
     <div class="container">
-      <h2 class="font-headline-lg mb-5 text-center" style="color: #4a3b8d;">Preguntas Frecuentes</h2>
+      <div class="reveal-on-scroll">
+        <h2 class="font-headline-lg mb-5 text-center" style="color: #4a3b8d;">Preguntas Frecuentes</h2>
+      </div>
       <div class="row justify-content-center">
         <div class="col-12 col-lg-8">
           <div class="accordion" id="faqAccordion">
             <!-- Pregunta 1 -->
-            <div class="accordion-item border-0 mb-3 glass-card shadow-sm">
+            <div class="accordion-item border-0 mb-3 glass-card shadow-sm reveal-on-scroll delay-100">
               <h3 class="accordion-header" id="headingOne">
                 <button class="accordion-button collapsed fw-bold font-title-md" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="color: #4a3b8d; background-color: transparent;">
                   ¿Comuseñas funciona como un traductor automático de LSA?
@@ -191,7 +227,7 @@
               </div>
             </div>
             <!-- Pregunta 2 -->
-            <div class="accordion-item border-0 mb-3 glass-card shadow-sm">
+            <div class="accordion-item border-0 mb-3 glass-card shadow-sm reveal-on-scroll delay-200">
               <h3 class="accordion-header" id="headingTwo">
                 <button class="accordion-button collapsed fw-bold font-title-md" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="color: #4a3b8d; background-color: transparent;">
                   ¿Para quién está recomendada la aplicación?
@@ -204,7 +240,7 @@
               </div>
             </div>
             <!-- Pregunta 3 -->
-            <div class="accordion-item border-0 mb-3 glass-card shadow-sm">
+            <div class="accordion-item border-0 mb-3 glass-card shadow-sm reveal-on-scroll delay-300">
               <h3 class="accordion-header" id="headingThree">
                 <button class="accordion-button collapsed fw-bold font-title-md" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="color: #4a3b8d; background-color: transparent;">
                   ¿La app requiere conocimientos previos de señas?
@@ -225,14 +261,24 @@
   <!-- En los Medios -->
   <section id="prensa" class="py-5 text-center bg-light" style="background-color: rgba(237, 231, 246, 0.3) !important;">
     <div class="container">
-      <h2 class="font-headline-lg mb-3" style="color: #4a3b8d;">Comuseñas en los Medios</h2>
-      <p class="font-body-lg mb-5 mx-auto" style="max-width: 600px;">
-        Descubre lo que la prensa está diciendo sobre nuestro impacto en la inclusión.
-      </p>
+      <div class="reveal-on-scroll">
+        <h2 class="font-headline-lg mb-3" style="color: #4a3b8d;">Comuseñas en los Medios</h2>
+        <p class="font-body-lg mb-5 mx-auto" style="max-width: 600px;">
+          Descubre lo que la prensa está diciendo sobre nuestro impacto en la inclusión.
+        </p>
+      </div>
 
-      <div class="marquee-container">
+      <div class="marquee-container reveal-on-scroll delay-150">
         <div class="marquee-content">
           <!-- ORIGINAL SET -->
+          <!-- Otro Día Perdido (El Trece) -->
+          <div class="marquee-item">
+            <a href="https://www.eltrecetv.com.ar/otro-dia-perdido/2026/09/18/la-historia-detras-de-comusenas-la-inovadora-app-desarrolada-en-argentina-que-destaco-mario-pergolini/" target="_blank" rel="noopener noreferrer" class="text-decoration-none" title="Nota en El Trece (Otro Día Perdido con Mario Pergolini) sobre Comuseñas">
+              <div class="glass-card feature-card h-100 d-flex flex-column align-items-center justify-content-center p-3 transition shadow-sm bg-white" style="border: 1px solid rgba(0,0,0,0.05); min-height: 100px;">
+                <img src="assets/noticias/otro_dia_perdido.webp" alt="Otro Día Perdido - El Trece" class="img-fluid rounded-2" style="max-height: 48px; opacity: 0.95;">
+              </div>
+            </a>
+          </div>
           <!-- Clarín -->
           <div class="marquee-item">
             <a href="https://www.clarin.com/zonales/crearon-app-aprender-lenguaje-senas_0_JJ6ghmrKJX.html" target="_blank" rel="noopener noreferrer" class="text-decoration-none" title="Nota en Clarín sobre Comuseñas">
@@ -291,6 +337,14 @@
           </div>
 
           <!-- DUPLICATED SET FOR SEAMLESS SCROLL -->
+          <!-- Otro Día Perdido (El Trece) -->
+          <div class="marquee-item">
+            <a href="https://www.eltrecetv.com.ar/otro-dia-perdido/2026/09/18/la-historia-detras-de-comusenas-la-inovadora-app-desarrolada-en-argentina-que-destaco-mario-pergolini/" target="_blank" rel="noopener noreferrer" class="text-decoration-none" title="Nota en El Trece (Otro Día Perdido con Mario Pergolini) sobre Comuseñas">
+              <div class="glass-card feature-card h-100 d-flex flex-column align-items-center justify-content-center p-3 transition shadow-sm bg-white" style="border: 1px solid rgba(0,0,0,0.05); min-height: 100px;">
+                <img src="assets/noticias/otro_dia_perdido.webp" alt="Otro Día Perdido - El Trece" class="img-fluid rounded-2" style="max-height: 48px; opacity: 0.95;">
+              </div>
+            </a>
+          </div>
           <!-- Clarín -->
           <div class="marquee-item">
             <a href="https://www.clarin.com/zonales/crearon-app-aprender-lenguaje-senas_0_JJ6ghmrKJX.html" target="_blank" rel="noopener noreferrer" class="text-decoration-none" title="Nota en Clarín sobre Comuseñas">
@@ -355,11 +409,13 @@
   <!-- Testimonios -->
   <section id="testimonios" class="py-5 text-center">
     <div class="container">
-      <h2 class="font-headline-lg mb-5" style="color: #4a3b8d;">Lo que dicen los padres y expertos</h2>
+      <div class="reveal-on-scroll">
+        <h2 class="font-headline-lg mb-5" style="color: #4a3b8d;">Lo que dicen los padres y expertos</h2>
+      </div>
       
       <div class="row row-cols-1 row-cols-md-2 g-4 text-start">
-        <div class="col">
-          <div class="glass-card position-relative p-4 h-100 bg-white">
+        <div class="col reveal-on-scroll delay-100">
+          <div class="glass-card testimonial-card position-relative p-4 h-100 bg-white">
             <span class="material-symbols-outlined position-absolute opacity-25" style="top: 1rem; left: 1rem; font-size: 3rem; color: #ede7f6;">format_quote</span>
             <p class="font-body-md fst-italic mb-4 position-relative z-1 mt-4">
               "Comuseñas ha transformado la forma en que mi hija aprende. Es increíble verla tan emocionada por conocer nuevas palabras. La interfaz es súper amigable."
@@ -373,8 +429,8 @@
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="glass-card position-relative p-4 h-100 bg-white">
+        <div class="col reveal-on-scroll delay-200">
+          <div class="glass-card testimonial-card position-relative p-4 h-100 bg-white">
             <span class="material-symbols-outlined position-absolute opacity-25" style="top: 1rem; left: 1rem; font-size: 3rem; color: #ede7f6;">format_quote</span>
             <p class="font-body-md fst-italic mb-4 position-relative z-1 mt-4">
               "Como educadora especial, recomiendo Comuseñas como una excelente herramienta de apoyo. El diseño pedagógico de los juegos es acertado y muy motivador."
@@ -395,14 +451,14 @@
   <!-- CTA -->
   <section class="py-5 mb-5 text-center">
     <div class="container">
-      <div class="glass-card p-5 mx-auto d-flex flex-column align-items-center justify-content-center" style="max-width: 800px; background-color: rgba(255,255,255,0.7); border-radius: 2rem;">
+      <div class="glass-card reveal-on-scroll p-5 mx-auto d-flex flex-column align-items-center justify-content-center" style="max-width: 800px; background-color: rgba(255,255,255,0.7); border-radius: 2rem;">
         <h4 class="font-title-md mb-2" style="color: #4a3b8d;">Comienza tu aventura hoy</h4>
         <p class="small mb-4" style="max-width: 400px;">
           Únete a cientos de familias que ya están aprendiendo lengua de señas de forma divertida. ¡Descarga Comuseñas ahora!
         </p>
         <div class="d-flex justify-content-center gap-2">
           <a target="_blank" href="https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR" class="text-decoration-none">
-            <div class="bg-dark text-white font-label-bold py-2 px-3 d-flex align-items-center gap-2 transition" style="cursor: pointer; border-radius: 0.5rem;">
+            <div class="bg-dark text-white font-label-bold py-2 px-3 d-flex align-items-center gap-2 transition btn-store-interactive" style="cursor: pointer; border-radius: 0.5rem;">
               <span class="material-symbols-outlined fs-3">shop</span>
               <div class="text-start">
                 <div class="text-uppercase" style="font-size: 8px; opacity: 0.8; line-height: 1;">Disponible en</div>
