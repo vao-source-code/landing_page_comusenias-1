@@ -8,7 +8,7 @@
   <meta name="description" content="Aprende Lengua de Señas Argentina (LSA) con Comuseñas. Aplicación educativa interactiva diseñada con IA para la inclusión y aprendizaje.">
   <meta name="author" content="Comuseñas">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#ffffff"> <!-- Sugerencia: cambialo al color principal de tu marca (ej: #4A90E2) -->
+  <meta name="theme-color" content="#543c9d">
   
   <link rel="canonical" href="https://xn--comuseas-i3a.com.ar/"> <!-- Usando punycode recomendado -->
   <link rel="apple-touch-icon" href="favicon.ico">
@@ -17,15 +17,15 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Comuseñas" />
   <meta property="og:locale" content="es_AR" />
-  <meta property="og:title" content="Comuseñas | Aprendé Lengua de Señas Argentina" />
-  <meta property="og:description" content="Plataforma y app móvil interactiva para aprender LSA de forma accesible e inclusiva." />
-  <meta property="og:image" content="https://xn--comuseas-i3a.com.ar/assets/og-banner.jpg" />
+  <meta property="og:title" content="Comuseñas | Aprendé Lengua de Señas Argentina con IA" />
+  <meta property="og:description" content="Plataforma y app móvil interactiva para aprender LSA de forma accesible e inclusiva con validación en tiempo real por inteligencia artificial." />
+  <meta property="og:image" content="https://xn--comuseas-i3a.com.ar/assets/logo_con_bordes.webp" />
   <meta property="og:url" content="https://xn--comuseas-i3a.com.ar" />
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Comuseñas: App para Aprender LSA">
-  <meta name="twitter:description" content="Aprende Lengua de Señas Argentina (LSA) con Comuseñas. Una app educativa inclusiva.">
+  <meta name="twitter:title" content="Comuseñas: App para Aprender LSA con IA">
+  <meta name="twitter:description" content="Aprende Lengua de Señas Argentina (LSA) con Comuseñas. Validación de gestos por cámara e inteligencia artificial.">
   <meta name="twitter:image" content="https://xn--comuseas-i3a.com.ar/assets/logo_con_bordes.webp">
 
   <!-- Precargar imagen Hero para mejorar LCP -->
@@ -48,16 +48,35 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        "@id": "https://xn--comuseas-i3a.com.ar/#website",
+        "url": "https://xn--comuseas-i3a.com.ar/",
+        "name": "Comuseñas",
+        "inLanguage": "es-AR",
+        "publisher": {
+          "@id": "https://xn--comuseas-i3a.com.ar/#organization"
+        }
+      },
+      {
         "@type": "Organization",
         "@id": "https://xn--comuseas-i3a.com.ar/#organization",
         "name": "Comuseñas",
         "url": "https://xn--comuseas-i3a.com.ar/",
         "logo": "https://xn--comuseas-i3a.com.ar/assets/logo_con_bordes.webp",
-        "description": "Proyecto y plataforma enfocada en la enseñanza accesible de Lengua de Señas Argentina (LSA) e inclusión digital.",
+        "description": "Plataforma educativa argentina para el aprendizaje inclusivo y lúdico de la Lengua de Señas Argentina (LSA) con Inteligencia Artificial.",
         "sameAs": [
           "https://www.instagram.com/comusenias",
-          "https://www.linkedin.com/in/comuse%C3%B1as/"
-        ]
+          "https://www.linkedin.com/in/comuse%C3%B1as/",
+          "https://www.youtube.com/@Comusenias",
+          "https://www.tiktok.com/@comusenias",
+          "https://cafecito.app/comusenias"
+        ],
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Universidad Nacional de La Matanza",
+          "alternateName": "UNLaM",
+          "sameAs": "https://www.wikidata.org/wiki/Q1583177"
+        }
       },
       {
         "@type": "MobileApplication",
@@ -65,23 +84,30 @@
         "name": "Comuseñas",
         "operatingSystem": "Android",
         "applicationCategory": "EducationalApplication",
-        "inLanguage": "es",
+        "inLanguage": "es-AR",
+        "teaches": {
+          "@type": "Language",
+          "name": "Lengua de Señas Argentina",
+          "alternateName": "LSA",
+          "sameAs": "https://www.wikidata.org/wiki/Q3322108"
+        },
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "ARS"
         },
-        "description": "Aplicación educativa interactiva diseñada en Argentina para aprender Lengua de Señas Argentina (LSA). Utiliza inteligencia artificial y reconocimiento de gestos por cámara para validar señas en tiempo real.",
+        "description": "Aplicación educativa interactiva desarrollada en Argentina para aprender Lengua de Señas Argentina (LSA). Utiliza inteligencia artificial y visión computacional por cámara para validar y corregir señas en tiempo real, con seguimiento por código QR para especialistas y familias.",
         "publisher": {
           "@id": "https://xn--comuseas-i3a.com.ar/#organization"
         },
         "installUrl": "https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR",
-        "screenshot": "https://xn--comuseas-i3a.com.ar/assets/screenshots/preview-1.webp",
         "featureList": [
-          "Diccionario interactivo de Lengua de Señas Argentina",
-          "Módulos educativos progresivos",
-          "Prácticas visuales y reconocimiento de gestos por IA",
-          "Acceso offline a contenidos esenciales"
+          "Validación en tiempo real por Inteligencia Artificial y cámara",
+          "Diccionario interactivo de Lengua de Señas Argentina (LSA)",
+          "Vocabulario enfocado en situaciones prácticas y rutinas cotidianas",
+          "Rol Especialista con vinculación ágil por escaneo de código QR",
+          "Estadísticas de avance y registro de observaciones personalizadas",
+          "Diseño accesible y gamificado para niños, familias y educadores"
         ],
         "aggregateRating": {
           "@type": "AggregateRating",
@@ -91,13 +117,78 @@
         "subjectOf": [
           {
             "@type": "NewsArticle",
+            "headline": "La historia detrás de Comuseñas, la innovadora app desarrollada en Argentina que destacó Mario Pergolini",
+            "publisher": {
+              "@type": "Organization",
+              "name": "El Trece - Otro Día Perdido"
+            },
+            "url": "https://www.eltrecetv.com.ar/otro-dia-perdido/2026/09/18/la-historia-detras-de-comusenas-la-inovadora-app-desarrolada-en-argentina-que-destaco-mario-pergolini/"
+          },
+          {
+            "@type": "NewsArticle",
             "headline": "Crearon una app para aprender el lenguaje de señas",
-            "url": "https://clarin.com"
+            "publisher": {
+              "@type": "Organization",
+              "name": "Clarín"
+            },
+            "url": "https://www.clarin.com/zonales/crearon-app-aprender-lenguaje-senas_0_JJ6ghmrKJX.html"
           },
           {
             "@type": "NewsArticle",
             "headline": "Comuseñas, para la hipoacusia profunda bilateral",
-            "url": "https://pagina12.com.ar"
+            "publisher": {
+              "@type": "Organization",
+              "name": "Página|12"
+            },
+            "url": "https://www.pagina12.com.ar/704301-comusenas-para-la-hipoacusia-profunda-bilateral/"
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Un graduado de la UNLaM con hipoacusia creó una innovadora aplicación para enseñar lengua de señas",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Primer Plano Online"
+            },
+            "url": "https://primerplanoonline.com.ar/un-graduado-de-la-unlam-con-hipoacusia-creo-una-innovadora-aplicacion-para-ensenar-lengua-de-senas/"
+          },
+          {
+            "@type": "NewsArticle",
+            "headline": "Graduado de la UNLaM desarrolló una app para enseñar lengua de señas",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Portal CyT UNLaM"
+            },
+            "url": "https://cyt.unlam.edu.ar/index.php?seccion=-1&accion=noticia&idNoticia=87"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://xn--comuseas-i3a.com.ar/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Comuseñas funciona como un traductor automático de LSA?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Funciona como una plataforma educativa avanzada con validación por inteligencia artificial. Corrige tus señas mediante la cámara para asegurar que tu aprendizaje sea técnicamente correcto, complementando la necesidad de un intérprete o diccionario LSA dinámico."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Para quién está recomendada la aplicación?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Es una herramienta clave para escuelas, familias con integrantes con hipoacusia o pérdida auditiva bilateral, y cualquier persona en Argentina que busque una base sólida de comunicación inclusiva."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿La app requiere conocimientos previos de señas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. La estructura pedagógica te acompaña desde el abecedario dactilológico hasta la construcción de frases complejas con soporte de IA."
+            }
           }
         ]
       }
@@ -106,25 +197,57 @@
   </script>
 </head>
 <body>
-  <!-- Contenido semántico inicial dentro de app-root para bots y motores de búsqueda -->
+  <!-- Contenido semántico inicial dentro de app-root para bots y motores generativos de búsqueda -->
   <app-root style="display: flex;flex-direction: column;min-height: 100%; overflow-x: hidden;">
     <div style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;">
       <header>
-        <h1>Comuseñas: Aprendé Lengua de Señas Argentina (LSA)</h1>
-        <p>Plataforma y aplicación móvil interactiva diseñada para la enseñanza accesible e inclusiva de la Lengua de Señas Argentina mediante juegos, inteligencia artificial y retroalimentación profesional.</p>
+        <h1>Comuseñas: App de Lengua de Señas Argentina con Inteligencia Artificial</h1>
+        <p>Plataforma y aplicación móvil interactiva desarrollada en Argentina para la enseñanza accesible e inclusiva de la Lengua de Señas Argentina (LSA). Integra reconocimiento y corrección de gestos por cámara en tiempo real mediante visión computacional e IA.</p>
       </header>
       <main>
-        <h2>Aprender LSA de forma dinámica e interactiva</h2>
-        <p>Comuseñas transforma el proceso de aprendizaje del alfabeto dactilológico, vocabulario y señas cotidianas en una experiencia lúdica para niños, adultos y educadores.</p>
-        
-        <h2>Descargá la app en Google Play</h2>
-        <p>Accedé a lecciones guiadas, prácticas visuales y seguimiento de progreso desde tu dispositivo móvil.</p>
-        <p><a href="https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR">Descargar Comuseñas en Google Play Store</a></p>
+        <section>
+          <h2>¿Cómo funciona nuestro validador y traductor de señas por IA?</h2>
+          <p>Comuseñas utiliza la cámara de tu celular para analizar la postura de manos y expresiones corporales, brindando devolución inmediata y precisa.</p>
+        </section>
+
+        <section>
+          <h2>Pilares Pedagógicos y Tecnológicos</h2>
+          <ul>
+            <li><strong>Categorías Temáticas y Rutinas Cotidianas:</strong> Vocabulario enfocado en situaciones prácticas (comida, baño, juego, emociones) para la conexión inmediata familiar. 100% basado en LSA oficial validada por especialistas.</li>
+            <li><strong>Videos Demostrativos y Validación IA:</strong> Modelos visuales claros con corrección instantánea de la seña por cámara e inteligencia artificial.</li>
+            <li><strong>Seguimiento de Progreso y Rol Especialista:</strong> Conexión ágil por código QR para fonoaudiólogos, docentes y familiares con métricas de juego y notas pedagógicas personalizadas.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Preguntas Frecuentes sobre Comuseñas (LSA)</h2>
+          <article>
+            <h3>¿Comuseñas funciona como un traductor automático de LSA?</h3>
+            <p>Funciona como una plataforma educativa avanzada con validación por inteligencia artificial. Corrige tus señas mediante la cámara para asegurar que tu aprendizaje sea técnicamente correcto.</p>
+          </article>
+          <article>
+            <h3>¿Para quién está recomendada la aplicación?</h3>
+            <p>Es una herramienta clave para escuelas, familias con integrantes con hipoacusia o pérdida auditiva bilateral, y cualquier persona en Argentina que busque una base sólida de comunicación inclusiva.</p>
+          </article>
+          <article>
+            <h3>¿La app requiere conocimientos previos de señas?</h3>
+            <p>No. La estructura pedagógica te acompaña desde el abecedario dactilológico hasta la construcción de frases complejas con soporte de IA.</p>
+          </article>
+        </section>
+
+        <section>
+          <h2>Descargá Comuseñas en Google Play</h2>
+          <p><a href="https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR">Descargar Comuseñas para Android</a></p>
+        </section>
       </main>
       <footer>
+        <p>Menciones en prensa destacada: El Trece (Otro Día Perdido con Mario Pergolini), Clarín, Página|12, Viví el Oeste, Primer Plano Online y Portal CyT UNLaM.</p>
         <p>Seguinos en nuestras redes oficiales:</p>
         <a href="https://www.instagram.com/comusenias" target="_blank" rel="noopener noreferrer">Instagram</a> | 
-        <a href="https://www.linkedin.com/in/comuse%C3%B1as/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/comuse%C3%B1as/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+        <a href="https://www.youtube.com/@Comusenias" target="_blank" rel="noopener noreferrer">YouTube</a> |
+        <a href="https://www.tiktok.com/@comusenias" target="_blank" rel="noopener noreferrer">TikTok</a> |
+        <a href="https://cafecito.app/comusenias" target="_blank" rel="noopener noreferrer">Cafecito</a>
       </footer>
     </div>
   </app-root>

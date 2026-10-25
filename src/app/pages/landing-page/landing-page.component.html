@@ -2,25 +2,25 @@
 <main class="flex-grow-1" style="color: #494551;">
 
   <!-- Hero Section -->
-  <section class="position-relative py-5">
-    <div class="container py-5">
+  <section class="position-relative py-4 py-md-5">
+    <div class="container py-3 py-md-5">
       <div class="row align-items-center">
         
         <!-- Text Content -->
-        <div class="col-12 col-md-6 text-center text-md-start mb-5 mb-md-0 reveal-on-scroll">
-          <h1 class="font-display-lg mb-4" style="color: #4a3b8d;">
+        <div class="col-12 col-md-6 text-center text-md-start mb-4 mb-md-0 reveal-on-scroll">
+          <h1 class="font-display-lg mb-3 mb-md-4" style="color: #4a3b8d;">
             Comuseñas: App de Lengua de Señas Argentina con Inteligencia Artificial
           </h1>
-          <p class="font-body-lg mb-5 mx-auto mx-md-0" style="max-width: 500px;">
+          <p class="font-body-lg mb-4 mb-md-5 mx-auto mx-md-0" style="max-width: 500px;">
             Aprendé LSA de forma interactiva y lúdica. Nuestra plataforma utiliza tecnología de reconocimiento de gestos por cámara para guiarte en tiempo real, actuando como un soporte inteligente para comprender y validar tus señas de manera precisa.
           </p>
           <div class="d-flex justify-content-center justify-content-md-start">
             <a target="_blank" href="https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR" class="text-decoration-none">
-              <div class="bg-dark text-white font-label-bold py-2 px-3 d-flex align-items-center gap-2 transition btn-store-interactive" style="cursor: pointer; border-radius: 0.5rem; width: fit-content;">
-                <span class="material-symbols-outlined fs-2">shop</span>
+              <div class="bg-dark text-white font-label-bold py-3 px-4 d-flex align-items-center gap-3 transition btn-store-interactive shadow" style="cursor: pointer; border-radius: 0.75rem; width: fit-content;">
+                <span class="material-symbols-outlined fs-1">shop</span>
                 <div class="text-start">
-                  <div class="text-uppercase" style="font-size: 8px; opacity: 0.8; line-height: 1;">Disponible en</div>
-                  <div class="fs-6 fw-bold" style="line-height: 1.2;">Google Play</div>
+                  <div class="text-uppercase" style="font-size: 10px; opacity: 0.85; line-height: 1; letter-spacing: 0.05em;">Disponible en</div>
+                  <div class="fs-5 fw-bold" style="line-height: 1.2;">Google Play</div>
                 </div>
               </div>
             </a>
@@ -31,6 +31,11 @@
         <div class="col-12 col-md-6 d-flex justify-content-center position-relative reveal-on-scroll delay-200">
             <div class="position-relative rounded-5 overflow-hidden shadow-sm float-hero-img" style="width: 100%; max-width: 450px; background-color: #fff; border: 1px solid rgba(255,255,255,0.8); aspect-ratio: 1/1;">
               <img src="assets/nina.webp" alt="Niña sonriendo mientras aprende Lengua de Señas Argentina con un teléfono móvil" width="450" height="450" fetchpriority="high" class="w-100 h-100 object-fit-cover" />
+              <!-- Floating live status badge from Stitch -->
+              <div class="position-absolute bottom-0 start-0 m-3 px-3 py-2 rounded-pill bg-white shadow-sm d-flex align-items-center gap-2" style="border: 1px solid rgba(0,0,0,0.06); z-index: 2;">
+                <span class="rounded-circle bg-success d-inline-block" style="width: 8px; height: 8px;"></span>
+                <span class="small fw-bold" style="color: #4a3b8d; font-size: 12px;">Validación en tiempo real</span>
+              </div>
             </div>
             <!-- Decorative light blob -->
             <div class="position-absolute bg-soft-yellow rounded-circle opacity-50 ambient-blob" style="top: -20px; right: 0; width: 150px; height: 150px; filter: blur(40px);"></div>
@@ -84,13 +89,85 @@
     </div>
   </section>
 
-  <!-- Mucho más que un juego -->
+  <!-- Sección Orgánica de Video de Presentación -->
+  <section id="demostracion" class="py-5 position-relative overflow-hidden">
+    <div class="container">
+      <div class="text-center mb-4 mb-md-5 reveal-on-scroll">
+        <span class="badge rounded-pill px-3 py-2 mb-2" style="background-color: #ede7f6; color: #4a3b8d; font-size: 13px; font-weight: 600; letter-spacing: 0.03em;">
+          DEMOSTRACIÓN INTERACTIVA
+        </span>
+        <h2 class="font-headline-lg mb-3" style="color: #4a3b8d;">Mirá Comuseñas en acción</h2>
+        <p class="font-body-lg mx-auto" style="max-width: 650px;">
+          Descubrí en menos de un minuto cómo nuestra app combina inteligencia artificial, pedagogía y juego para transformar el aprendizaje de LSA.
+        </p>
+      </div>
+
+      <div class="row justify-content-center align-items-center g-4">
+        <div class="col-12" [ngClass]="isMobile ? 'col-md-7 col-lg-5 col-xl-4' : 'col-lg-10 col-xl-9'" class="reveal-on-scroll delay-100">
+          <!-- Glassmorphism Video Card -->
+          <div class="video-presentation-wrapper position-relative rounded-5 overflow-hidden shadow-lg p-2 p-md-3 bg-white" style="border: 1px solid rgba(74, 59, 141, 0.1);">
+            
+            <div class="position-relative rounded-4 overflow-hidden video-container-inner" 
+                 [style.aspect-ratio]="isMobile ? '9/16' : '16/9'" 
+                 style="background-color: #0f0a1c;">
+              <video #presentationVideo
+                     class="w-100 h-100 object-fit-cover"
+                     [poster]="isMobile ? 'assets/video_poster_mobile.webp' : 'assets/video_poster.webp'"
+                     preload="none"
+                     playsinline
+                     controls
+                     (play)="isVideoPlaying = true"
+                     (pause)="onVideoPause()"
+                     (ended)="onVideoEnded()">
+                <source [src]="isMobile ? 'assets/video_presentacion_mobile.mp4' : 'assets/video_presentacion.mp4'" type="video/mp4">
+                Tu navegador no soporta la reproducción de video HTML5.
+              </video>
+
+              <!-- Botón flotante Play limpio -->
+              <div *ngIf="!isVideoPlaying"
+                   class="video-play-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center cursor-pointer text-white"
+                   (click)="playVideo(presentationVideo)"
+                   role="button"
+                   aria-label="Reproducir video de presentación">
+                <div class="play-btn-circle rounded-circle d-flex align-items-center justify-content-center shadow">
+                  <span class="material-symbols-outlined fs-1 ms-1 text-white">play_arrow</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Highlights footer inside card -->
+            <div class="row row-cols-1 row-cols-md-3 g-2 g-md-3 mt-3 px-2 pb-1 text-center text-md-start">
+              <div class="col d-flex align-items-center gap-2">
+                <span class="material-symbols-outlined text-success fs-5">check_circle</span>
+                <span class="small fw-semibold" style="color: #4a3b8d;">Detección precisa por IA</span>
+              </div>
+              <div class="col d-flex align-items-center gap-2">
+                <span class="material-symbols-outlined text-primary fs-5">verified</span>
+                <span class="small fw-semibold" style="color: #4a3b8d;">Contenido LSA validado</span>
+              </div>
+              <div class="col d-flex align-items-center gap-2">
+                <span class="material-symbols-outlined text-warning fs-5">stars</span>
+                <span class="small fw-semibold" style="color: #4a3b8d;">Experiencia 100% interactiva</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative ambient glow -->
+    <div class="position-absolute bg-soft-yellow rounded-circle opacity-25 ambient-blob" style="bottom: 0; left: 5%; width: 220px; height: 220px; filter: blur(60px); pointer-events: none;"></div>
+    <div class="position-absolute rounded-circle opacity-25 ambient-blob" style="top: 10%; right: 5%; width: 200px; height: 200px; background-color: #ede7f6; filter: blur(50px); pointer-events: none;"></div>
+  </section>
+
+  <!-- Pilares Pedagógicos y Tecnológicos -->
   <section class="py-5">
     <div class="container">
-      <div class="row align-items-center">
-        <!-- List side -->
-        <div class="col-12 col-md-6 mb-4 mb-md-0 reveal-on-scroll delay-100">
-          <div class="glass-card p-4 d-flex flex-column gap-4" style="background-color: #fff;">
+      <div class="row justify-content-center">
+        <!-- Tarjeta centrada de los 3 Pilares -->
+        <div class="col-12 col-lg-10 col-xl-8 reveal-on-scroll">
+          <div class="glass-card p-4 p-md-5 d-flex flex-column gap-4 bg-white shadow-sm">
             
             <!-- Item 1: Categorías Temáticas -->
             <div class="d-flex align-items-start gap-3">
@@ -110,13 +187,13 @@
 
             <!-- Item 2: Videos Demostrativos -->
             <div class="d-flex align-items-start gap-3">
-              <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 44px; height: 44px; background-color: #ede7f6;">
-                <span class="material-symbols-outlined feature-icon-anim" style="color: #4a3b8d;">video_library</span>
+              <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 44px; height: 44px; background-color: #dfe0ff;">
+                <span class="material-symbols-outlined feature-icon-anim" style="color: #4453bf;">video_library</span>
               </div>
               <div>
                 <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
                   <h4 class="font-label-bold mb-0" style="color: #4a3b8d;">Videos Demostrativos y Validación IA</h4>
-                  <span class="badge rounded-pill" style="background-color: #ede7f6; color: #4a3b8d; font-size: 11px;">Cámara + IA</span>
+                  <span class="badge rounded-pill" style="background-color: #dfe0ff; color: #2a3aa6; font-size: 11px;">Cámara + IA</span>
                 </div>
                 <p class="small text-muted mb-0">
                   Modelos visuales claros complementados con el mayor diferencial de Comuseñas: aprendizaje con validación en tiempo real por Inteligencia Artificial, utilizando la cámara del celular para corregir la postura de las manos al instante y asegurar una ejecución precisa de la seña.
@@ -126,13 +203,13 @@
 
             <!-- Item 3: Seguimiento de Progreso y Rol Especialista -->
             <div class="d-flex align-items-start gap-3">
-              <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 44px; height: 44px; background-color: #ede7f6;">
-                <span class="material-symbols-outlined feature-icon-anim" style="color: #4a3b8d;">qr_code_scanner</span>
+              <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 44px; height: 44px; background-color: #fff3dc;">
+                <span class="material-symbols-outlined feature-icon-anim" style="color: #b45309;">qr_code_scanner</span>
               </div>
               <div>
                 <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
                   <h4 class="font-label-bold mb-0" style="color: #4a3b8d;">Seguimiento de Progreso y Rol Especialista</h4>
-                  <span class="badge rounded-pill" style="background-color: #ede7f6; color: #4a3b8d; font-size: 11px;">Escaneo QR</span>
+                  <span class="badge rounded-pill" style="background-color: #fff3dc; color: #9a3412; font-size: 11px;">Escaneo QR</span>
                 </div>
                 <p class="small text-muted mb-0">
                   Integración explícita para el Rol Especialista mediante un escaneo rápido de código QR. Permite a fonoaudiólogos, docentes integradores y familiares no solo ver estadísticas de juego, sino también dejar observaciones y notas personalizadas para guiar el aprendizaje.
@@ -140,25 +217,6 @@
               </div>
             </div>
 
-          </div>
-        </div>
-        <!-- Text side -->
-        <div class="col-12 col-md-6 px-md-5 reveal-on-scroll delay-200">
-          <div class="d-inline-block px-3 py-1 rounded-pill mb-3" style="background-color: rgba(84, 60, 157, 0.08); color: #4a3b8d; font-size: 12px; font-weight: 700; letter-spacing: 0.04em;">
-            BASE PEDAGÓGICA Y TERAPÉUTICA
-          </div>
-          <h3 class="font-headline-lg mb-3" style="color: #4a3b8d;">Mucho más que un juego</h3>
-          <p class="font-body-md mb-3" style="color: #494551;">
-            Comuseñas está construida con una base pedagógica sólida. Cada interacción está diseñada para fomentar la inclusión y el desarrollo del lenguaje en un entorno seguro y estimulante.
-          </p>
-          <p class="font-body-md small text-muted mb-4">
-            Un puente pensado para que padres, cuidadores y profesionales de la salud o educación acompañen la evolución comunicativa del niño con métricas claras y seguimiento continuo.
-          </p>
-          <div>
-            <a routerLink="/especialistas-y-familias" class="text-decoration-none fw-bold d-inline-flex align-items-center gap-2 transition" style="color: #4a3b8d;">
-              <span>Conocé más sobre el rol para especialistas y familias</span>
-              <span class="material-symbols-outlined fs-5">arrow_forward</span>
-            </a>
           </div>
         </div>
       </div>
@@ -199,60 +257,6 @@
           </div>
           <h4 class="font-title-md mb-2" style="color: #4a3b8d;">¡Empieza a Jugar!</h4>
           <p class="small mx-auto" style="max-width: 250px;">Explora los diferentes mundos, aprende nuevas señas y gana recompensas.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Schema -->
-  <section id="faq" class="py-5 bg-white">
-    <div class="container">
-      <div class="reveal-on-scroll">
-        <h2 class="font-headline-lg mb-5 text-center" style="color: #4a3b8d;">Preguntas Frecuentes</h2>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-8">
-          <div class="accordion" id="faqAccordion">
-            <!-- Pregunta 1 -->
-            <div class="accordion-item border-0 mb-3 glass-card shadow-sm reveal-on-scroll delay-100">
-              <h3 class="accordion-header" id="headingOne">
-                <button class="accordion-button collapsed fw-bold font-title-md" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="color: #4a3b8d; background-color: transparent;">
-                  ¿Comuseñas funciona como un traductor automático de LSA?
-                </button>
-              </h3>
-              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                <div class="accordion-body text-muted small">
-                  Funciona como una plataforma educativa avanzada con validación por inteligencia artificial. Corrige tus señas mediante la cámara para asegurar que tu aprendizaje sea técnicamente correcto, complementando la necesidad de un intérprete o diccionario LSA dinámico.
-                </div>
-              </div>
-            </div>
-            <!-- Pregunta 2 -->
-            <div class="accordion-item border-0 mb-3 glass-card shadow-sm reveal-on-scroll delay-200">
-              <h3 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed fw-bold font-title-md" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="color: #4a3b8d; background-color: transparent;">
-                  ¿Para quién está recomendada la aplicación?
-                </button>
-              </h3>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                <div class="accordion-body text-muted small">
-                  Es una herramienta clave para escuelas, familias con integrantes con hipoacusia o pérdida auditiva bilateral, y cualquier persona en Argentina que busque una base sólida de comunicación inclusiva.
-                </div>
-              </div>
-            </div>
-            <!-- Pregunta 3 -->
-            <div class="accordion-item border-0 mb-3 glass-card shadow-sm reveal-on-scroll delay-300">
-              <h3 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed fw-bold font-title-md" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="color: #4a3b8d; background-color: transparent;">
-                  ¿La app requiere conocimientos previos de señas?
-                </button>
-              </h3>
-              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                <div class="accordion-body text-muted small">
-                  No. La estructura pedagógica te acompaña desde el abecedario dactilológico hasta la construcción de frases complejas con soporte de IA.
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -440,6 +444,63 @@
               <div>
                 <h5 class="font-label-bold mb-0" style="color: #4a3b8d;">Lic. Laura Gómez</h5>
                 <p class="small mb-0">Educadora Especial</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Schema -->
+  <section id="faq" class="py-5 bg-white">
+    <div class="container">
+      <div class="reveal-on-scroll">
+        <h2 class="font-headline-lg mb-5 text-center" style="color: #4a3b8d;">Preguntas Frecuentes</h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+          <div class="accordion" id="faqAccordion">
+            <!-- Pregunta 1 -->
+            <div class="accordion-item border-0 mb-3 glass-card shadow-sm reveal-on-scroll delay-100">
+              <h3 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed fw-bold font-title-md d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="color: #4a3b8d; background-color: transparent;">
+                  <span class="rounded-circle me-3 d-inline-flex align-items-center justify-content-center flex-shrink-0 fw-bold" style="width: 28px; height: 28px; background-color: #ede7f6; color: #4a3b8d; font-size: 14px;">?</span>
+                  <span>¿Comuseñas funciona como un traductor automático de LSA?</span>
+                </button>
+              </h3>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted small ps-5">
+                  Funciona como una plataforma educativa avanzada con validación por inteligencia artificial. Corrige tus señas mediante la cámara para asegurar que tu aprendizaje sea técnicamente correcto, complementando la necesidad de un intérprete o diccionario LSA dinámico.
+                </div>
+              </div>
+            </div>
+            <!-- Pregunta 2 -->
+            <div class="accordion-item border-0 mb-3 glass-card shadow-sm reveal-on-scroll delay-200">
+              <h3 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed fw-bold font-title-md d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="color: #4a3b8d; background-color: transparent;">
+                  <span class="rounded-circle me-3 d-inline-flex align-items-center justify-content-center flex-shrink-0 fw-bold" style="width: 28px; height: 28px; background-color: #ede7f6; color: #4a3b8d; font-size: 14px;">?</span>
+                  <span>¿Para quién está recomendada la aplicación?</span>
+                </button>
+              </h3>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted small ps-5">
+                  Es una herramienta clave para escuelas, familias con integrantes con hipoacusia o pérdida auditiva bilateral, y cualquier persona en Argentina que busque una base sólida de comunicación inclusiva.
+                </div>
+              </div>
+            </div>
+            <!-- Pregunta 3 -->
+            <div class="accordion-item border-0 mb-3 glass-card shadow-sm reveal-on-scroll delay-300">
+              <h3 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed fw-bold font-title-md d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="color: #4a3b8d; background-color: transparent;">
+                  <span class="rounded-circle me-3 d-inline-flex align-items-center justify-content-center flex-shrink-0 fw-bold" style="width: 28px; height: 28px; background-color: #ede7f6; color: #4a3b8d; font-size: 14px;">?</span>
+                  <span>¿La app requiere conocimientos previos de señas?</span>
+                </button>
+              </h3>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted small ps-5">
+                  No. La estructura pedagógica te acompaña desde el abecedario dactilológico hasta la construcción de frases complejas con soporte de IA.
+                </div>
               </div>
             </div>
           </div>

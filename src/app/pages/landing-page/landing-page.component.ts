@@ -10,6 +10,21 @@ declare var require: any;
 export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private observer?: IntersectionObserver;
+  public isVideoPlaying = false;
+  public isMobile = false;
+
+  public playVideo(videoElement: HTMLVideoElement): void {
+    this.isVideoPlaying = true;
+    videoElement.play();
+  }
+
+  public onVideoPause(): void {
+    this.isVideoPlaying = false;
+  }
+
+  public onVideoEnded(): void {
+    this.isVideoPlaying = false;
+  }
 
   public cards = [
     {
@@ -32,6 +47,7 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor() { }
 
   ngOnInit() {    
+    this.checkIsMobile();
     this.loadAnimation('animation-numbers', 'assets/animations/Animation-numbers.json');
     this.loadAnimation('animation-premium', 'assets/animations/Animation-premium.json');
     this.loadAnimation('animation-clock', 'assets/animations/Animation-clock.json');
@@ -44,6 +60,18 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     if (this.observer) {
       this.observer.disconnect();
+    }
+  }
+
+  private checkIsMobile(): void {
+    if (typeof window !== 'undefined') {
+      this.isMobile = window.innerWidth <= 768;
+      window.addEventListener('resize', () => {
+        const currentMobile = window.innerWidth <= 768;
+        if (currentMobile !== this.isMobile) {
+          this.isMobile = currentMobile;
+        }
+      });
     }
   }
 

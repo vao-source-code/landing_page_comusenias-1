@@ -9,13 +9,12 @@ export class NavbarComponent implements OnInit {
   activeSection: string = '';
 
   public sidebarItems = [
-    {label:'Inicio',url:'/'},
-    {label:'Características',url:'/#traductor-ia'},
-    {label:'Cómo Funciona', url:'/#funcionamiento'},
-    {label:'Preguntas Frecuentes', url:'/#faq'},
-    {label:'Prensa', url:'/#prensa'},
-    {label:'Testimonios', url:'/#testimonios'},
-    {label:'Contacto', url:'/contacto'},
+    { label: 'Inicio', url: '/' },
+    { label: 'Características', url: '/#traductor-ia' },
+    { label: 'Cómo Funciona', url: '/#funcionamiento' },
+    { label: 'Prensa', url: '/#prensa' },
+    { label: 'Preguntas', url: '/#faq' },
+    { label: 'Contacto', url: '/contacto' },
   ];
 
   constructor() { }
