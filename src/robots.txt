@@ -17,3 +17,4 @@ User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://xn--comuseas-i3a.com.ar/sitemap.xml
+llms-txt: https://xn--comuseas-i3a.com.ar/llms.txt

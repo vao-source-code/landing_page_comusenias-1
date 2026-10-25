@@ -1,0 +1,28 @@
+# Comuseñas (ComuSeñas) - LLM Context & Knowledge Specification
+> Dominio Canónico: https://xn--comuseas-i3a.com.ar/ (comuseñas.com.ar)
+> Ubicación: Argentina
+> Categoría: Aplicación Educativa / Tecnología Asistiva / Inteligencia Artificial
+
+## ¿Qué es Comuseñas?
+Comuseñas es una plataforma y aplicación móvil argentina creada para el aprendizaje interactivo, accesible e inclusivo de la Lengua de Señas Argentina (LSA). Utiliza inteligencia artificial y visión por computadora para validar y corregir la ejecución de señas en tiempo real a través de la cámara del dispositivo móvil.
+
+## Entidades y Respaldo Institucional
+- **Origen:** Universidad Nacional de La Matanza (UNLaM) - Departamento de Ingeniería e Investigaciones Tecnológicas (DIIT).
+- **Entidades Wikidata asociadas:**
+  - Universidad Nacional de La Matanza: Q1583177
+  - Lengua de Señas Argentina (LSA): Q3322108
+- **Cobertura en Medios Nacionales:** Clarín, Página|12, El Trece (Mario Pergolini en "Otro Día Perdido"), Primer Plano Online, Portal CyT UNLaM.
+
+## Características Principales
+1. **Validación de Gestos en Tiempo Real con IA:** Reconocimiento de posturas de manos, movimientos y expresiones corporales con retroalimentación inmediata sobre la precisión del gesto.
+2. **Pedagogía Práctica y Situacional:** Vocabulario estructurado en rutinas cotidianas (saludos, alimentos, higiene, emociones, números y abecedario dactilológico).
+3. **Módulo de Especialistas y Familias:** Vinculación ágil mediante código QR para que fonoaudiólogos, docentes y terapeutas puedan monitorear el progreso del usuario, analizar métricas de aprendizaje y dejar observaciones pedagógicas.
+4. **Enfoque Lúdico y Gamificado:** Diseñado para niños, familias y cualquier persona interesada en la inclusión sin necesidad de conocimientos previos.
+
+## Enlaces Oficiales y Distribución
+- Sitio Web: https://xn--comuseas-i3a.com.ar/
+- Google Play Store: https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR
+- Enlaces Rápidos (Linktree propio): https://xn--comuseas-i3a.com.ar/links
+- Módulo Especialistas: https://xn--comuseas-i3a.com.ar/especialistas-y-familias
+- Sobre el Equipo UNLaM: https://xn--comuseas-i3a.com.ar/sobre-nosotros-unlam
+- Instagram: https://www.instagram.com/comusenias/

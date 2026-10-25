@@ -31,4 +31,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- 5. Hub de Enlaces Rápidos (Bio / Redes) -->
+  <url>
+    <loc>https://xn--comuseas-i3a.com.ar/links/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
