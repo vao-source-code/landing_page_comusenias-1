@@ -2,6 +2,15 @@ import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { LottiePlayer } from 'lottie-web'; // Asegúrate de que esté instalado correctamente
 declare var require: any;
 
+export interface Founder {
+  name: string;
+  role: string;
+  bio: string;
+  image: string;
+  linkedin?: string;
+  github?: string;
+}
+
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
@@ -12,6 +21,23 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
   private observer?: IntersectionObserver;
   public isVideoPlaying = false;
   public isMobile = false;
+
+  public founders: Founder[] = [
+    {
+      name: 'Víctor Orue',
+      role: 'Fundador & Ingeniero de Software',
+      bio: 'Desarrollo de software y arquitectura web, enfocado en crear soluciones tecnológicas accesibles y de alto impacto social.',
+      image: 'assets/fundadores/victor_orue.webp',
+      linkedin: 'https://www.linkedin.com/in/victor-andrian-orue/'
+    },
+    {
+      name: 'Juan Guerrero Aguilar',
+      role: 'Fundador & Impulsor del Proyecto',
+      bio: 'Inspirador de Comuseñas a partir de su vivencia con hipoacusia profunda bilateral, transformando barreras de comunicación en tecnología inclusiva.',
+      image: 'assets/fundadores/juan_guerrero.webp',
+      linkedin: 'https://www.linkedin.com/in/juan-matias-guerrero-aguilar-a8b389184/'
+    }
+  ];
 
   public playVideo(videoElement: HTMLVideoElement): void {
     this.isVideoPlaying = true;
