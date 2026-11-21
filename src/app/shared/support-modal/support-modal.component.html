@@ -1,0 +1,89 @@
+<div
+  *ngIf="isOpen"
+  class="support-backdrop"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="supportModalTitle"
+  (click)="close()"
+>
+  <div class="support-dialog" (click)="$event.stopPropagation()">
+    <button
+      type="button"
+      class="support-close-btn"
+      (click)="close()"
+      aria-label="Cerrar ventana"
+    >
+      <span class="material-symbols-outlined" aria-hidden="true">close</span>
+    </button>
+
+    <div class="tech-eyebrow mb-2">
+      <span class="tech-eyebrow-dot" aria-hidden="true"></span>
+      <span>APOYÁ COMUSEÑAS</span>
+    </div>
+
+    <h2 id="supportModalTitle" class="font-title-md text-ink mb-2">
+      Ayudanos a seguir creciendo
+    </h2>
+    <p class="font-body-md text-on-surface-variant small mb-4">
+      Comuseñas es 100% gratuita. Tu aporte nos ayuda a mantener los servidores y sumar nuevas señas de LSA.
+    </p>
+
+    <!-- Opción 1: Alias (Mercado Pago / Lemon / Banco) -->
+    <div class="support-option-card mb-3">
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <span class="font-mono-tech text-brand-primary" style="font-size: 0.7rem;">
+          MERCADO PAGO · LEMON · BANCO
+        </span>
+        <span class="badge rounded-pill badge-brand-primary px-2 py-1" style="font-size: 10px;">
+          Sin comisión
+        </span>
+      </div>
+
+      <div class="alias-row">
+        <div class="alias-value" aria-label="Alias para transferir">{{ alias }}</div>
+        <button
+          type="button"
+          class="btn-copy-alias"
+          [class.copied]="aliasCopied"
+          (click)="copyAlias()"
+        >
+          <span class="material-symbols-outlined" style="font-size: 16px;" aria-hidden="true">
+            {{ aliasCopied ? 'check' : 'content_copy' }}
+          </span>
+          <span>{{ aliasCopied ? '¡Copiado!' : 'Copiar alias' }}</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Opción 2: Cafecito -->
+    <div class="support-option-card support-option-cafecito">
+      <div class="font-mono-tech mb-2" style="font-size: 0.7rem; color: #8a4b08;">
+        CAFECITO
+      </div>
+      <p class="small text-on-surface-variant mb-3">
+        También podés invitarnos uno o más cafecitos online en segundos.
+      </p>
+      <a
+        [href]="cafecitoUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-cafecito-modal w-100"
+      >
+        <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">local_cafe</span>
+        <span>Ir a Cafecito</span>
+        <span class="material-symbols-outlined" style="font-size: 16px;" aria-hidden="true">open_in_new</span>
+      </a>
+    </div>
+
+    <div class="text-center mt-3 pt-2">
+      <a
+        routerLink="/ayudanos"
+        (click)="close()"
+        class="small fw-semibold text-brand-primary text-decoration-none d-inline-flex align-items-center gap-1"
+      >
+        <span>Ver en qué usamos cada aporte y próximos objetivos</span>
+        <span class="material-symbols-outlined" style="font-size: 16px;" aria-hidden="true">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</div>

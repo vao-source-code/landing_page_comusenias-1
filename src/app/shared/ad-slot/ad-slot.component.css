@@ -1,0 +1,29 @@
+.ad-slot-wrapper {
+  border: 1px solid rgba(79, 53, 232, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 12px 16px 16px;
+}
+
+.ad-slot-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted, #6c6878);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.ad-slot-stage {
+  min-height: 100px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 767.98px) {
+  .ad-slot-stage {
+    min-height: 250px;
+  }
+}

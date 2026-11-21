@@ -92,6 +92,18 @@
   color: #fff;
 }
 
+.cafecito-link-btn {
+  background-color: #fff8eb;
+  color: #8a4b08;
+  border: 1.5px solid rgba(217, 119, 6, 0.35);
+}
+
+.cafecito-link-btn:hover {
+  background-color: #d97706;
+  border-color: #d97706;
+  color: #fff;
+}
+
 .icon {
   font-size: 1.25rem;
 }

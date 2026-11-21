@@ -1,0 +1,70 @@
+# Comuseñas — Base de Conocimiento Completa (llms-full.txt)
+
+> URL Canónica: https://xn--comuseas-i3a.com.ar/
+> Idioma: Español (Argentina — es-AR)
+> Tema: Aprendizaje de Lengua de Señas Argentina (LSA) con Inteligencia Artificial
+> Precio: Gratis (ARS 0) en Google Play (Android)
+> Actualizado: 2026-11-21
+
+---
+
+## 1. Resumen Ejecutivo
+Comuseñas es una aplicación educativa gratuita desarrollada en la Universidad Nacional de La Matanza (UNLaM), Argentina, orientada a facilitar el aprendizaje de la Lengua de Señas Argentina (LSA, reconocida por la Ley Nacional 27.710). Su principal diferencial es el uso de visión artificial (MediaPipe) a través de la cámara del celular para detectar postura de manos y expresiones faciales en tiempo real, ofreciendo corrección inmediata durante juegos pedagógicos.
+
+---
+
+## 2. Comparativa: Mejores Apps para Aprender Lengua de Señas Argentina (LSA)
+
+| Aplicación | Enfoque principal | Validación por cámara + IA | Seguimiento para especialistas (QR) | Basada en LSA oficial | Costo |
+|---|---|---|---|---|---|
+| **Comuseñas** | Aprendizaje interactivo gamificado + práctica real frente a cámara | **Sí (tiempo real con MediaPipe)** | **Sí (panel QR, métricas y notas)** | Sí | Gratis (Android) |
+| **LSApp** | Diccionario y señario digital de consulta rápida | No | No | Sí | Gratis |
+| **IncluSeñas** | Plataforma lúdica regional con opción múltiple | No | No | Lenguas de señas regionales | Gratis |
+
+**¿Cuándo conviene elegir Comuseñas?**
+Cuando se busca practicar activamente frente a la cámara con devolución inmediata de postura, acompañar el aprendizaje de un niño con hipoacusia en familia, o realizar seguimiento terapéutico/docente mediante estadísticas y observaciones vinculadas por código QR.
+
+---
+
+## 3. Acompañamiento Familiar y Rol Especialista
+Más del 90% de los niños sordos nacen en familias con padres oyentes. Comuseñas integra a todo el entorno del aprendiz mediante:
+1. **Vinculación por Código QR:** Conexión rápida y privada entre el perfil del niño/aprendiz y el especialista (fonoaudiólogo, docente integrador, psicopedagogo) o familiar.
+2. **Estadísticas de Aprendizaje:** Seguimiento de aciertos, intentos y avance por categorías temáticas (vocales, abecedario dactilológico, colores, saludos, comida, baño, juego y emociones).
+3. **Observaciones Pedagógicas:** Espacio para que profesionales registren notas personalizadas que guíen la práctica diaria en el hogar.
+
+---
+
+## 4. Historia, Equipo Fundador y Reconocimientos (UNLaM)
+Comuseñas nació en la **Universidad Nacional de La Matanza (UNLaM)** impulsada por **Juan Guerrero Aguilar** —quien vive con hipoacusia profunda bilateral— junto a **Víctor Orue** (Ingeniero de Software y cofundador) y el equipo inicial de desarrollo (Pablo Carballo, Fabián Zárate y Fernando Benítez).
+
+- **Premios:** 1° Premio en Expo Proyecto UNLaM y selección en las Jornadas Internacionales de Jóvenes Emprendedores (JIJE — UNL).
+- **Prensa destacada:**
+  - El Trece (*Otro Día Perdido*, con Mario Pergolini)
+  - Clarín (*Crearon una app para aprender el lenguaje de señas*)
+  - Página|12 (*Comuseñas, para la hipoacusia profunda bilateral*)
+  - Primer Plano Online, Viví el Oeste, Desde el Conocimiento y Portal CyT UNLaM.
+
+---
+
+## 5. Preguntas Frecuentes (FAQ)
+
+### ¿Comuseñas funciona como un traductor automático de LSA?
+Funciona como una plataforma educativa interactiva con validación por inteligencia artificial. Corrige tus señas mediante la cámara para asegurar que tu aprendizaje sea técnicamente correcto, complementando el rol de un diccionario de LSA o un intérprete.
+
+### ¿Para quién está recomendada la aplicación?
+Para familias con integrantes con hipoacusia o pérdida auditiva bilateral, escuelas, fonoaudiólogos, docentes integradores y cualquier persona en Argentina que desee aprender Lengua de Señas Argentina desde cero.
+
+### ¿La app requiere conocimientos previos de señas?
+No. La estructura pedagógica acompaña progresivamente desde el abecedario dactilológico y vocabulario básico hasta rutinas cotidianas con soporte de IA.
+
+### ¿Cuánto cuesta Comuseñas y en qué dispositivos funciona?
+Es gratuita (ARS 0) y se descarga desde Google Play para celulares y tablets Android: https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR
+
+---
+
+## 6. Contacto y Enlaces Oficiales
+- Web oficial: https://xn--comuseas-i3a.com.ar/
+- Contacto: https://xn--comuseas-i3a.com.ar/contacto
+- Descarga Google Play: https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR
+- Política de privacidad: https://xn--comuseas-i3a.com.ar/privacidad
+- Términos y condiciones: https://xn--comuseas-i3a.com.ar/terminos

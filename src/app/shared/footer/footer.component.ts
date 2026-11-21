@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/services/firebase.service';
+import { SupportModalService } from 'src/app/services/support-modal.service';
 
 @Component({
   selector: 'app-footer',
@@ -16,7 +17,15 @@ export class FooterComponent implements OnInit {
   showMessage: boolean = false; // Variable de estado para mostrar el mensaje
   message: string = ''; // Mensaje a mostrar
 
-  constructor(private formBuilder: FormBuilder,private firebaseService: FirebaseService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private firebaseService: FirebaseService,
+    private supportModalService: SupportModalService
+  ) { }
+
+  openSupportModal(): void {
+    this.supportModalService.open();
+  }
 
   ngOnInit(): void {
   

@@ -21,16 +21,18 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              "src/ads.txt",
               "src/robots.txt",
               "src/sitemap.xml",
               "src/llms.txt",
+              "src/llms-full.txt",
               "src/loaderio-3ee70de11d8f5141fc7dec81fa200fd6.txt",
               "src/loaderio-3ee70de11d8f5141fc7dec81fa200fd6.html",
               "src/loaderio-3ee70de11d8f5141fc7dec81fa200fd6"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
@@ -46,8 +48,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "3kb",
-                  "maximumError": "5kb"
+                  "maximumWarning": "16kb",
+                  "maximumError": "24kb"
                 }
               ],
               "fileReplacements": [
@@ -97,9 +99,11 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              "src/ads.txt",
               "src/robots.txt",
               "src/sitemap.xml",
               "src/llms.txt",
+              "src/llms-full.txt",
               "src/loaderio-3ee70de11d8f5141fc7dec81fa200fd6.txt",
               "src/loaderio-3ee70de11d8f5141fc7dec81fa200fd6.html",
               "src/loaderio-3ee70de11d8f5141fc7dec81fa200fd6"

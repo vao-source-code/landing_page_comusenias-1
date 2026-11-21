@@ -1,0 +1,144 @@
+<section class="swiss-grid-bg py-5">
+  <div class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <!-- Header -->
+        <div class="tech-eyebrow mb-3">
+          <span class="tech-eyebrow-dot" aria-hidden="true"></span>
+          <span>TRANSPARENCIA Y COMUNIDAD</span>
+        </div>
+        <h1 class="font-display-md text-ink mb-3">
+          Ayudanos a mantener Comuseñas 100% gratuita<span class="accent-square-dot" aria-hidden="true"></span>
+        </h1>
+        <p class="font-body-lg text-on-surface-variant mb-5" style="max-width: 740px;">
+          Comuseñas nació en la Universidad Nacional de La Matanza (UNLaM) con un objetivo claro: derribar barreras de comunicación en Argentina acercando la Lengua de Señas Argentina (LSA) con Inteligencia Artificial a todas las familias, escuelas y especialistas, sin costo.
+        </p>
+
+        <!-- Canales de Aporte (Alias + Cafecito) -->
+        <div class="row g-4 mb-5">
+          <div class="col-12 col-md-6">
+            <article class="swiss-card h-100 d-flex flex-column justify-content-between" style="border-color: var(--border-brand-subtle);">
+              <div>
+                <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                  <span class="font-mono-tech text-brand-primary" style="font-size: 0.72rem;">MERCADO PAGO · LEMON · BANCO</span>
+                  <span class="badge rounded-pill badge-brand-primary px-2 py-1" style="font-size: 11px;">Sin comisión</span>
+                </div>
+                <h2 class="font-title-md text-ink mb-2">Transferencia por Alias</h2>
+                <p class="font-body-md text-on-surface-variant small mb-4">
+                  Podés aportar el monto que quieras desde Mercado Pago, Lemon o cualquier billetera/banco argentino.
+                </p>
+              </div>
+
+              <div class="alias-box">
+                <span class="alias-code" aria-label="Alias para transferir">{{ alias }}</span>
+                <button
+                  type="button"
+                  class="btn-copy-alias"
+                  [class.copied]="aliasCopied"
+                  (click)="copyAlias()"
+                >
+                  <span class="material-symbols-outlined" style="font-size: 16px;" aria-hidden="true">
+                    {{ aliasCopied ? 'check' : 'content_copy' }}
+                  </span>
+                  <span>{{ aliasCopied ? '¡Copiado!' : 'Copiar alias' }}</span>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <article class="swiss-card cafecito-card h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="font-mono-tech mb-3" style="font-size: 0.72rem; color: #8a4b08;">CAFECITO</div>
+                <h2 class="font-title-md text-ink mb-2">Invitanos un Cafecito</h2>
+                <p class="font-body-md text-on-surface-variant small mb-4">
+                  Si preferís colaborar en segundos de forma online y dejarnos un mensaje de aliento para el equipo, podés hacerlo desde Cafecito.
+                </p>
+              </div>
+
+              <a
+                [href]="cafecitoUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-cafecito-solid w-100"
+              >
+                <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">local_cafe</span>
+                <span>Apoyar en Cafecito</span>
+                <span class="material-symbols-outlined" style="font-size: 16px;" aria-hidden="true">open_in_new</span>
+              </a>
+            </article>
+          </div>
+        </div>
+
+        <!-- ¿En qué se usa cada aporte? -->
+        <div class="mb-5">
+          <div class="tech-eyebrow mb-2">
+            <span class="tech-eyebrow-dot" aria-hidden="true"></span>
+            <span>01 / DESTINO DE LOS FONDOS</span>
+          </div>
+          <h2 class="font-display-md text-ink mb-4">¿En qué se usa tu aporte?</h2>
+
+          <div class="row g-3">
+            <div *ngFor="let item of fundingUses" class="col-12 col-md-6">
+              <article class="swiss-card h-100 d-flex align-items-start gap-3">
+                <div class="swiss-icon-box flex-shrink-0">
+                  <span class="material-symbols-outlined" aria-hidden="true">{{ item.icon }}</span>
+                </div>
+                <div>
+                  <span class="font-mono-tech text-brand-primary d-block mb-1" style="font-size: 0.7rem;">{{ item.index }}</span>
+                  <h3 class="font-title-md text-ink mb-2">{{ item.title }}</h3>
+                  <p class="font-body-md text-on-surface-variant small mb-0">{{ item.description }}</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hoja de ruta / Próximas señas -->
+        <div class="mb-5">
+          <div class="tech-eyebrow mb-2">
+            <span class="tech-eyebrow-dot" aria-hidden="true"></span>
+            <span>02 / HOJA DE RUTA</span>
+          </div>
+          <h2 class="font-display-md text-ink mb-4">Próximas mejoras y nuevas señas</h2>
+
+          <div class="d-flex flex-column gap-3">
+            <article *ngFor="let goal of roadmapItems" class="swiss-card">
+              <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+                <h3 class="font-title-md text-ink mb-0">{{ goal.title }}</h3>
+                <span class="badge rounded-pill badge-brand-primary px-2 py-1" style="font-size: 11px;">{{ goal.status }}</span>
+              </div>
+              <p class="font-body-md text-on-surface-variant mb-0">{{ goal.description }}</p>
+            </article>
+          </div>
+        </div>
+
+        <!-- Bloque de anuncio AdSense separado del contenido de donaciones (pegar data-ad-slot cuando se apruebe) -->
+        <app-ad-slot adSlot="" adFormat="horizontal"></app-ad-slot>
+
+        <!-- Cierre institucional / empresas -->
+        <div class="swiss-card text-center mt-5">
+          <h2 class="font-title-md text-ink mb-2">¿Representás una empresa, escuela o fundación?</h2>
+          <p class="font-body-md text-on-surface-variant mx-auto mb-4" style="max-width: 580px;">
+            Si querés sumar a tu organización como aliada del proyecto o implementar Comuseñas en tu institución educativa, escribinos directamente.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a routerLink="/contacto" class="btn-precision-primary">
+              <span>Contactar al equipo</span>
+              <span class="material-symbols-outlined btn-arrow fs-5" aria-hidden="true">arrow_forward</span>
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-precision-ghost px-3"
+            >
+              <span>Descargar en Google Play</span>
+              <span class="material-symbols-outlined fs-5" aria-hidden="true">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

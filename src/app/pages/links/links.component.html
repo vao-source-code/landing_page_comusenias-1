@@ -11,10 +11,16 @@
     <div class="links-list mt-4">
       
       <!-- Google Play Link -->
-      <a target="_blank" href="https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR" class="link-btn google-play-btn">
+      <a target="_blank" rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR" class="link-btn google-play-btn">
         <span class="material-symbols-outlined icon">shop</span>
         <span class="btn-text">Descargar en Google Play</span>
       </a>
+
+      <!-- Support Modal Trigger (Alias + Cafecito) -->
+      <button type="button" (click)="openSupportModal()" class="link-btn cafecito-link-btn w-100">
+        <span class="material-symbols-outlined icon" aria-hidden="true">volunteer_activism</span>
+        <span class="btn-text">Ayudanos (Alias / Cafecito)</span>
+      </button>
 
       <!-- Landing Page Link -->
       <a routerLink="/" class="link-btn">

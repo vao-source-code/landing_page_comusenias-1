@@ -1,91 +1,42 @@
-# DESIGN.md - Sistema de Diseño de Comuseñas
+# DESIGN.md - Sistema de Diseño Swiss-Tech de Comuseñas
 
-> Documento de tokens de diseño, tipografía, componentes y principios visuales de **Comuseñas** para consistencia en la web e interfaz de usuario asistida por IA.
+> Documento de tokens de diseño, tipografía, componentes y principios visuales de **Comuseñas** bajo estética **Swiss-Tech / Editorial de Precisión**.
 
 ---
 
 ## 1. Identidad y Filosofía Visual
-- **Tono**: Cálido, accesible, educativo, innovador y confiable.
-- **Enfoque**: Inclusión real, contrastes legibles para personas con baja visión, microinteracciones suaves y diseño adaptado a móviles.
-- **Estilo**: Modern glassmorphism sutil sobre degradado lavanda/violeta con bordes redondeados orgánicos (`rounded-4`, `rounded-5`, `rounded-pill`).
+- **Tono**: Preciso, innovador, humano, accesible y confiable.
+- **Enfoque**: Inclusión real con contraste WCAG AA/AAA, lienzo blanco arquitectónico con grilla técnica hairline (`1px`), integración directa de fotografía recortada sin marcos y narrativa visual de visión computacional.
+- **Firma visual**: Encabezados con contraste tipográfico (*Bold + Light*) rematados con punto cuadrado magenta (`#E052B2`), navegación prefijada con `+`, eyebrows monoespaciados y franja vertical degradada en el borde derecho del Hero.
 
 ---
 
 ## 2. Paleta de Colores y Tokens Semánticos
 
-### Colores Principales (Brand Tokens)
-| Token CSS | Hex | Rol / Uso |
+| Token CSS | Hex / Valor | Rol / Uso |
 |---|---|---|
-| `--color-primary` | `#543c9d` | Violeta principal institucional (títulos, botones primarios, acentos) |
-| `--color-primary-dark` | `#4a3b8d` | Variante oscura para alto contraste |
-| `--color-primary-fixed` | `#e7deff` | Fondo violeta suave / badges / píldoras destacadas |
-| `--color-primary-light` | `#ede7f6` | Contenedores de iconos y fondos sutiles |
-| `--color-secondary` | `#4453bf` | Acento azul índigo (secciones interactivas, validación IA) |
-| `--color-secondary-fixed` | `#dfe0ff` | Fondo índigo suave para badges secundarios |
-
-### Colores Neutros y de Superficie
-| Token CSS | Hex | Rol / Uso |
-|---|---|---|
-| `--color-surface` | `#f7f5fa` | Fondo global de la aplicación |
-| `--color-surface-card` | `rgba(255, 255, 255, 0.85)` | Fondo de tarjetas con glassmorphism |
-| `--color-on-surface` | `#1f1c2b` | Texto principal de alta legibilidad |
-| `--color-on-surface-variant`| `#494551` | Texto secundario / párrafos descriptivos |
-| `--color-border-subtle` | `rgba(84, 60, 157, 0.12)` | Bordes finos de tarjetas y separadores |
-
-### Colores de Estado y Acentos Específicos
-| Token | Hex | Rol |
-|---|---|---|
-| `--color-soft-yellow` | `#FFF4A3` | Acento cálido / blobs decorativos |
-| `--color-warm-amber` | `#fff3dc` | Badges de alerta / seguimiento QR |
-| `--color-success` | `#10b981` | Estado activo / validación correcta |
+| `--color-primary` | `#4f35e8` | Violeta eléctrico principal (titulares, CTAs primarios, enlaces, retícula IA) |
+| `--color-primary-deep` | `#3b25b8` | Hover de botones y énfasis de alto contraste |
+| `--color-primary-dark` | `#543c9d` | Violeta institucional secundario |
+| `--color-accent-magenta` | `#e052b2` | Punto cuadrado editorial, indicador de eyebrow y acento de borde |
+| `--surface-canvas` | `#ffffff` | Lienzo principal limpio |
+| `--surface-subtle` | `#fafafe` | Secciones alternadas |
+| `--grid-line` | `rgba(79, 53, 232, 0.075)` | Líneas de grilla arquitectónica |
+| `--border-hairline` | `rgba(17, 16, 29, 0.085)` | Divisores y bordes de tarjetas |
+| `--color-ink` | `#11101d` | Texto principal (contraste > 16:1 sobre blanco) |
+| `--color-on-surface-variant` | `#4b4860` | Texto secundario / párrafos (contraste > 7.5:1 sobre blanco) |
 
 ---
 
-## 3. Tipografía
-
-- **Fuente principal**: `Nunito Sans`, sans-serif (legible, limpia, amigable).
-- **Iconografía**: `Material Symbols Outlined`.
-
-### Escala Tipográfica
-- `font-display-lg`: `clamp(2rem, 5.5vw, 3rem)`, `font-weight: 800` (Hero titles).
-- `font-display-md`: `clamp(1.75rem, 4vw, 2.25rem)`, `font-weight: 800` (Títulos de sección).
-- `font-headline-lg`: `clamp(1.5rem, 3.5vw, 2rem)`, `font-weight: 700`.
-- `font-title-md`: `20px` / `line-height: 28px`, `font-weight: 600`.
-- `font-body-lg`: `clamp(1rem, 2vw, 1.125rem)`, `line-height: 1.6`, `font-weight: 400`.
-- `font-label-bold`: `14px`, `font-weight: 700`, `letter-spacing: 0.05em`.
+## 3. Tipografía (Unificada con la App Android ComuSenias)
+- **Sans principal**: `Lato` (`300`, `400`, `700`, `900`) — misma tipografía oficial de la aplicación Android.
+- **Acento manuscrito**: `Marck Script` (`cursiveSchool` en la app Android).
+- **Mono técnico**: `JetBrains Mono` (`400`, `500`, `600`) para eyebrows, numeración `01/02/03`, `SCROLL DOWN` y telemetría.
+- **Iconografía**: `Material Symbols Outlined` + SVGs geométricos animados.
 
 ---
 
-## 4. Elevación y Tarjetas (Glassmorphism)
-
-### Glass Card Base (`.glass-card`)
-- Fondo: `rgba(255, 255, 255, 0.7)` a `0.85`.
-- Backdrop filter: `blur(16px)`.
-- Borde: `1px solid rgba(255, 255, 255, 0.5)`.
-- Radio: `1.5rem` (`24px`).
-- Sombra base: `0 4px 6px -1px rgba(0, 0, 0, 0.05)`.
-- Hover: `translateY(-6px)`, sombra `0 16px 25px -5px rgba(84, 60, 157, 0.15)`.
-
----
-
-## 5. Reglas de Componentes
-
-### Botón Store / Acción Primaria
-- Fondo: `#1c1924` o gradiente `linear-gradient(135deg, #6b4cce, #543c9d)`.
-- Texto: Blanco con letra de apoyo al 85% de opacidad.
-- Hover: Leve elevación `translateY(-3px)` con sombra de color primario.
-
-### Tarjetas de Perfil / Fundadores (`.founder-card`)
-- Proporción de imagen: `aspect-ratio: 1 / 1`, con `object-fit: cover` y `object-position: center top`.
-- Enlaces sociales: botón circular de `38px` con fondo `var(--color-primary-fixed)` y hover a color primario.
-
-### Badges / Píldoras
-- Clases recomendadas: `.badge-primary-soft`, `.badge-indigo-soft`, `.badge-amber-soft`.
-- Padding: `py-2 px-3`, `border-radius: 50rem` (`rounded-pill`), texto en semibold.
-
----
-
-## 6. Buenas Prácticas para Código Futuro
-1. **No usar estilos inline `style="color: #4a3b8d"`**: Utilizar las clases utilitarias (`text-brand-primary`, `bg-brand-soft`, etc.) o variables CSS.
-2. **Imágenes siempre adaptadas**: Especificar `aspect-ratio`, `object-fit: cover`, `loading="lazy"` y `decoding="async"`.
-3. **Microinteracciones consistentes**: Duración estándar `0.35s` con curva `cubic-bezier(0.16, 1, 0.3, 1)`.
+## 4. Buenas Prácticas
+1. Evitar estilos inline repetitivos; utilizar tokens CSS y clases utilitarias (`.swiss-card`, `.tech-eyebrow`, `.btn-precision-primary`).
+2. Garantizar `:focus-visible` visible en todos los elementos interactivos y soporte completo de `prefers-reduced-motion: reduce`.
+3. Solo aplicar `cursor: pointer` en elementos realmente interactivos.
