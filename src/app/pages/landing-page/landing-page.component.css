@@ -262,3 +262,29 @@
   background-color: var(--color-primary);
   transform: scale(1.1);
 }
+
+/* Prensa y Noticias */
+.press-card {
+  min-height: 100px;
+  background-color: #ffffff;
+  border: 1px solid rgba(84, 60, 157, 0.08) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.press-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(84, 60, 157, 0.08) !important;
+}
+
+.press-logo {
+  max-height: 40px;
+  width: auto;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  filter: grayscale(15%);
+}
+
+.press-card:hover .press-logo {
+  opacity: 1;
+  filter: grayscale(0%);
+}

@@ -37,17 +37,43 @@ body {
 
 :root {
   --color-primary: #543c9d; /* from Stitch */
+  --color-primary-dark: #4a3b8d;
   --color-primary-fixed: #e7deff;
+  --color-primary-light: #ede7f6;
   --color-secondary: #4453bf;
+  --color-secondary-fixed: #dfe0ff;
   --color-on-surface-variant: #494551;
   --color-surface: #fbf9f9;
   --color-soft-yellow: #FFF4A3;
+  --color-warm-amber: #fff3dc;
+  --color-warm-amber-text: #9a3412;
 }
 
 .text-primary-custom { color: var(--color-primary) !important; }
+.text-brand-primary { color: var(--color-primary-dark) !important; }
 .bg-primary-fixed { background-color: var(--color-primary-fixed) !important; }
+.bg-primary-soft { background-color: var(--color-primary-light) !important; }
 .text-on-surface-variant { color: var(--color-on-surface-variant) !important; }
 .bg-soft-yellow { background-color: var(--color-soft-yellow) !important; }
+
+/* Badges reutilizables */
+.badge-brand-primary {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-weight: 600;
+}
+
+.badge-brand-indigo {
+  background-color: var(--color-secondary-fixed);
+  color: #2a3aa6;
+  font-weight: 600;
+}
+
+.badge-brand-amber {
+  background-color: var(--color-warm-amber);
+  color: var(--color-warm-amber-text);
+  font-weight: 600;
+}
 
 img {
   max-width: 100%;
