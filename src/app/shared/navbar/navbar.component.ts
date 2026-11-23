@@ -20,9 +20,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
   private scrollListener?: () => void;
 
   public readonly navItems: NavItem[] = [
-    { label: 'Tecnología', route: '/', fragment: 'traductor-ia' },
-    { label: 'Proceso', route: '/', fragment: 'funcionamiento' },
-    { label: 'Especialistas', route: '/especialistas-y-familias' },
+    { label: 'Probar Demo', route: '/', fragment: 'probar-demo' },
+    { label: 'Cómo se juega', route: '/', fragment: 'como-funciona' },
+    { label: 'Familias y Especialistas', route: '/especialistas-y-familias' },
     { label: 'Prensa', route: '/', fragment: 'prensa' },
     { label: 'Contacto', route: '/contacto' },
   ];

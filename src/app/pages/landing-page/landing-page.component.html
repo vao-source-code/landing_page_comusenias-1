@@ -2,352 +2,282 @@
 <main class="flex-grow-1">
 
   <!-- =====================================================================
-       HERO SECTION — SWISS-TECH EDITORIAL + LIVE MOTION & PARALLAX
+       HERO SECTION — LÚDICO-MODERNO INCLUSIVO
        ===================================================================== -->
-  <section
-    class="hero-swiss swiss-grid-bg position-relative overflow-hidden"
-    (mousemove)="onHeroMouseMove($event)"
-    (mouseleave)="onHeroMouseLeave()"
-  >
-    <!-- Animated Right Gradient Edge Strip -->
-    <div class="hero-edge-accent d-none d-lg-block" aria-hidden="true"></div>
-
-    <!-- Ambient Breathing Orbs behind grid -->
-    <div
-      class="hero-orb hero-orb-violet"
-      [style.transform]="'translate3d(' + (-parallaxX * 0.7) + 'px, ' + (-parallaxY * 0.7) + 'px, 0)'"
-      aria-hidden="true"
-    ></div>
-    <div
-      class="hero-orb hero-orb-magenta"
-      [style.transform]="'translate3d(' + (parallaxX * 0.5) + 'px, ' + (parallaxY * 0.5) + 'px, 0)'"
-      aria-hidden="true"
-    ></div>
-
-    <!-- Living Architectural Vector Telemetry Background -->
-    <svg
-      class="hero-blueprint-svg"
-      viewBox="0 0 1440 820"
-      fill="none"
-      preserveAspectRatio="xMidYMid slice"
-      [style.transform]="'translate3d(' + (-parallaxX * 0.35) + 'px, ' + (-parallaxY * 0.35) + 'px, 0)'"
-      aria-hidden="true"
-    >
-      <!-- Animated Circuit Paths -->
-      <path id="circuitPathA" d="M120 0 V240 Q120 310 190 310 H480 Q560 310 560 230 V0" stroke="rgba(79,53,232,0.14)" stroke-width="1.2" stroke-dasharray="6 8" class="circuit-flow" />
-      <path id="circuitPathB" d="M680 820 V560 Q680 480 760 480 H1180 Q1280 480 1280 380 V120" stroke="rgba(79,53,232,0.18)" stroke-width="1.3" />
-      <path id="circuitPathC" d="M520 510 H820 Q900 510 900 430 V200 Q900 140 960 140 H1440" stroke="rgba(79,53,232,0.16)" stroke-width="1.3" />
-
-      <!-- Live Traveling Data Pulses along SVG paths -->
-      <circle r="4" fill="#4f35e8" opacity="0.85">
-        <animateMotion dur="7s" repeatCount="indefinite" path="M680 820 V560 Q680 480 760 480 H1180 Q1280 480 1280 380 V120" />
-      </circle>
-      <circle r="3.5" fill="#e052b2" opacity="0.9">
-        <animateMotion dur="9s" repeatCount="indefinite" begin="1.5s" path="M520 510 H820 Q900 510 900 430 V200 Q900 140 960 140 H1440" />
-      </circle>
-      <circle r="3" fill="#4f35e8" opacity="0.7">
-        <animateMotion dur="6s" repeatCount="indefinite" begin="0.8s" path="M120 0 V240 Q120 310 190 310 H480 Q560 310 560 230 V0" />
-      </circle>
-
-      <!-- Static precision nodes -->
-      <circle cx="560" cy="230" r="3.5" fill="#4f35e8" />
-      <circle cx="760" cy="480" r="3.5" fill="#4f35e8" />
-      <circle cx="900" cy="430" r="3.5" fill="#4f35e8" />
-      <circle cx="1180" cy="480" r="3.5" fill="#e052b2" />
-
-      <!-- Bottom-right rotating crosshair -->
-      <g opacity="0.38">
-        <circle cx="1290" cy="640" r="56" stroke="#4f35e8" stroke-width="1" stroke-dasharray="5 5" />
-        <line x1="1290" y1="560" x2="1290" y2="720" stroke="#4f35e8" stroke-width="1" />
-        <line x1="1210" y1="640" x2="1370" y2="640" stroke="#4f35e8" stroke-width="1" />
-        <circle cx="1290" cy="640" r="4" fill="#4f35e8" />
-      </g>
-    </svg>
+  <section class="hero-playful position-relative overflow-hidden">
+    <!-- Soft Playful Decorative Blobs -->
+    <div class="hero-blob hero-blob-yellow" aria-hidden="true"></div>
+    <div class="hero-blob hero-blob-violet" aria-hidden="true"></div>
+    <div class="hero-blob hero-blob-pink" aria-hidden="true"></div>
 
     <div class="container position-relative z-2 hero-container">
-      <div class="row align-items-center hero-row g-4 g-lg-0">
+      <div class="row align-items-center g-4 g-lg-5">
 
-        <!-- Left Editorial Column (Choreographed Entrance) -->
-        <div class="col-12 col-lg-6 hero-copy-col">
-          <div class="tech-eyebrow mb-3 mb-md-4 hero-anim hero-anim-1">
-            <span class="tech-eyebrow-dot" aria-hidden="true"></span>
-            <span>SISTEMA IA DE LENGUA DE SEÑAS ARGENTINA</span>
+        <!-- Left Friendly Copy Column -->
+        <div class="col-12 col-lg-6">
+          <div class="playful-pill playful-pill-yellow mb-3 hero-enter hero-enter-1">
+            <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">auto_awesome</span>
+            <span>App 100% gratis · Lengua de Señas Argentina</span>
           </div>
 
-          <h1 class="font-display-hero hero-headline mb-4" aria-label="Señas, en Tiempo Real">
-            <span class="d-block hero-line-bold position-relative">
-              <span class="typewriter-ghost" aria-hidden="true">Señas, en</span>
+          <h1 class="font-display-hero text-ink mb-3">
+            <span class="visually-hidden">Aprendé Lengua de Señas Argentina (LSA) jugando</span>
+            <span class="d-block position-relative">
+              <span class="typewriter-ghost" aria-hidden="true">Aprendé Lengua de Señas</span>
               <span class="typewriter-live" aria-hidden="true">{{ typedLine1 }}<span *ngIf="typingStage === 'line1'" class="typewriter-cursor"></span></span>
             </span>
-            <span class="d-block hero-line-light position-relative">
-              <span class="typewriter-ghost" aria-hidden="true">Tiempo Real.</span>
-              <span class="typewriter-live" aria-hidden="true">{{ typedLine2 }}<span *ngIf="typingStage === 'line2'" class="typewriter-cursor"></span><span *ngIf="typingStage === 'done'" class="accent-square-dot hero-dot-settle"></span></span>
+            <span class="d-block position-relative mt-1">
+              <span class="typewriter-ghost" aria-hidden="true">jugando.</span>
+              <span class="typewriter-live" aria-hidden="true">
+                <span class="hero-highlight" [class.is-drawn]="typingStage === 'done'">{{ typedLine2 }}</span><span *ngIf="typingStage === 'line2'" class="typewriter-cursor"></span><span *ngIf="typingStage === 'done'" class="accent-square-dot"></span>
+              </span>
             </span>
           </h1>
 
-          <p class="hero-subtitle mb-4 mb-md-5 hero-anim hero-anim-4">
-            Plataforma educativa con visión artificial que valida tus gestos de LSA por cámara en tiempo real — conectando niños, familias y especialistas.
+          <p class="hero-subtitle mb-4 hero-enter hero-enter-3">
+            Un juego interactivo con cámara inteligente para que <strong>niños, familias y escuelas</strong> aprendan LSA paso a paso, ganando estrellas y practicando a su ritmo.
           </p>
 
-          <!-- Dual CTA Row -->
-          <div class="d-flex flex-wrap align-items-center gap-3 gap-md-4 mb-3 hero-anim hero-anim-5">
+          <!-- Chunky 3D CTA Row (Full-width touch-friendly on mobile) -->
+          <div class="d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center gap-3 mb-3 hero-enter hero-enter-4">
+            <button
+              type="button"
+              class="btn-playful-primary btn-cta-shine"
+              (click)="scrollToInteractiveDemo()"
+            >
+              <span class="material-symbols-outlined" aria-hidden="true">photo_camera</span>
+              <span>Probar la letra A ahora</span>
+            </button>
+
             <a
               href="https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR"
               target="_blank"
               rel="noopener noreferrer"
-              class="btn-precision-primary"
+              class="btn-playful-secondary"
             >
+              <span class="material-symbols-outlined" aria-hidden="true">download</span>
               <span>Descargar en Google Play</span>
-              <span class="material-symbols-outlined btn-arrow fs-5" aria-hidden="true">arrow_forward</span>
             </a>
-
-            <button
-              type="button"
-              class="btn-precision-ghost"
-              (click)="scrollToDemoAndPlay()"
-            >
-              <span>Ver cómo funciona</span>
-              <span class="play-ring" aria-hidden="true">
-                <span class="material-symbols-outlined" style="font-size: 15px;">play_arrow</span>
-              </span>
-            </button>
           </div>
 
-          <!-- Support CTA right below Google Play -->
-          <div class="mb-4 hero-anim hero-anim-5">
+          <!-- Support + Trust Strip -->
+          <div class="d-flex flex-wrap align-items-center gap-3 mt-4 pt-2 hero-enter hero-enter-5">
+            <div class="hero-rating-badge">
+              <span class="material-symbols-outlined text-warning" style="font-size: 18px;" aria-hidden="true">star</span>
+              <span class="fw-bold text-ink">4.8</span>
+              <span class="text-on-surface-variant small">en Google Play · +150 reseñas</span>
+            </div>
+
             <button
               type="button"
               (click)="openSupportModal()"
-              class="cafecito-btn d-inline-flex align-items-center gap-2 border-0"
+              class="cafecito-btn"
             >
               <span class="material-symbols-outlined" style="font-size: 16px;" aria-hidden="true">volunteer_activism</span>
-              <span>Ayudanos a mantener la app gratis</span>
+              <span>Ayudanos a mantenerla gratis</span>
             </button>
-          </div>
-
-          <!-- Compact Trust Metric -->
-          <div class="hero-trust-strip d-inline-flex flex-wrap align-items-center gap-3 hero-anim hero-anim-6">
-            <span class="d-inline-flex align-items-center gap-1 fw-bold text-ink small">
-              <span class="material-symbols-outlined text-brand-primary" style="font-size: 16px;" aria-hidden="true">star</span>
-              4.8 en Google Play
-            </span>
-            <span class="trust-divider" aria-hidden="true"></span>
-            <span class="small text-on-surface-variant">+150 reseñas · Gratis en Android</span>
           </div>
         </div>
 
-        <!-- Right Visual Column: Cutout Girl with Live Parallax & Active AI Hand Scanner -->
-        <div class="col-12 col-lg-6 hero-visual-col">
-          <div
-            class="hero-subject-stage hero-subject-enter"
-            [style.transform]="'translate3d(' + (parallaxX * 0.45) + 'px, ' + (parallaxY * 0.35) + 'px, 0)'"
-          >
-            <!-- Breathing radial light halo -->
-            <div class="hero-subject-halo" aria-hidden="true"></div>
+        <!-- Right Visual Column: Cutout Girl with Playful Game Badges -->
+        <div class="col-12 col-lg-6">
+          <div class="hero-visual-stage mx-auto">
+            <!-- Warm circular backdrop behind girl -->
+            <div class="hero-stage-circle" aria-hidden="true"></div>
 
-            <!-- Cutout Girl (RGBA transparent WebP, gently floating) -->
-            <img
-              src="assets/nina.webp"
-              alt="Niña aprendiendo Lengua de Señas Argentina frente a la cámara de su celular con Comuseñas"
-              width="1100"
-              height="1342"
-              fetchpriority="high"
-              class="hero-subject-img"
-            />
+            <!-- Tight frame matching nina.webp bounds so HUD stays pixel-aligned at every breakpoint -->
+            <div class="hero-girl-frame position-relative">
+              <!-- Cutout Girl (LCP optimized WebP) -->
+              <img
+                src="assets/nina.webp"
+                alt="Niña aprendiendo Lengua de Señas Argentina jugando frente a la cámara con Comuseñas"
+                width="1100"
+                height="1342"
+                fetchpriority="high"
+                class="hero-subject-img"
+              />
 
-            <!-- Active AI Face + Hand Holistic Tracking HUD Overlay -->
-            <div
-              class="hand-tracking-hud"
-              [style.transform]="'translate3d(' + (parallaxX * 0.45) + 'px, ' + (parallaxY * 0.4) + 'px, 0)'"
-              aria-hidden="true"
-            >
-              <!-- Full-width animated laser scanline across face + hand -->
-              <div class="scanline-bar"></div>
+              <!-- Pixel-aligned Face + Hand Tracking Overlay (exact 1100x1342 coordinates of nina.webp) -->
+              <div class="hand-tracking-hud" aria-hidden="true">
+                <div class="scanline-bar"></div>
 
-              <svg viewBox="0 0 360 280" fill="none" class="w-100 h-100">
-                <!-- Large Unified Outer Corner Brackets (Face + Hand) -->
-                <path d="M14 44 V14 H44" stroke="#4f35e8" stroke-width="2.2" />
-                <path d="M316 14 H346 V44" stroke="#4f35e8" stroke-width="2.2" />
-                <path d="M14 236 V266 H44" stroke="#4f35e8" stroke-width="2.2" />
-                <path d="M316 266 H346 V236" stroke="#4f35e8" stroke-width="2.2" />
+                <svg viewBox="0 0 1100 1342" fill="none" class="w-100 h-100">
+                  <!-- Soft Rounded Outer Corner Brackets around Face + Hand -->
+                  <path d="M295 365 V305 Q295 290 310 290 H370" stroke="#7584f2" stroke-width="6" stroke-linecap="round" />
+                  <path d="M760 290 H820 Q835 290 835 305 V365" stroke="#7584f2" stroke-width="6" stroke-linecap="round" />
+                  <path d="M295 655 V715 Q295 730 310 730 H370" stroke="#7584f2" stroke-width="6" stroke-linecap="round" />
+                  <path d="M760 730 H820 Q835 730 835 715 V655" stroke="#7584f2" stroke-width="6" stroke-linecap="round" />
 
-                <!-- Subtle unified bounding frame -->
-                <rect x="14" y="14" width="332" height="252" rx="12" stroke="rgba(79,53,232,0.16)" stroke-width="1" stroke-dasharray="4 6" />
+                  <!-- Subtle unified bounding frame -->
+                  <rect x="295" y="290" width="540" height="440" rx="28" stroke="rgba(117,132,242,0.25)" stroke-width="2.5" stroke-dasharray="10 12" />
 
-                <!-- ================= FACE TRACKING ZONE ================= -->
-                <ellipse cx="118" cy="132" rx="54" ry="68" stroke="rgba(79,53,232,0.45)" stroke-width="1.2" stroke-dasharray="5 5" />
-                <!-- Delicate FaceMesh expression geometry -->
-                <polyline points="87,110 124,142 154,116" stroke="#4f35e8" stroke-width="1.1" stroke-opacity="0.65" />
-                <polyline points="87,110 106,170 154,116" stroke="rgba(224,82,178,0.6)" stroke-width="1" stroke-dasharray="3 3" />
-                <line x1="87" y1="110" x2="154" y2="116" stroke="rgba(79,53,232,0.45)" stroke-width="1" />
-                <!-- Face landmarks: eyes, nose, mouth -->
-                <circle cx="87" cy="110" r="3.8" fill="#4f35e8" class="landmark-pulse" />
-                <circle cx="154" cy="116" r="3.8" fill="#4f35e8" class="landmark-pulse" />
-                <circle cx="124" cy="142" r="3.2" fill="#ffffff" stroke="#4f35e8" stroke-width="1.8" />
-                <circle cx="106" cy="170" r="3.8" fill="#e052b2" class="landmark-pulse" />
-                <circle cx="106" cy="170" r="7" stroke="#e052b2" stroke-width="1" class="landmark-sonar landmark-sonar-delay" />
-                <!-- High-contrast pill label: ROSTRO -->
-                <g transform="translate(86, 40)">
-                  <rect width="64" height="20" rx="10" fill="rgba(79,53,232,0.92)" stroke="#ffffff" stroke-width="1.2" />
-                  <text x="32" y="13.5" text-anchor="middle" fill="#ffffff" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600" letter-spacing="1.2">ROSTRO</text>
-                </g>
+                  <!-- ================= FACE TRACKING ZONE (Eyes: 422,466 & 512,476 | Nose: 462,526 | Mouth: 440,574) ================= -->
+                  <ellipse cx="458" cy="498" rx="122" ry="142" stroke="rgba(117,132,242,0.58)" stroke-width="3" stroke-dasharray="10 10" />
+                  <polyline points="422,466 462,526 512,476" stroke="#7584f2" stroke-width="3" stroke-opacity="0.78" />
+                  <polyline points="422,466 440,574 512,476" stroke="rgba(162,117,253,0.75)" stroke-width="2.5" stroke-dasharray="6 6" />
+                  <line x1="422" y1="466" x2="512" y2="476" stroke="rgba(117,132,242,0.6)" stroke-width="2.5" />
+                  <circle cx="422" cy="466" r="9" fill="#7584f2" class="landmark-pulse" />
+                  <circle cx="512" cy="476" r="9" fill="#7584f2" class="landmark-pulse" />
+                  <circle cx="462" cy="526" r="8" fill="#ffffff" stroke="#7584f2" stroke-width="4" />
+                  <circle cx="440" cy="574" r="9" fill="#a275fd" class="landmark-pulse" />
+                  <circle cx="440" cy="574" r="18" stroke="#a275fd" stroke-width="2.5" class="landmark-sonar landmark-sonar-delay" />
+                  <!-- Pill label: ROSTRO -->
+                  <g transform="translate(390, 310)">
+                    <rect width="136" height="40" rx="20" fill="#7584f2" stroke="#ffffff" stroke-width="3.5" />
+                    <text x="68" y="27" text-anchor="middle" fill="#ffffff" font-family="Lato, sans-serif" font-size="20" font-weight="900" letter-spacing="1.8">ROSTRO</text>
+                  </g>
 
-                <!-- Holistic link connecting Face <-> Hand -->
-                <path d="M168 148 Q195 148 214 166" stroke="#e052b2" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.75" />
+                  <!-- Holistic link Face <-> Hand -->
+                  <path d="M555 510 Q585 520 605 550" stroke="#f2d05c" stroke-width="4" stroke-dasharray="8 8" opacity="0.95" />
 
-                <!-- ================= HAND TRACKING ZONE ================= -->
-                <circle cx="242" cy="160" r="72" stroke="#4f35e8" stroke-width="1.3" stroke-dasharray="6 6" class="reticle-ring" />
-                <circle cx="242" cy="160" r="48" stroke="rgba(224,82,178,0.45)" stroke-width="1.1" stroke-dasharray="12 8" class="reticle-ring-inner" />
+                  <!-- ================= HAND TRACKING ZONE (Tips: 612,456 & 703,441 | Thumb: 565,646 | Palm: 658,605 | Pinky: 722,578) ================= -->
+                  <circle cx="655" cy="545" r="142" stroke="#4e9a7c" stroke-width="3.5" stroke-dasharray="12 12" class="reticle-ring" />
+                  <circle cx="655" cy="545" r="96" stroke="rgba(117,132,242,0.55)" stroke-width="2.8" stroke-dasharray="18 14" class="reticle-ring-inner" />
 
-                <!-- MediaPipe hand skeleton aligned to raised hand -->
-                <polyline points="194,208 252,196 224,114" stroke="#4f35e8" stroke-width="1.6" stroke-opacity="0.82" />
-                <polyline points="252,196 274,116" stroke="#4f35e8" stroke-width="1.6" stroke-opacity="0.82" />
-                <polyline points="252,196 292,178" stroke="#e052b2" stroke-width="1.5" stroke-opacity="0.88" />
+                  <!-- Hand skeleton aligned to raised fingers -->
+                  <polyline points="565,646 658,605 612,456" stroke="#4e9a7c" stroke-width="4.5" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round" />
+                  <polyline points="658,605 703,441" stroke="#4e9a7c" stroke-width="4.5" stroke-opacity="0.92" stroke-linecap="round" />
+                  <polyline points="658,605 722,578" stroke="#7584f2" stroke-width="4" stroke-opacity="0.9" stroke-linecap="round" />
 
-                <!-- Sonar rings on fingertips -->
-                <circle cx="224" cy="114" r="8" stroke="#4f35e8" stroke-width="1.2" class="landmark-sonar" />
-                <circle cx="274" cy="116" r="8" stroke="#e052b2" stroke-width="1.2" class="landmark-sonar landmark-sonar-delay" />
+                  <!-- Sonar rings on raised fingertips -->
+                  <circle cx="612" cy="456" r="19" stroke="#4e9a7c" stroke-width="3" class="landmark-sonar" />
+                  <circle cx="703" cy="441" r="19" stroke="#f2d05c" stroke-width="3" class="landmark-sonar landmark-sonar-delay" />
 
-                <!-- Hand landmarks -->
-                <circle cx="224" cy="114" r="4.5" fill="#4f35e8" class="landmark-pulse" />
-                <circle cx="274" cy="116" r="4.5" fill="#4f35e8" class="landmark-pulse" />
-                <circle cx="194" cy="208" r="4.5" fill="#e052b2" class="landmark-pulse" />
-                <circle cx="292" cy="178" r="3.8" fill="#e052b2" class="landmark-pulse" />
-                <circle cx="252" cy="196" r="4.8" fill="#ffffff" stroke="#4f35e8" stroke-width="2" />
-                <!-- High-contrast pill label: MANO -->
-                <g transform="translate(215, 64)">
-                  <rect width="54" height="20" rx="10" fill="rgba(224,82,178,0.92)" stroke="#ffffff" stroke-width="1.2" />
-                  <text x="27" y="13.5" text-anchor="middle" fill="#ffffff" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600" letter-spacing="1.2">MANO</text>
-                </g>
-              </svg>
+                  <!-- Hand landmarks -->
+                  <circle cx="612" cy="456" r="10" fill="#4e9a7c" class="landmark-pulse" />
+                  <circle cx="703" cy="441" r="10" fill="#4e9a7c" class="landmark-pulse" />
+                  <circle cx="565" cy="646" r="10" fill="#7584f2" class="landmark-pulse" />
+                  <circle cx="722" cy="578" r="9" fill="#a275fd" class="landmark-pulse" />
+                  <circle cx="658" cy="605" r="11" fill="#ffffff" stroke="#4e9a7c" stroke-width="4.5" />
+                  <!-- Pill label: MANO -->
+                  <g transform="translate(598, 355)">
+                    <rect width="114" height="40" rx="20" fill="#4e9a7c" stroke="#ffffff" stroke-width="3.5" />
+                    <text x="57" y="27" text-anchor="middle" fill="#ffffff" font-family="Lato, sans-serif" font-size="20" font-weight="900" letter-spacing="1.8">MANO</text>
+                  </g>
+                </svg>
 
-              <!-- Live Cycling Telemetry Pill -->
-              <div class="telemetry-chip">
-                <span class="telemetry-dot"></span>
-                <span>{{ currentTelemetryLabel }}</span>
+                <!-- Live Cycling Friendly AI Status Chip -->
+                <div class="telemetry-chip">
+                  <span class="telemetry-dot"></span>
+                  <span>{{ currentTelemetryLabel }}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Hero Bottom Anchor -->
-      <div class="hero-bottom-bar d-flex align-items-end justify-content-end pt-3 hero-anim hero-anim-6">
-        <!-- Floating Mini Video Preview -->
-        <button
-          type="button"
-          class="hero-video-mini d-none d-md-flex"
-          (click)="scrollToDemoAndPlay()"
-          aria-label="Reproducir video de presentación de Comuseñas"
-        >
-          <img
-            src="assets/video_poster.webp"
-            alt=""
-            width="136"
-            height="76"
-            class="hero-video-thumb"
-          />
-          <span class="hero-video-mini-play" aria-hidden="true">
-            <span class="material-symbols-outlined">play_arrow</span>
-          </span>
-        </button>
       </div>
     </div>
   </section>
 
   <!-- =====================================================================
-       01 · TECNOLOGÍA IA
+       SECCIÓN ESTELAR · MINI-DEMO INTERACTIVA CON CÁMARA (MODELO LSA REAL)
        ===================================================================== -->
-  <section id="traductor-ia" class="section-swiss border-top">
+  <section id="probar-demo" class="section-playful bg-surface-subtle">
     <div class="container">
-      <div class="row align-items-end mb-5 g-4">
-        <div class="col-12 col-lg-7 reveal-left">
-          <div class="tech-eyebrow mb-3">
-            <span class="tech-eyebrow-dot" aria-hidden="true"></span>
-            <span>01 / TECNOLOGÍA DE VISIÓN ARTIFICIAL</span>
-          </div>
-          <h2 class="font-display-md text-ink mb-0">
-            ¿Cómo funciona nuestro validador de señas por IA?
-          </h2>
+      <div class="text-center mb-4 mb-md-5 reveal-on-scroll">
+        <div class="playful-pill playful-pill-green mb-3">
+          <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">stadia_controller</span>
+          <span>¡Probalo acá mismo sin descargar nada!</span>
         </div>
-        <div class="col-12 col-lg-5 reveal-right delay-100">
-          <p class="font-body-md text-on-surface-variant mb-0">
-            Integramos modelos de reconocimiento de gestos en tiempo real para que cada práctica tenga devolución precisa, accesible y sin barreras.
-          </p>
-        </div>
+        <h2 class="font-display-md text-ink mb-2">
+          Elegí una vocal y hacé tu primera seña
+        </h2>
+        <p class="font-body-lg text-on-surface-variant mx-auto mb-0" style="max-width: 630px;">
+          Empezá por la <strong>letra A</strong>: mirá la guía y tocá el botón para prender tu cámara cuando estés listo.
+        </p>
       </div>
 
-      <div class="swiss-bento-grid reveal-scale delay-150">
-        <!-- Module 01 -->
-        <article class="swiss-bento-cell">
-          <div class="d-flex align-items-center justify-content-between mb-4">
-            <span class="font-mono-tech text-brand-primary">01</span>
-            <div class="swiss-icon-box">
-              <span class="material-symbols-outlined" aria-hidden="true">photo_camera</span>
-            </div>
-          </div>
-          <h3 class="font-title-md text-ink mb-3">Reconocimiento de gestos en tiempo real</h3>
-          <p class="font-body-md text-on-surface-variant mb-0">
-            Usamos la cámara de tu celular para analizar la postura de tus manos y expresiones, brindándote devoluciones instantáneas y precisas.
-          </p>
-        </article>
-
-        <!-- Module 02 -->
-        <article class="swiss-bento-cell">
-          <div class="d-flex align-items-center justify-content-between mb-4">
-            <span class="font-mono-tech text-brand-primary">02</span>
-            <div class="swiss-icon-box">
-              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
-            </div>
-          </div>
-          <h3 class="font-title-md text-ink mb-3">Diccionario visual e interactivo de LSA</h3>
-          <p class="font-body-md text-on-surface-variant mb-0">
-            Accedé a módulos educativos clasificados por categorías cotidianas para incorporar Lengua de Señas Argentina validada de forma visual.
-          </p>
-        </article>
-
-        <!-- Module 03 -->
-        <article class="swiss-bento-cell">
-          <div class="d-flex align-items-center justify-content-between mb-4">
-            <span class="font-mono-tech text-brand-primary">03</span>
-            <div class="swiss-icon-box">
-              <span class="material-symbols-outlined" aria-hidden="true">sports_esports</span>
-            </div>
-          </div>
-          <h3 class="font-title-md text-ink mb-3">Aprendizaje lúdico y accesible</h3>
-          <p class="font-body-md text-on-surface-variant mb-0">
-            Diseñado para derribar barreras de comunicación mediante la gamificación, ideal tanto para el hogar como para entornos escolares y terapéuticos.
-          </p>
-        </article>
+      <div class="row justify-content-center">
+        <div class="col-12 col-xl-11 reveal-scale delay-100">
+          <app-sign-demo></app-sign-demo>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- =====================================================================
-       02 · DEMOSTRACIÓN EN VIDEO
+       POR QUÉ LES ENCANTA A LOS CHICOS (Y A LAS FAMILIAS)
        ===================================================================== -->
-  <section id="demostracion" class="section-swiss bg-surface-subtle border-top">
+  <section id="traductor-ia" class="section-playful">
     <div class="container">
       <div class="text-center mb-5 reveal-on-scroll">
-        <div class="tech-eyebrow justify-content-center mb-3">
-          <span class="tech-eyebrow-dot" aria-hidden="true"></span>
-          <span>02 / DEMOSTRACIÓN INTERACTIVA</span>
+        <div class="playful-pill mb-3">
+          <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">favorite</span>
+          <span>Aprender sin aburrirse</span>
         </div>
-        <h2 class="font-display-md text-ink mb-3">Mirá Comuseñas en acción</h2>
-        <p class="font-body-lg text-on-surface-variant mx-auto mb-0" style="max-width: 620px;">
-          Descubrí en menos de un minuto cómo combinamos inteligencia artificial, pedagogía y juego para transformar el aprendizaje de LSA.
+        <h2 class="font-display-md text-ink mb-3">
+          ¿Cómo funciona Comuseñas?
+        </h2>
+        <p class="font-body-lg text-on-surface-variant mx-auto mb-0" style="max-width: 610px;">
+          Combinamos juego, videos claros e inteligencia artificial para que cada práctica sea divertida, accesible y sin barreras.
+        </p>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Card 1 -->
+        <div class="col reveal-on-scroll delay-100">
+          <article class="playful-card h-100 feature-card-violet">
+            <div class="feature-bubble feature-bubble-violet mb-3">
+              <span class="material-symbols-outlined" aria-hidden="true">photo_camera</span>
+            </div>
+            <h3 class="font-title-md text-ink mb-2">Cámara inteligente en vivo</h3>
+            <p class="font-body-md text-on-surface-variant mb-0">
+              La app mira cómo ponés tus manos con la cámara del celular y te avisa al instante cuando la seña está bien hecha.
+            </p>
+          </article>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col reveal-on-scroll delay-200">
+          <article class="playful-card h-100 feature-card-sky">
+            <div class="feature-bubble feature-bubble-sky mb-3">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+            </div>
+            <h3 class="font-title-md text-ink mb-2">Mundos de todos los días</h3>
+            <p class="font-body-md text-on-surface-variant mb-0">
+              Explorá categorías cotidianas —vocales, colores, familia, saludos y emociones— en Lengua de Señas Argentina oficial.
+            </p>
+          </article>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col reveal-on-scroll delay-300">
+          <article class="playful-card h-100 feature-card-yellow">
+            <div class="feature-bubble feature-bubble-yellow mb-3">
+              <span class="material-symbols-outlined" aria-hidden="true">emoji_events</span>
+            </div>
+            <h3 class="font-title-md text-ink mb-2">Estrellas, niveles y diversión</h3>
+            <p class="font-body-md text-on-surface-variant mb-0">
+              Pensada para chicos y familias: cada logro se celebra para mantener la motivación tanto en casa como en la escuela.
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       MIRÁ COMUSEÑAS EN ACCIÓN (VIDEO LAZY-LOAD)
+       ===================================================================== -->
+  <section id="demostracion" class="section-playful bg-surface-warm">
+    <div class="container">
+      <div class="text-center mb-5 reveal-on-scroll">
+        <div class="playful-pill playful-pill-magenta mb-3">
+          <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">play_circle</span>
+          <span>Mirá la app por dentro</span>
+        </div>
+        <h2 class="font-display-md text-ink mb-3">Comuseñas en acción</h2>
+        <p class="font-body-lg text-on-surface-variant mx-auto mb-0" style="max-width: 600px;">
+          Descubrí en menos de un minuto cómo los chicos practican señas reales jugando desde el celular o la tablet.
         </p>
       </div>
 
       <div class="row justify-content-center">
         <div class="col-12 reveal-scale delay-150" [ngClass]="isMobile ? 'col-md-7 col-lg-5 col-xl-4' : 'col-lg-10 col-xl-9'">
-          <div class="seamless-motion-stage position-relative">
-            <!-- Soft ambient halo behind seamless visual -->
-            <div class="cinema-ambient-glow" aria-hidden="true"></div>
-
-            <!-- Frameless Auto-Playing Motion Canvas (no video player chrome) -->
+          <div class="video-tablet-frame position-relative">
             <div
-              class="seamless-motion-canvas position-relative overflow-hidden"
+              class="video-canvas position-relative overflow-hidden"
               [style.aspect-ratio]="isMobile ? '9/16' : '16/9'"
             >
               <video
@@ -364,34 +294,25 @@
                 <source *ngIf="shouldLoadVideo" [src]="isMobile ? 'assets/video_presentacion_mobile.mp4' : 'assets/video_presentacion.mp4'" type="video/mp4" />
               </video>
 
-              <!-- Minimalist discreet audio toggle (bottom-right corner) -->
+              <!-- Friendly audio toggle -->
               <button
                 type="button"
-                class="seamless-sound-pill"
+                class="video-sound-pill"
                 (click)="toggleMuteVideo(presentationVideo)"
                 [attr.aria-label]="isVideoMuted ? 'Activar sonido' : 'Silenciar'"
               >
                 <span class="material-symbols-outlined" aria-hidden="true">
                   {{ isVideoMuted ? 'volume_off' : 'volume_up' }}
                 </span>
+                <span class="small fw-bold">{{ isVideoMuted ? 'Activar sonido' : 'Silenciar' }}</span>
               </button>
             </div>
+          </div>
 
-            <!-- Minimalist Spec Strip below -->
-            <div class="d-flex flex-wrap justify-content-center gap-3 gap-md-4 mt-4">
-              <span class="cinema-spec-tag">
-                <span class="cinema-spec-dot" aria-hidden="true"></span>
-                Detección facial y manual por IA
-              </span>
-              <span class="cinema-spec-tag">
-                <span class="cinema-spec-dot" aria-hidden="true"></span>
-                LSA oficial validada
-              </span>
-              <span class="cinema-spec-tag">
-                <span class="cinema-spec-dot" aria-hidden="true"></span>
-                Feedback instantáneo
-              </span>
-            </div>
+          <div class="d-flex flex-wrap justify-content-center gap-2 gap-md-3 mt-4">
+            <span class="video-chip">Validación por cámara e IA</span>
+            <span class="video-chip">LSA oficial (Ley 27.710)</span>
+            <span class="video-chip">Gratis en Android</span>
           </div>
         </div>
       </div>
@@ -399,72 +320,70 @@
   </section>
 
   <!-- =====================================================================
-       03 · PILARES PEDAGÓGICOS Y ROL ESPECIALISTA
+       PARA FAMILIAS, ESCUELAS Y ESPECIALISTAS (CONFIANZA Y ACOMPAÑAMIENTO)
        ===================================================================== -->
-  <section class="section-swiss border-top">
+  <section class="section-playful">
     <div class="container">
-      <div class="row g-5 align-items-start">
-        <!-- Sticky Left Header -->
-        <div class="col-12 col-lg-5 reveal-left sticky-lg-top" style="top: 100px;">
-          <div class="tech-eyebrow mb-3">
-            <span class="tech-eyebrow-dot" aria-hidden="true"></span>
-            <span>03 / PILARES PEDAGÓGICOS</span>
+      <div class="row g-5 align-items-center">
+        <div class="col-12 col-lg-5 reveal-left">
+          <div class="playful-pill mb-3">
+            <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">diversity_1</span>
+            <span>Para madres, padres y profesionales</span>
           </div>
           <h2 class="font-display-md text-ink mb-3">
-            Diseñada junto a familias y especialistas
+            Acompañamiento real para familias y especialistas
           </h2>
           <p class="font-body-md text-on-surface-variant mb-4">
-            Cada módulo combina rigor lingüístico en LSA oficial con herramientas de acompañamiento terapéutico para fonoaudiólogos y docentes integradores.
+            Más del 90% de los niños sordos nacen en familias oyentes. Diseñamos Comuseñas junto a fonoaudiólogos y docentes integradores para acompañar el aprendizaje dentro y fuera del consultorio.
           </p>
-          <a routerLink="/especialistas-y-familias" class="btn-precision-ghost px-0">
-            <span>Explorar panel para especialistas</span>
-            <span class="material-symbols-outlined fs-5" aria-hidden="true">arrow_forward</span>
+          <a routerLink="/especialistas-y-familias" class="btn-playful-violet">
+            <span>Ver panel para especialistas</span>
+            <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
           </a>
         </div>
 
-        <!-- Right Numbered Architectural Modules (Staggered Slide-In) -->
         <div class="col-12 col-lg-7 d-flex flex-column gap-3">
-          <article class="swiss-card pillar-row d-flex align-items-start gap-3 gap-md-4 reveal-right delay-100">
-            <div class="swiss-icon-box flex-shrink-0">
+          <article class="playful-card d-flex align-items-start gap-3 gap-md-4 reveal-right delay-100">
+            <div class="feature-bubble feature-bubble-violet flex-shrink-0">
               <span class="material-symbols-outlined" aria-hidden="true">category</span>
             </div>
             <div>
-              <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
-                <h3 class="font-title-md text-ink mb-0">Categorías Temáticas y Rutinas Cotidianas</h3>
+              <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
+                <h3 class="font-title-md text-ink mb-0">Vocabulario de rutinas cotidianas</h3>
                 <span class="badge rounded-pill badge-brand-primary px-2 py-1" style="font-size: 11px;">100% LSA Oficial</span>
               </div>
               <p class="font-body-md text-on-surface-variant mb-0">
-                Vocabulario enfocado en situaciones prácticas del día a día (comida, baño, juego, emociones) para conectar al niño con su familia de forma inmediata.
+                Palabras útiles para la vida diaria (familia, comida, emociones, escuela) que ayudan a conectar al niño con su entorno desde el primer día.
               </p>
             </div>
           </article>
 
-          <article class="swiss-card pillar-row d-flex align-items-start gap-3 gap-md-4 reveal-right delay-200">
-            <div class="swiss-icon-box swiss-icon-indigo flex-shrink-0">
+          <article class="playful-card d-flex align-items-start gap-3 gap-md-4 reveal-right delay-200">
+            <div class="feature-bubble feature-bubble-sky flex-shrink-0">
               <span class="material-symbols-outlined" aria-hidden="true">video_library</span>
             </div>
             <div>
-              <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
-                <h3 class="font-title-md text-ink mb-0">Videos Demostrativos y Validación IA</h3>
+              <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
+                <h3 class="font-title-md text-ink mb-0">Videos claros + corrección por IA</h3>
                 <span class="badge rounded-pill badge-brand-indigo px-2 py-1" style="font-size: 11px;">Cámara + IA</span>
               </div>
               <p class="font-body-md text-on-surface-variant mb-0">
-                Modelos visuales claros complementados con validación en tiempo real por visión artificial para corregir la postura de las manos al instante.
+                Primero miran el video modelo paso a paso y luego practican con la cámara para afianzar la postura de las manos con devolución inmediata.
               </p>
             </div>
           </article>
 
-          <article class="swiss-card pillar-row d-flex align-items-start gap-3 gap-md-4 reveal-right delay-300">
-            <div class="swiss-icon-box swiss-icon-amber flex-shrink-0">
+          <article class="playful-card d-flex align-items-start gap-3 gap-md-4 reveal-right delay-300">
+            <div class="feature-bubble feature-bubble-yellow flex-shrink-0">
               <span class="material-symbols-outlined" aria-hidden="true">qr_code_scanner</span>
             </div>
             <div>
-              <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
-                <h3 class="font-title-md text-ink mb-0">Seguimiento de Progreso y Rol Especialista</h3>
-                <span class="badge rounded-pill badge-brand-amber px-2 py-1" style="font-size: 11px;">Escaneo QR</span>
+              <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
+                <h3 class="font-title-md text-ink mb-0">Seguimiento por Código QR</h3>
+                <span class="badge rounded-pill badge-brand-amber px-2 py-1" style="font-size: 11px;">Rol Especialista</span>
               </div>
               <p class="font-body-md text-on-surface-variant mb-0">
-                Vinculación rápida mediante código QR para que fonoaudiólogos, docentes y familiares vean estadísticas de juego y dejen observaciones personalizadas.
+                Fonoaudiólogos, docentes y familiares pueden vincularse con un QR para ver avances, estadísticas de práctica y dejar notas personalizadas.
               </p>
             </div>
           </article>
@@ -474,65 +393,49 @@
   </section>
 
   <!-- =====================================================================
-       04 · CÓMO FUNCIONA (ANIMATED TELEMETRY TIMELINE)
+       CÓMO SE EMPIEZA — CAMINO EN 3 PASOS
        ===================================================================== -->
-  <section id="funcionamiento" class="section-swiss bg-surface-subtle border-top">
+  <section id="como-funciona" class="section-playful bg-surface-subtle">
     <div class="container">
       <div class="text-center mb-5 reveal-on-scroll">
-        <div class="tech-eyebrow justify-content-center mb-3">
-          <span class="tech-eyebrow-dot" aria-hidden="true"></span>
-          <span>04 / PROCESO EN 3 PASOS</span>
+        <div class="playful-pill playful-pill-yellow mb-3">
+          <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">flag</span>
+          <span>Súper fácil de empezar</span>
         </div>
-        <h2 class="font-display-md text-ink mb-3">¿Cómo funciona?</h2>
-        <p class="font-body-lg text-on-surface-variant mx-auto mb-0" style="max-width: 560px;">
-          Tres pasos simples para empezar a practicar Lengua de Señas Argentina hoy mismo.
+        <h2 class="font-display-md text-ink mb-3">3 pasos para empezar a jugar</h2>
+        <p class="font-body-lg text-on-surface-variant mx-auto mb-0" style="max-width: 540px;">
+          En menos de dos minutos ya podés estar practicando tus primeras señas en casa o en el aula.
         </p>
       </div>
 
-      <div class="position-relative steps-track">
-        <!-- Animated horizontal telemetry line (desktop) -->
-        <div class="steps-connector d-none d-md-block" aria-hidden="true">
-          <div class="steps-connector-pulse"></div>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col reveal-on-scroll delay-100">
+          <div class="playful-card h-100 text-center">
+            <div class="step-circle step-circle-violet mx-auto mb-3">1</div>
+            <h3 class="font-title-md text-ink mb-2">Descargá la App gratis</h3>
+            <p class="font-body-md text-on-surface-variant mb-0">
+              Disponible en Google Play para celulares y tablets Android, sin suscripciones ni barreras.
+            </p>
+          </div>
         </div>
 
-        <div class="row row-cols-1 row-cols-md-3 g-4 position-relative z-1">
-          <div class="col reveal-on-scroll delay-100">
-            <div class="swiss-card step-card-kinetic h-100 text-start">
-              <div class="d-flex align-items-center justify-content-between mb-4">
-                <span class="step-index-pill">01</span>
-                <span class="material-symbols-outlined text-brand-primary fs-3 step-icon" aria-hidden="true">download</span>
-              </div>
-              <h3 class="font-title-md text-ink mb-2">Descargá la App</h3>
-              <p class="font-body-md text-on-surface-variant mb-0">
-                Disponible gratis en Google Play para celulares y tablets Android.
-              </p>
-            </div>
+        <div class="col reveal-on-scroll delay-200">
+          <div class="playful-card h-100 text-center">
+            <div class="step-circle step-circle-pink mx-auto mb-3">2</div>
+            <h3 class="font-title-md text-ink mb-2">¡Empezá a jugar al instante!</h3>
+            <p class="font-body-md text-on-surface-variant mb-0">
+              Abrí la app y practicá señas frente a la cámara desde el primer segundo, sin necesidad de registrarte.
+            </p>
           </div>
+        </div>
 
-          <div class="col reveal-on-scroll delay-200">
-            <div class="swiss-card step-card-kinetic h-100 text-start">
-              <div class="d-flex align-items-center justify-content-between mb-4">
-                <span class="step-index-pill">02</span>
-                <span class="material-symbols-outlined text-brand-primary fs-3 step-icon" aria-hidden="true">face</span>
-              </div>
-              <h3 class="font-title-md text-ink mb-2">Creá tu Perfil</h3>
-              <p class="font-body-md text-on-surface-variant mb-0">
-                Personalizá el avatar, elegí el rol (aprendiz o especialista) y seleccioná el nivel inicial.
-              </p>
-            </div>
-          </div>
-
-          <div class="col reveal-on-scroll delay-300">
-            <div class="swiss-card step-card-kinetic h-100 text-start">
-              <div class="d-flex align-items-center justify-content-between mb-4">
-                <span class="step-index-pill">03</span>
-                <span class="material-symbols-outlined text-brand-primary fs-3 step-icon" aria-hidden="true">smart_toy</span>
-              </div>
-              <h3 class="font-title-md text-ink mb-2">¡Empezá a Jugar!</h3>
-              <p class="font-body-md text-on-surface-variant mb-0">
-                Explorá mundos temáticos, validá tus señas frente a la cámara y ganá recompensas.
-              </p>
-            </div>
+        <div class="col reveal-on-scroll delay-300">
+          <div class="playful-card h-100 text-center">
+            <div class="step-circle step-circle-green mx-auto mb-3">3</div>
+            <h3 class="font-title-md text-ink mb-2">Guardá tu progreso</h3>
+            <p class="font-body-md text-on-surface-variant mb-0">
+              Si querés guardar tus avances, elegir tu avatar o vincularte con un especialista por QR, registrate cuando quieras.
+            </p>
           </div>
         </div>
       </div>
@@ -540,18 +443,18 @@
   </section>
 
   <!-- =====================================================================
-       05 · EN LOS MEDIOS (ACCESSIBLE MARQUEE)
+       EN LOS MEDIOS (ACCESSIBLE MARQUEE)
        ===================================================================== -->
-  <section id="prensa" class="section-swiss border-top">
+  <section id="prensa" class="section-playful">
     <div class="container">
       <div class="text-center mb-5 reveal-on-scroll">
-        <div class="tech-eyebrow justify-content-center mb-3">
-          <span class="tech-eyebrow-dot" aria-hidden="true"></span>
-          <span>05 / RECONOCIMIENTO EN PRENSA</span>
+        <div class="playful-pill mb-3">
+          <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">newspaper</span>
+          <span>Reconocimiento en prensa</span>
         </div>
         <h2 class="font-display-md text-ink mb-3">Comuseñas en los Medios</h2>
         <p class="font-body-lg text-on-surface-variant mx-auto mb-0" style="max-width: 580px;">
-          Medios nacionales y universidades destacaron nuestro impacto en la inclusión y la tecnología educativa.
+          Medios nacionales y universidades destacaron nuestro impacto en la inclusión y la educación infantil.
         </p>
       </div>
 
@@ -605,23 +508,29 @@
   </section>
 
   <!-- =====================================================================
-       06 · TESTIMONIOS
+       TESTIMONIOS DE FAMILIAS Y EDUCADORAS
        ===================================================================== -->
-  <section id="testimonios" class="section-swiss bg-surface-subtle border-top">
+  <section id="testimonios" class="section-playful bg-surface-warm">
     <div class="container">
       <div class="text-center mb-5 reveal-on-scroll">
-        <div class="tech-eyebrow justify-content-center mb-3">
-          <span class="tech-eyebrow-dot" aria-hidden="true"></span>
-          <span>06 / COMUNIDAD</span>
+        <div class="playful-pill playful-pill-yellow mb-3">
+          <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">forum</span>
+          <span>Nuestra comunidad</span>
         </div>
         <h2 class="font-display-md text-ink mb-0">Lo que dicen las familias y especialistas</h2>
       </div>
 
       <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col reveal-left delay-100">
-          <blockquote class="swiss-card h-100 d-flex flex-column justify-content-between mb-0">
+          <blockquote class="playful-card h-100 d-flex flex-column justify-content-between mb-0">
             <div>
-              <span class="material-symbols-outlined text-brand-primary opacity-25 fs-1 mb-2" aria-hidden="true">format_quote</span>
+              <div class="d-flex gap-1 text-warning mb-3" aria-label="5 de 5 estrellas">
+                <span class="material-symbols-outlined" style="font-size: 20px;">star</span>
+                <span class="material-symbols-outlined" style="font-size: 20px;">star</span>
+                <span class="material-symbols-outlined" style="font-size: 20px;">star</span>
+                <span class="material-symbols-outlined" style="font-size: 20px;">star</span>
+                <span class="material-symbols-outlined" style="font-size: 20px;">star</span>
+              </div>
               <p class="font-body-lg text-ink mb-4">
                 "Comuseñas ha transformado la forma en que mi hija aprende. Es increíble verla tan emocionada por conocer nuevas palabras. La interfaz es súper amigable."
               </p>
@@ -637,9 +546,15 @@
         </div>
 
         <div class="col reveal-right delay-200">
-          <blockquote class="swiss-card h-100 d-flex flex-column justify-content-between mb-0">
+          <blockquote class="playful-card h-100 d-flex flex-column justify-content-between mb-0">
             <div>
-              <span class="material-symbols-outlined text-brand-primary opacity-25 fs-1 mb-2" aria-hidden="true">format_quote</span>
+              <div class="d-flex gap-1 text-warning mb-3" aria-label="5 de 5 estrellas">
+                <span class="material-symbols-outlined" style="font-size: 20px;">star</span>
+                <span class="material-symbols-outlined" style="font-size: 20px;">star</span>
+                <span class="material-symbols-outlined" style="font-size: 20px;">star</span>
+                <span class="material-symbols-outlined" style="font-size: 20px;">star</span>
+                <span class="material-symbols-outlined" style="font-size: 20px;">star</span>
+              </div>
               <p class="font-body-lg text-ink mb-4">
                 "Como educadora especial, recomiendo Comuseñas como una excelente herramienta de apoyo. El diseño pedagógico de los juegos es acertado y muy motivador."
               </p>
@@ -658,53 +573,51 @@
   </section>
 
   <!-- =====================================================================
-       07 · PREGUNTAS FRECUENTES
+       PREGUNTAS FRECUENTES (SEO FAQPage PRESERVADO)
        ===================================================================== -->
-  <section id="faq" class="section-swiss border-top">
+  <section id="faq" class="section-playful">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-8">
           <div class="text-center mb-5 reveal-on-scroll">
-            <div class="tech-eyebrow justify-content-center mb-3">
-              <span class="tech-eyebrow-dot" aria-hidden="true"></span>
-              <span>07 / PREGUNTAS FRECUENTES</span>
+            <div class="playful-pill mb-3">
+              <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">help</span>
+              <span>Preguntas frecuentes</span>
             </div>
             <h2 class="font-display-md text-ink mb-0">Despejá tus dudas</h2>
           </div>
 
-          <div class="accordion swiss-accordion" id="faqAccordion">
-            <div class="accordion-item swiss-faq-item reveal-on-scroll delay-100">
+          <div class="accordion playful-accordion d-flex flex-column gap-3" id="faqAccordion">
+            <div class="accordion-item playful-faq-item reveal-on-scroll delay-100">
               <h3 class="accordion-header" id="headingOne">
                 <button
-                  class="accordion-button collapsed swiss-faq-btn"
+                  class="accordion-button collapsed playful-faq-btn"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseOne"
                   aria-expanded="false"
                   aria-controls="collapseOne"
                 >
-                  <span class="font-mono-tech text-brand-primary me-3">01</span>
                   <span>¿Comuseñas funciona como un traductor automático de LSA?</span>
                 </button>
               </h3>
               <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                 <div class="accordion-body text-on-surface-variant font-body-md pt-0">
-                  Funciona como una plataforma educativa avanzada con validación por inteligencia artificial. Corrige tus señas mediante la cámara para asegurar que tu aprendizaje sea técnicamente correcto, complementando la necesidad de un intérprete o diccionario LSA dinámico.
+                  Funciona como una plataforma educativa con validación por inteligencia artificial. Corrige tus señas mediante la cámara para asegurar que tu aprendizaje sea técnicamente correcto, complementando la necesidad de un intérprete o diccionario LSA dinámico.
                 </div>
               </div>
             </div>
 
-            <div class="accordion-item swiss-faq-item reveal-on-scroll delay-200">
+            <div class="accordion-item playful-faq-item reveal-on-scroll delay-200">
               <h3 class="accordion-header" id="headingTwo">
                 <button
-                  class="accordion-button collapsed swiss-faq-btn"
+                  class="accordion-button collapsed playful-faq-btn"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseTwo"
                   aria-expanded="false"
                   aria-controls="collapseTwo"
                 >
-                  <span class="font-mono-tech text-brand-primary me-3">02</span>
                   <span>¿Para quién está recomendada la aplicación?</span>
                 </button>
               </h3>
@@ -715,23 +628,22 @@
               </div>
             </div>
 
-            <div class="accordion-item swiss-faq-item reveal-on-scroll delay-300">
+            <div class="accordion-item playful-faq-item reveal-on-scroll delay-300">
               <h3 class="accordion-header" id="headingThree">
                 <button
-                  class="accordion-button collapsed swiss-faq-btn"
+                  class="accordion-button collapsed playful-faq-btn"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseThree"
                   aria-expanded="false"
                   aria-controls="collapseThree"
                 >
-                  <span class="font-mono-tech text-brand-primary me-3">03</span>
                   <span>¿La app requiere conocimientos previos de señas?</span>
                 </button>
               </h3>
               <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
                 <div class="accordion-body text-on-surface-variant font-body-md pt-0">
-                  No. La estructura pedagógica te acompaña desde el abecedario dactilológico hasta la construcción de frases cotidianas con soporte de IA.
+                  No. La estructura pedagógica te acompaña desde las vocales y el abecedario dactilológico hasta palabras y rutinas cotidianas con soporte de IA.
                 </div>
               </div>
             </div>
@@ -742,18 +654,18 @@
   </section>
 
   <!-- =====================================================================
-       08 · EQUIPO FUNDADOR
+       EQUIPO FUNDADOR UNLaM
        ===================================================================== -->
-  <section id="fundadores" class="section-swiss bg-surface-subtle border-top">
+  <section id="fundadores" class="section-playful bg-surface-subtle">
     <div class="container">
       <div class="text-center mb-5 reveal-on-scroll">
-        <div class="tech-eyebrow justify-content-center mb-3">
-          <span class="tech-eyebrow-dot" aria-hidden="true"></span>
-          <span>08 / PROPÓSITO E INNOVACIÓN</span>
+        <div class="playful-pill playful-pill-magenta mb-3">
+          <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">school</span>
+          <span>Nacido en la UNLaM</span>
         </div>
         <h2 class="font-display-md text-ink mb-3">Conocé a los Fundadores</h2>
         <p class="font-body-lg text-on-surface-variant mx-auto mb-3" style="max-width: 640px;">
-          Un proyecto nacido en la Universidad Nacional de La Matanza (UNLaM), uniendo visión artificial y vivencia en primera persona para derribar barreras de comunicación.
+          Un proyecto surgido en la Universidad Nacional de La Matanza (UNLaM), uniendo tecnología e historia en primera persona para derribar barreras de comunicación.
         </p>
         <a routerLink="/sobre-nosotros-unlam" class="btn-precision-ghost">
           <span>Conocer nuestra historia en UNLaM</span>
@@ -774,11 +686,9 @@
               />
             </div>
 
-            <div class="p-4 d-flex flex-column text-center">
+            <div class="p-4 d-flex flex-column text-center flex-grow-1">
               <h3 class="font-title-md text-ink mb-1">{{ founder.name }}</h3>
-              <p class="font-mono-tech text-brand-primary mb-3" style="font-size: 0.68rem;">
-                {{ founder.role }}
-              </p>
+              <p class="founder-role mb-3">{{ founder.role }}</p>
               <p class="font-body-md text-on-surface-variant small mb-4 flex-grow-1">
                 {{ founder.bio }}
               </p>
@@ -805,45 +715,115 @@
   </section>
 
   <!-- =====================================================================
-       09 · CTA FINAL
+       CTA FINAL ALEGRE + QR DESKTOP + LISTA DE ESPERA iOS
        ===================================================================== -->
-  <section class="section-swiss swiss-grid-bg border-top">
+  <section class="section-playful">
     <div class="container">
-      <div class="cta-editorial-box text-center mx-auto reveal-scale">
-        <div class="tech-eyebrow justify-content-center mb-3">
-          <span class="tech-eyebrow-dot" aria-hidden="true"></span>
-          <span>EMPEZÁ HOY GRATIS</span>
-        </div>
-        <h2 class="font-display-md text-ink mb-3">
-          Llevá la inclusión a tu celular<span class="accent-square-dot" aria-hidden="true"></span>
-        </h2>
-        <p class="font-body-lg text-on-surface-variant mx-auto mb-4" style="max-width: 520px;">
-          Sumate a cientos de familias, escuelas y especialistas que ya practican Lengua de Señas Argentina con validación por IA.
-        </p>
-        <div class="d-flex flex-wrap justify-content-center gap-3">
-          <a
-            href="https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-precision-primary"
-          >
-            <span>Descargar en Google Play</span>
-            <span class="material-symbols-outlined btn-arrow fs-5" aria-hidden="true">arrow_forward</span>
-          </a>
-          <a routerLink="/contacto" class="btn-precision-ghost px-3">
-            <span>Hablar con el equipo</span>
-            <span class="material-symbols-outlined fs-5" aria-hidden="true">arrow_forward</span>
-          </a>
+      <div class="cta-playful-box mx-auto reveal-scale">
+        <div class="row g-4 align-items-center">
+          <!-- Left Main CTA & iOS Waitlist -->
+          <div class="col-12 col-lg-8 text-center text-lg-start">
+            <div class="playful-pill playful-pill-yellow mb-3">
+              <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">celebration</span>
+              <span>Empezá hoy gratis</span>
+            </div>
+            <h2 class="font-display-md text-white mb-3">
+              Llevá el juego y la inclusión a tu celular
+            </h2>
+            <p class="font-body-lg cta-playful-sub mb-4" style="max-width: 540px;">
+              Sumate a cientos de familias, escuelas y especialistas que ya practican Lengua de Señas Argentina con Comuseñas.
+            </p>
+            <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-playful-primary"
+              >
+                <span class="material-symbols-outlined" aria-hidden="true">download</span>
+                <span>Descargar en Google Play</span>
+              </a>
+              <a routerLink="/contacto" class="btn-playful-secondary">
+                <span>Hablar con el equipo</span>
+                <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Desktop QR Card (hidden on mobile where direct button is best) -->
+          <div class="col-lg-4 d-none d-lg-flex justify-content-center">
+            <div class="cta-qr-card text-center">
+              <img
+                src="assets/qr-playstore.svg"
+                alt="Código QR para descargar Comuseñas gratis en Google Play Android"
+                width="132"
+                height="132"
+                loading="lazy"
+                class="cta-qr-img mb-2"
+              />
+              <div class="cta-qr-title">Escaneá con tu Android</div>
+              <div class="cta-qr-sub">Descarga directa en Google Play</div>
+            </div>
+          </div>
         </div>
 
-        <div class="mt-4 pt-4 border-top d-flex flex-column flex-sm-row align-items-center justify-content-center gap-3">
-          <span class="small text-on-surface-variant">
+        <!-- iOS Waitlist Strip -->
+        <div class="cta-ios-box mt-4">
+          <div class="row g-3 align-items-center">
+            <div class="col-12 col-lg-5 text-center text-lg-start">
+              <div class="d-inline-flex align-items-center gap-2 text-white fw-bold mb-1">
+                <span class="material-symbols-outlined" style="font-size: 20px;" aria-hidden="true">phone_iphone</span>
+                <span>¿Usás iPhone o iPad?</span>
+              </div>
+              <p class="small cta-playful-sub mb-0">
+                Dejanos tu mail y te avisamos apenas lancemos la versión para iOS.
+              </p>
+            </div>
+            <div class="col-12 col-lg-7">
+              <form
+                *ngIf="iosStatus !== 'success'"
+                (submit)="submitIosWaitlist($event, iosEmailInput)"
+                class="d-flex flex-column flex-sm-row gap-2"
+                novalidate
+              >
+                <label for="iosWaitlistEmail" class="visually-hidden">Correo electrónico para aviso de iOS</label>
+                <input
+                  #iosEmailInput
+                  id="iosWaitlistEmail"
+                  type="email"
+                  class="cta-ios-input flex-grow-1"
+                  placeholder="tu-correo&#64;ejemplo.com"
+                  autocomplete="email"
+                  required
+                  [disabled]="iosStatus === 'submitting'"
+                />
+                <button
+                  type="submit"
+                  class="btn-playful-yellow flex-shrink-0"
+                  [disabled]="iosStatus === 'submitting'"
+                >
+                  <span>{{ iosStatus === 'submitting' ? 'Enviando...' : 'Avisarme' }}</span>
+                </button>
+              </form>
+
+              <div *ngIf="iosFeedback" class="cta-ios-feedback mt-2" [class.is-success]="iosStatus === 'success'" [class.is-error]="iosStatus === 'error'" role="status">
+                <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">
+                  {{ iosStatus === 'success' ? 'check_circle' : 'error' }}
+                </span>
+                <span>{{ iosFeedback }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-4 cta-support-row d-flex flex-column flex-sm-row align-items-center justify-content-center gap-3 text-center">
+          <span class="small cta-playful-sub">
             Comuseñas es 100% gratuita. Ayudanos a mantener los servidores y sumar más señas:
           </span>
           <button
             type="button"
             (click)="openSupportModal()"
-            class="cafecito-btn d-inline-flex align-items-center gap-2 flex-shrink-0 border-0"
+            class="cafecito-btn flex-shrink-0"
           >
             <span class="material-symbols-outlined" style="font-size: 16px;" aria-hidden="true">volunteer_activism</span>
             <span>Ayudanos</span>

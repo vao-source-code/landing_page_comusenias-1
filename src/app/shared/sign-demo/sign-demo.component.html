@@ -1,0 +1,303 @@
+<div class="demo-console">
+  <!-- Top Progress & Challenge Selector Bar -->
+  <div class="demo-header">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3">
+      <div class="d-flex align-items-center gap-2">
+        <span class="demo-star-badge" aria-hidden="true">
+          <span class="material-symbols-outlined">star</span>
+        </span>
+        <div>
+          <div class="demo-kicker">Mini-juego interactivo · Vocales LSA</div>
+          <div class="demo-progress-text">
+            {{ completedCount }} de {{ challenges.length }} estrellas logradas
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-wrap align-items-center gap-2">
+        <div class="demo-privacy-pill">
+          <span class="material-symbols-outlined" style="font-size: 16px;" aria-hidden="true">lock</span>
+          <span>100% privado · Cámara local</span>
+        </div>
+        <button
+          type="button"
+          class="demo-sound-btn"
+          (click)="toggleSound()"
+          [attr.aria-label]="soundEnabled ? 'Silenciar sonidos de logro' : 'Activar sonidos de logro'"
+          [title]="soundEnabled ? 'Sonido activado' : 'Sonido silenciado'"
+        >
+          <span class="material-symbols-outlined" style="font-size: 20px;" aria-hidden="true">
+            {{ soundEnabled ? 'volume_up' : 'volume_off' }}
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Duolingo-style Progress Bar -->
+    <div class="demo-progress-track mb-4" role="progressbar" [attr.aria-valuenow]="progressPercent" aria-valuemin="0" aria-valuemax="100">
+      <div class="demo-progress-fill" [style.width.%]="progressPercent"></div>
+    </div>
+
+    <!-- Selectable Vowel Tiles -->
+    <div class="demo-selector-grid" role="tablist" aria-label="Elegí una vocal en LSA para practicar">
+      <button
+        *ngFor="let item of challenges"
+        type="button"
+        role="tab"
+        class="sign-tile"
+        [class.is-active]="selectedChallenge.id === item.id"
+        [class.is-completed]="item.completed"
+        [attr.aria-selected]="selectedChallenge.id === item.id"
+        (click)="selectChallenge(item)"
+      >
+        <span *ngIf="item.badgeText && !item.completed" class="sign-tile-tag">{{ item.badgeText }}</span>
+        <span *ngIf="item.completed" class="sign-tile-done" aria-label="Completada">
+          <span class="material-symbols-outlined" style="font-size: 15px;">check</span>
+        </span>
+        <img
+          [src]="item.previewImage"
+          [alt]="'Seña ' + item.title + ' en LSA'"
+          width="56"
+          height="56"
+          class="sign-tile-img"
+          loading="lazy"
+          decoding="async"
+        />
+        <span class="sign-tile-name">{{ item.title }}</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Interactive Stage -->
+  <div class="row g-4 align-items-stretch mt-1">
+    <!-- Left Guide Card -->
+    <div class="col-12 col-lg-5 d-flex">
+      <div class="demo-guide-card w-100 d-flex flex-column justify-content-between">
+        <div>
+          <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+            <span
+              class="demo-guide-badge"
+              [style.background-color]="selectedChallenge.accentBg"
+              [style.color]="selectedChallenge.accentColor"
+            >
+              {{ selectedChallenge.subtitle }}
+            </span>
+            <span *ngIf="selectedChallenge.completed" class="demo-done-pill">
+              <span class="material-symbols-outlined" style="font-size: 16px;" aria-hidden="true">verified</span>
+              ¡Lograda!
+            </span>
+          </div>
+
+          <h3 class="demo-guide-title mb-2">
+            Hacé la <span [style.color]="selectedChallenge.accentColor">{{ selectedChallenge.title }}</span>
+          </h3>
+          <p class="demo-guide-tip mb-4">{{ selectedChallenge.tip }}</p>
+
+          <!-- Official Comuseñas Vowel Medal Illustration -->
+          <div class="hand-illustration-box mb-3" [style.background-color]="selectedChallenge.accentBg">
+            <img
+              [src]="selectedChallenge.image"
+              [alt]="'Guía oficial de la ' + selectedChallenge.title + ' en Lengua de Señas Argentina'"
+              width="168"
+              height="168"
+              class="hand-guide-img"
+              [class.medal-pop]="medalPulse"
+              decoding="async"
+            />
+          </div>
+        </div>
+
+        <div class="demo-guide-footnote">
+          <span class="material-symbols-outlined" style="font-size: 18px; color: #5262d6;" aria-hidden="true">tips_and_updates</span>
+          <span>Visión artificial en vivo corriendo <strong>100% en tu navegador</strong>.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Interactive Camera / Play Stage -->
+    <div class="col-12 col-lg-7 d-flex">
+      <div class="demo-stage-card w-100 d-flex flex-column justify-content-center">
+
+        <!-- STAGE 1: CHOOSE / READY TO START CAMERA -->
+        <div *ngIf="stage === 'choose'" class="stage-idle text-center">
+          <div class="stage-camera-bubble mx-auto mb-3" aria-hidden="true">
+            <span class="material-symbols-outlined">videocam</span>
+          </div>
+          <h4 class="stage-title mb-2">¿Listo para probar la {{ selectedChallenge.title }}?</h4>
+          <p class="stage-desc mx-auto mb-4">
+            Tu cámara <strong>solo se enciende cuando tocás el botón</strong>. Hacé la seña frente a la pantalla y nuestra IA la valida al instante.
+          </p>
+
+          <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+            <button
+              type="button"
+              class="btn-playful-primary"
+              (click)="startCameraDemo()"
+            >
+              <span class="material-symbols-outlined" aria-hidden="true">photo_camera</span>
+              <span>¡Probar con mi cámara!</span>
+            </button>
+
+            <button
+              type="button"
+              class="btn-playful-secondary"
+              (click)="openFallbackMode()"
+            >
+              <span class="material-symbols-outlined" aria-hidden="true">extension</span>
+              <span>Probar sin cámara</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STAGE 2: LOADING CAMERA + MEDIAPIPE MODEL -->
+        <div *ngIf="stage === 'loading'" class="stage-loading text-center">
+          <div class="playful-spinner mx-auto mb-3" role="status" aria-hidden="true"></div>
+          <h4 class="stage-title mb-2">¡Ya casi empezamos!</h4>
+          <p class="stage-desc mb-3">{{ loadingMessage }}</p>
+          <button type="button" class="btn-playful-secondary btn-sm" (click)="stopCamera()">
+            Cancelar
+          </button>
+        </div>
+
+        <!-- STAGE 3: LIVE CAMERA + REAL-TIME LSA DETECTION -->
+        <div *ngIf="stage === 'camera'" class="stage-camera">
+          <div class="camera-viewport" [class.is-matching]="isMatchingNow">
+            <video
+              #cameraVideo
+              class="camera-video"
+              autoplay
+              playsinline
+              muted
+            ></video>
+            <canvas #overlayCanvas class="camera-overlay"></canvas>
+
+            <!-- Top overlay target pill + mini medal guide inside camera (great for mobile!) -->
+            <div class="camera-top-hud">
+              <div class="camera-guide-chip">
+                <img
+                  [src]="selectedChallenge.previewImage"
+                  [alt]="'Guía ' + selectedChallenge.title"
+                  width="38"
+                  height="38"
+                  class="camera-mini-medal"
+                />
+                <span>Hacé la <strong>{{ selectedChallenge.id }}</strong></span>
+              </div>
+              <button
+                type="button"
+                class="camera-close-btn"
+                (click)="stopCamera()"
+                aria-label="Apagar cámara"
+              >
+                <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">videocam_off</span>
+                <span>Apagar</span>
+              </button>
+            </div>
+
+            <!-- Bottom live progress & friendly feedback -->
+            <div class="camera-bottom-hud">
+              <div class="camera-feedback-pill" [class.is-good]="isMatchingNow">
+                <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">
+                  {{ isMatchingNow ? 'check_circle' : (handDetected ? 'pan_tool' : 'front_hand') }}
+                </span>
+                <span>{{ liveFeedback }}</span>
+              </div>
+              <div class="camera-hold-track">
+                <div class="camera-hold-fill" [style.width.%]="holdProgress"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 4: CELEBRATION -->
+        <div *ngIf="stage === 'celebration'" class="stage-celebration text-center position-relative overflow-hidden">
+          <div class="confetti-layer" aria-hidden="true">
+            <span
+              *ngFor="let p of confettiPieces"
+              class="confetti-dot"
+              [style.left.%]="(p * 6.3) % 94 + 3"
+              [style.animation-delay.ms]="(p * 95) % 600"
+            ></span>
+          </div>
+
+          <div class="celebration-trophy mx-auto mb-3" aria-hidden="true">
+            <span class="material-symbols-outlined">emoji_events</span>
+          </div>
+
+          <div class="playful-pill playful-pill-yellow mb-2">
+            {{ allCompleted ? '¡5 de 5 vocales completadas!' : '+1 estrella ganada' }}
+          </div>
+
+          <h4 class="stage-title mb-2">
+            {{ allCompleted ? '¡Sos un crack de las vocales!' : ('¡Excelente! Lograste la ' + selectedChallenge.title) }}
+          </h4>
+          <p class="stage-desc mx-auto mb-4">
+            {{ allCompleted
+              ? 'Ya dominás las 5 vocales en LSA. Descargá Comuseñas gratis para seguir con colores, familia, saludos y mucho más.'
+              : 'Así de fácil y divertido se aprende Lengua de Señas Argentina en Comuseñas.' }}
+          </p>
+
+          <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+            <button
+              *ngIf="!allCompleted"
+              type="button"
+              class="btn-playful-primary"
+              (click)="tryNextChallenge()"
+            >
+              <span>Probar otra vocal</span>
+              <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+            </button>
+
+            <a
+              href="https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR"
+              target="_blank"
+              rel="noopener noreferrer"
+              [ngClass]="allCompleted ? 'btn-playful-primary' : 'btn-playful-violet'"
+            >
+              <span class="material-symbols-outlined" aria-hidden="true">download</span>
+              <span>Seguí jugando en la App</span>
+            </a>
+          </div>
+
+          <div class="mt-3">
+            <button type="button" class="btn-link-subtle" (click)="replayCurrentWithCamera()">
+              Volver a practicar la {{ selectedChallenge.title }}
+            </button>
+          </div>
+        </div>
+
+        <!-- STAGE 5: FALLBACK GUIDED QUIZ (NO CAMERA / PERMISSION DENIED) -->
+        <div *ngIf="stage === 'fallback'" class="stage-fallback">
+          <div *ngIf="cameraError" class="fallback-notice mb-3">
+            <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">info</span>
+            <span>{{ cameraError }}</span>
+          </div>
+
+          <div class="playful-pill mb-2">Modo práctica guiada</div>
+          <h4 class="stage-title mb-2">{{ selectedChallenge.quizPrompt }}</h4>
+          <p class="stage-desc mb-3">Elegí la respuesta correcta mirando la guía de la {{ selectedChallenge.title }}:</p>
+
+          <div class="d-flex flex-column gap-2 mb-3">
+            <button
+              *ngFor="let opt of selectedChallenge.quizOptions"
+              type="button"
+              class="quiz-option-btn"
+              (click)="answerFallbackQuiz(opt)"
+            >
+              {{ opt.label }}
+            </button>
+          </div>
+
+          <p *ngIf="quizWrongMessage" class="quiz-wrong-msg mb-3">
+            {{ quizWrongMessage }}
+          </p>
+
+          <button type="button" class="btn-link-subtle" (click)="startCameraDemo()">
+            Intentar activar cámara nuevamente
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

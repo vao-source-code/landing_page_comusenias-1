@@ -18,6 +18,7 @@ const KNOWN_ROUTES = new Set([
   '/about',
   '/contacto',
   '/contact',
+  '/ayudanos',
   '/privacidad',
   '/privacy',
   '/terminos',
@@ -30,8 +31,26 @@ const STATIC_FILES = new Set([
   '/sitemap.xml',
   '/llms.txt',
   '/llms-full.txt',
+  '/ads.txt',
   '/favicon.ico'
 ]);
+
+const SECURITY_HEADERS = {
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'DENY',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Permissions-Policy': 'camera=(self), microphone=(), geolocation=()',
+  'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'
+};
+
+function applySecurityHeaders(headers) {
+  for (const [key, value] of Object.entries(SECURITY_HEADERS)) {
+    if (!headers.has(key)) {
+      headers.set(key, value);
+    }
+  }
+  return headers;
+}
 
 function normalizePath(pathname) {
   if (pathname === '/') return '/';
@@ -78,22 +97,22 @@ export default {
 
         return new Response(md404, {
           status: 404,
-          headers: {
+          headers: applySecurityHeaders(new Headers({
             'Content-Type': 'text/markdown; charset=utf-8',
             'Vary': 'Accept',
             'Cache-Control': 'no-cache'
-          }
+          }))
         });
       }
 
       const html404 = `<!doctype html><html lang="es"><head><meta charset="utf-8"><title>404 — Comuseñas</title><meta name="robots" content="noindex"></head><body><h1>404 — Página no encontrada</h1><p>La ruta solicitada no existe. Visitá <a href="/">Comuseñas</a> o consultá <a href="/llms.txt">llms.txt</a> y <a href="/sitemap.xml">sitemap.xml</a>.</p></body></html>`;
       return new Response(html404, {
         status: 404,
-        headers: {
+        headers: applySecurityHeaders(new Headers({
           'Content-Type': 'text/html; charset=utf-8',
           'Vary': 'Accept',
           'Cache-Control': 'no-cache'
-        }
+        }))
       });
     }
 
@@ -105,17 +124,17 @@ export default {
 
       return new Response(mdText, {
         status: 200,
-        headers: {
+        headers: applySecurityHeaders(new Headers({
           'Content-Type': 'text/markdown; charset=utf-8',
           'Vary': 'Accept',
           'Cache-Control': 'public, max-age=3600'
-        }
+        }))
       });
     }
 
-    // 4. Normal HTML browser request -> proxy to origin and include `Vary: Accept`
+    // 4. Normal HTML browser request -> proxy to origin and include `Vary: Accept` + security headers
     const originRes = await fetch(request);
-    const headers = new Headers(originRes.headers);
+    const headers = applySecurityHeaders(new Headers(originRes.headers));
     const existingVary = headers.get('Vary');
     if (!existingVary) {
       headers.set('Vary', 'Accept');

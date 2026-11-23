@@ -5,14 +5,11 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { AdSlotComponent } from './shared/ad-slot/ad-slot.component';
 import { SupportModalComponent } from './shared/support-modal/support-modal.component';
+import { SignDemoComponent } from './shared/sign-demo/sign-demo.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
-import { environment } from 'src/environments/environment';
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { ReactiveFormsModule } from '@angular/forms';
-
 
 import { MejoresAppsComponent } from './pages/mejores-apps/mejores-apps.component';
 import { EspecialistasFamiliasComponent } from './pages/especialistas-familias/especialistas-familias.component';
@@ -27,6 +24,7 @@ import { AyudanosComponent } from './pages/ayudanos/ayudanos.component';
     FooterComponent,
     AdSlotComponent,
     SupportModalComponent,
+    SignDemoComponent,
     LandingPageComponent,
     MejoresAppsComponent,
     EspecialistasFamiliasComponent,
@@ -40,10 +38,7 @@ import { AyudanosComponent } from './pages/ayudanos/ayudanos.component';
     BrowserAnimationsModule,
     BrowserModule
   ],
-  providers: [
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

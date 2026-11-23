@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { SupportModalService } from 'src/app/services/support-modal.service';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 export interface Founder {
   name: string;
@@ -38,23 +39,23 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
   public shouldLoadVideo = false;
   public isMobile = false;
 
-  // Kinetic typewriter state for Hero H1
-  private readonly fullLine1 = 'Señas, en';
-  private readonly fullLine2 = 'Tiempo Real';
+  // iOS Waitlist state (lazy-loads Firebase only on submit)
+  public iosStatus: 'idle' | 'submitting' | 'success' | 'error' = 'idle';
+  public iosFeedback = '';
+
+  // Typewriter state for Hero H1
+  private readonly fullLine1 = 'Aprendé Lengua de Señas';
+  private readonly fullLine2 = 'jugando';
   public typedLine1 = '';
   public typedLine2 = '';
   public typingStage: 'line1' | 'line2' | 'done' = 'line1';
 
-  // Interactive mouse parallax state for Hero depth
-  public parallaxX = 0;
-  public parallaxY = 0;
-
-  // Live cycling AI telemetry status on the face + hand scanner
+  // Live friendly AI status on the face + hand overlay
   public readonly telemetryStates: string[] = [
     'ROSTRO + MANO · OK',
-    'LSA · 98.4% PRECISIÓN',
-    'SEÑA VALIDADA ✓',
-    'VISIÓN IA · 60 FPS'
+    'LETRA A · DETECTADA',
+    '¡SEÑA CORRECTA! ✓',
+    'IA EN TIEMPO REAL'
   ];
   public telemetryIndex = 0;
 
@@ -66,7 +67,7 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
     {
       name: 'Víctor Orue',
       role: 'Fundador & Ingeniero de Software',
-      bio: 'Desarrollo de software y arquitectura web, enfocado en crear soluciones tecnológicas accesibles y de alto impacto social.',
+      bio: 'Creador y arquitecto técnico de Comuseñas: transforma la visión del proyecto en la app, la IA de reconocimiento de señas y toda la tecnología que la hace realidad.',
       image: 'assets/fundadores/victor_orue.webp',
       linkedin: 'https://www.linkedin.com/in/victor-andrian-orue/'
     },
@@ -131,16 +132,54 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   ];
 
-  constructor(private supportModalService: SupportModalService) {}
+  constructor(
+    private supportModalService: SupportModalService,
+    private firebaseService: FirebaseService
+  ) {}
 
   public openSupportModal(): void {
     this.supportModalService.open();
   }
 
+  public async submitIosWaitlist(event: Event, emailInput: HTMLInputElement): Promise<void> {
+    event.preventDefault();
+    const email = (emailInput.value || '').trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      this.iosStatus = 'error';
+      this.iosFeedback = 'Ingresá un correo electrónico válido.';
+      return;
+    }
+
+    this.iosStatus = 'submitting';
+    this.iosFeedback = '';
+
+    try {
+      await this.firebaseService.saveIosWaitlistEmail(email);
+      this.iosStatus = 'success';
+      this.iosFeedback = '¡Listo! Te vamos a avisar apenas salga Comuseñas para iPhone y iPad.';
+      emailInput.value = '';
+    } catch {
+      this.iosStatus = 'error';
+      this.iosFeedback = 'No pudimos guardar tu correo en este momento. Probá nuevamente en unos segundos.';
+    }
+  }
+
+  public scrollToInteractiveDemo(): void {
+    if (typeof document === 'undefined') {
+      return;
+    }
+    const section = document.getElementById('probar-demo');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
   ngOnInit(): void {
     this.setupResponsiveListener();
-    this.startTelemetryCycle();
     this.startHeroTypewriter();
+    this.startTelemetryCycle();
   }
 
   ngAfterViewInit(): void {
@@ -169,26 +208,6 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  public onHeroMouseMove(event: MouseEvent): void {
-    if (this.isMobile) {
-      return;
-    }
-    const target = event.currentTarget as HTMLElement | null;
-    if (!target) {
-      return;
-    }
-    const rect = target.getBoundingClientRect();
-    const normX = (event.clientX - rect.left) / rect.width - 0.5;
-    const normY = (event.clientY - rect.top) / rect.height - 0.5;
-    this.parallaxX = Math.round(normX * 22 * 10) / 10;
-    this.parallaxY = Math.round(normY * 18 * 10) / 10;
-  }
-
-  public onHeroMouseLeave(): void {
-    this.parallaxX = 0;
-    this.parallaxY = 0;
-  }
-
   public playVideo(videoElement: HTMLVideoElement): void {
     this.isVideoPlaying = true;
     videoElement.play().catch(() => {
@@ -208,30 +227,6 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
     this.isVideoPlaying = false;
   }
 
-  public onVideoEnded(): void {
-    this.isVideoPlaying = false;
-  }
-
-  public scrollToDemoAndPlay(): void {
-    if (typeof document === 'undefined') {
-      return;
-    }
-    this.shouldLoadVideo = true;
-    const section = document.getElementById('demostracion');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-    setTimeout(() => {
-      const videoEl = this.presentationVideoRef?.nativeElement;
-      if (videoEl) {
-        if (!videoEl.getAttribute('src')) {
-          videoEl.load();
-        }
-        this.playVideo(videoEl);
-      }
-    }, 350);
-  }
-
   private setupVideoAutoplayOnScroll(): void {
     const videoEl = this.presentationVideoRef?.nativeElement;
     if (!videoEl || typeof window === 'undefined' || !('IntersectionObserver' in window)) {
@@ -239,11 +234,9 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
       return;
     }
 
-    // Ensure muted property is enforced for reliable browser autoplay
     videoEl.muted = true;
     this.isVideoMuted = true;
 
-    // 1. Preload video only when user approaches the section (protects Hero LCP)
     this.videoPreloadObserver = new IntersectionObserver(
       (entries, obs) => {
         entries.forEach(entry => {
@@ -258,7 +251,6 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
     );
     this.videoPreloadObserver.observe(videoEl);
 
-    // 2. Play/pause seamlessly based on viewport visibility
     this.videoObserver = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
@@ -284,9 +276,7 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
           }
         });
       },
-      {
-        threshold: 0.35
-      }
+      { threshold: 0.35 }
     );
 
     this.videoObserver.observe(videoEl);
@@ -298,7 +288,7 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     this.telemetryInterval = setInterval(() => {
       this.telemetryIndex = (this.telemetryIndex + 1) % this.telemetryStates.length;
-    }, 2800);
+    }, 2600);
   }
 
   private startHeroTypewriter(): void {
@@ -322,7 +312,7 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
       if (i <= this.fullLine1.length) {
         this.typedLine1 = this.fullLine1.slice(0, i);
         i++;
-        this.typingTimeout = setTimeout(typeLine1, 58);
+        this.typingTimeout = setTimeout(typeLine1, 44);
       } else {
         this.typingStage = 'line2';
         let j = 0;
@@ -330,16 +320,16 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
           if (j <= this.fullLine2.length) {
             this.typedLine2 = this.fullLine2.slice(0, j);
             j++;
-            this.typingTimeout = setTimeout(typeLine2, 54);
+            this.typingTimeout = setTimeout(typeLine2, 58);
           } else {
             this.typingStage = 'done';
           }
         };
-        this.typingTimeout = setTimeout(typeLine2, 110);
+        this.typingTimeout = setTimeout(typeLine2, 95);
       }
     };
 
-    this.typingTimeout = setTimeout(typeLine1, 180);
+    this.typingTimeout = setTimeout(typeLine1, 140);
   }
 
   private setupResponsiveListener(): void {
