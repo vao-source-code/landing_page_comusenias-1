@@ -79,10 +79,32 @@ const PRIVACY_BODY_HTML = `
 
 const ROUTES = [
   {
+    slug: 'ios',
+    title: 'Comuseñas para iPhone y iPad (iOS) — Lista de espera',
+    description:
+      '¿Usás iPhone o iPad? Dejanos tu correo y te avisamos apenas lancemos la versión para iOS de Comuseñas, la app gratuita para aprender LSA con IA.',
+    ogType: 'website',
+    breadcrumbName: 'Lista de espera iOS',
+    bodyHtml: `
+      <header>
+        <h1>Comuseñas para iPhone y iPad (iOS) — Lista de espera</h1>
+        <p>Dejanos tu correo electrónico y te avisamos apenas lancemos la versión oficial de Comuseñas para iPhone y iPad (iOS). Mientras tanto, ya podés probar la demo interactiva de vocales en LSA desde tu navegador.</p>
+      </header>
+      <main>
+        <p><a href="https://play.google.com/store/apps/details?id=com.ars.comusenias&hl=es_AR">Descargar hoy en Google Play (Android, Gratis)</a></p>
+        <nav>
+          <a href="/">Inicio y Demo IA</a> |
+          <a href="/links">Enlaces Oficiales</a> |
+          <a href="/contacto">Contacto</a>
+        </nav>
+      </main>
+    `
+  },
+  {
     slug: 'mejores-apps-aprender-lengua-de-senas-argentina',
     title: 'Mejores Apps para Aprender Lengua de Señas Argentina (LSA) | Comuseñas',
     description:
-      'Comparativa de las mejores aplicaciones para aprender Lengua de Señas Argentina (LSA) en 2026: Comuseñas con IA en tiempo real, LSApp e IncluSeñas.',
+      'Comparativa 2026 de apps de Lengua de Señas Argentina (LSA): Comuseñas (aprender con IA en tiempo real), LSApp, IncluSeñas y traductores en vivo como Pulsa.',
     ogType: 'article',
     breadcrumbName: 'Mejores Apps de LSA',
     bodyHtml: `
@@ -93,7 +115,7 @@ const ROUTES = [
       <main>
         <section>
           <h2>Respuesta rápida</h2>
-          <p>Si buscás practicar frente a la cámara con corrección automática en tiempo real, <strong>Comuseñas</strong> es actualmente la única app argentina gratuita que integra Inteligencia Artificial (MediaPipe) para validar gestos de manos y expresiones faciales en LSA, además de incluir un panel por código QR para fonoaudiólogos, docentes y familias.</p>
+          <p>Si buscás <strong>aprender y practicar LSA</strong> frente a la cámara con corrección automática en tiempo real, <strong>Comuseñas</strong> es actualmente la única app educativa argentina gratuita que integra Inteligencia Artificial (MediaPipe) para validar gestos de manos y expresiones faciales, además de incluir un panel por código QR para fonoaudiólogos, docentes y familias. Si en cambio ya te comunicás en LSA y necesitás un <strong>traductor a voz/texto</strong> en situaciones cotidianas, existen propuestas complementarias enfocadas en interpretación en vivo como <strong>Pulsa</strong>.</p>
         </section>
         <section>
           <h2>Comparativa de apps para aprender LSA en Argentina</h2>
@@ -129,6 +151,13 @@ const ROUTES = [
                 <td>No</td>
                 <td>Gratis</td>
               </tr>
+              <tr>
+                <td>Pulsa</td>
+                <td>Traductor en vivo LSA → voz y texto (no educativa)</td>
+                <td>Traduce en vivo (sin corrección pedagógica)</td>
+                <td>No</td>
+                <td>Gratis</td>
+              </tr>
             </tbody>
           </table>
         </section>
@@ -146,6 +175,15 @@ const ROUTES = [
             <h3>IncluSeñas</h3>
             <p>Plataforma lúdica con preguntas de opción múltiple enfocada en lenguas de señas de la región.</p>
           </article>
+          <article>
+            <h3>Pulsa</h3>
+            <p>Herramienta utilitaria argentina diseñada para que personas Sordas que ya se comunican en LSA traduzcan sus señas a español hablado y escrito en tiempo real frente a oyentes. No es una app educativa para aprender desde cero, sino un recurso complementario de interpretación asistida.</p>
+          </article>
+        </section>
+        <section>
+          <h2>Diferencia entre una app para aprender LSA y un traductor con IA</h2>
+          <p><strong>App educativa con IA (Comuseñas):</strong> pensada para aprender y practicar LSA paso a paso (niños, familias oyentes, escuelas y fonoaudiólogos) con devolución inmediata por cámara.</p>
+          <p><strong>Traductor de LSA en tiempo real (como Pulsa):</strong> pensado para personas Sordas que ya dominan LSA y necesitan traducir señas a texto y voz frente a oyentes en la calle, un comercio o una consulta médica.</p>
         </section>
         <nav>
           <a href="/">Inicio</a> |

@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { SupportModalService } from 'src/app/services/support-modal.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
 
@@ -133,6 +134,7 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
   ];
 
   constructor(
+    private route: ActivatedRoute,
     private supportModalService: SupportModalService,
     private firebaseService: FirebaseService
   ) {}
@@ -185,6 +187,27 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     this.setupScrollAnimations();
     this.setupVideoAutoplayOnScroll();
+
+    if (this.route.snapshot.data['scrollToIos'] || this.route.snapshot.fragment === 'ios') {
+      this.scrollToIosWaitlist();
+    }
+  }
+
+  public scrollToIosWaitlist(): void {
+    if (typeof document === 'undefined') {
+      return;
+    }
+    setTimeout(() => {
+      const box = document.getElementById('ios');
+      if (box) {
+        box.closest('.reveal-scale')?.classList.add('is-visible');
+        box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const input = document.getElementById('iosWaitlistEmail') as HTMLInputElement | null;
+        if (input) {
+          setTimeout(() => input.focus({ preventScroll: true }), 450);
+        }
+      }
+    }, 150);
   }
 
   ngOnDestroy(): void {

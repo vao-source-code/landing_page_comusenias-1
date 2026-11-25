@@ -25,12 +25,26 @@ const routes: Routes = [
     }
   },
   {
+    path: 'ios',
+    component: LandingPageComponent,
+    data: {
+      scrollToIos: true,
+      seo: {
+        title: 'Comuseñas para iPhone y iPad (iOS) — Lista de espera',
+        description: '¿Usás iPhone o iPad? Dejanos tu correo y te avisamos apenas lancemos la versión para iOS de Comuseñas, la app gratuita para aprender LSA con IA.',
+        path: '/ios',
+        ogType: 'website',
+        breadcrumbName: 'Lista de espera iOS'
+      } as RouteSeoData
+    }
+  },
+  {
     path: 'mejores-apps-aprender-lengua-de-senas-argentina',
     component: MejoresAppsComponent,
     data: {
       seo: {
         title: 'Mejores Apps para Aprender Lengua de Señas Argentina (LSA) | Comuseñas',
-        description: 'Comparativa de las mejores aplicaciones para aprender Lengua de Señas Argentina (LSA) en 2026: Comuseñas con IA en tiempo real, LSApp e IncluSeñas.',
+        description: 'Comparativa 2026 de apps de Lengua de Señas Argentina (LSA): Comuseñas (aprender con IA en tiempo real), LSApp, IncluSeñas y traductores en vivo como Pulsa.',
         path: '/mejores-apps-aprender-lengua-de-senas-argentina',
         ogType: 'article',
         breadcrumbName: 'Mejores Apps de LSA'

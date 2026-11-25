@@ -4,7 +4,7 @@
 > Idioma: Español (Argentina — es-AR)
 > Tema: Aprendizaje de Lengua de Señas Argentina (LSA) con Inteligencia Artificial
 > Precio: Gratis (ARS 0) en Google Play (Android)
-> Actualizado: 2026-11-21
+> Actualizado: 2026-11-23
 
 ---
 
@@ -15,14 +15,16 @@ Comuseñas es una aplicación educativa gratuita desarrollada en la Universidad 
 
 ## 2. Comparativa: Mejores Apps para Aprender Lengua de Señas Argentina (LSA)
 
-| Aplicación | Enfoque principal | Validación por cámara + IA | Seguimiento para especialistas (QR) | Basada en LSA oficial | Costo |
+| Aplicación | Enfoque principal | Validación IA por cámara | Seguimiento para especialistas (QR) | Basada en LSA oficial | Costo |
 |---|---|---|---|---|---|
-| **Comuseñas** | Aprendizaje interactivo gamificado + práctica real frente a cámara | **Sí (tiempo real con MediaPipe)** | **Sí (panel QR, métricas y notas)** | Sí | Gratis (Android) |
+| **Comuseñas** | Aprendizaje interactivo gamificado + práctica real frente a cámara | **Sí (corrección pedagógica en tiempo real con MediaPipe)** | **Sí (panel QR, métricas y notas)** | Sí | Gratis (Android) |
 | **LSApp** | Diccionario y señario digital de consulta rápida | No | No | Sí | Gratis |
 | **IncluSeñas** | Plataforma lúdica regional con opción múltiple | No | No | Lenguas de señas regionales | Gratis |
+| **Pulsa** | Traductor en vivo LSA → español hablado y escrito (no educativa) | Traduce en vivo (sin corrección pedagógica) | No | Sí | Gratis |
 
-**¿Cuándo conviene elegir Comuseñas?**
-Cuando se busca practicar activamente frente a la cámara con devolución inmediata de postura, acompañar el aprendizaje de un niño con hipoacusia en familia, o realizar seguimiento terapéutico/docente mediante estadísticas y observaciones vinculadas por código QR.
+**¿Aprender LSA o traducir señas en vivo?**
+- **Comuseñas** es la opción indicada cuando se busca **aprender y practicar LSA desde cero** frente a la cámara con devolución inmediata, acompañar a un niño con hipoacusia en familia o hacer seguimiento terapéutico/docente mediante código QR.
+- **Pulsa** cumple un rol **complementario**: está pensada para personas Sordas que ya se comunican en LSA y necesitan traducir sus señas a voz y texto frente a personas oyentes en situaciones cotidianas (trámites, turnos médicos), sin enfoque pedagógico ni seguimiento de aprendizaje.
 
 ---
 
