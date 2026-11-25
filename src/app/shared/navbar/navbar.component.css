@@ -1,102 +1,68 @@
-.playful-navbar {
-  background-color: rgba(250, 252, 255, 0.94);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 2px solid var(--border-playful);
-  transition: box-shadow 0.25s ease, background-color 0.25s ease;
+.calm-navbar {
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(117, 132, 242, 0.12);
   z-index: 1030;
+  transition: box-shadow 0.25s ease;
 }
 
-.playful-navbar.is-scrolled {
-  background-color: rgba(255, 255, 255, 0.97);
-  box-shadow: 0 10px 26px -18px rgba(117, 132, 242, 0.32);
+.calm-navbar.is-scrolled {
+  box-shadow: 0 8px 24px -18px rgba(82, 98, 214, 0.28);
 }
 
-.scroll-progress-track {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: transparent;
-}
-
-.scroll-progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #7584f2, #8164ff, #f2d05c, #6aaf93);
-  transition: width 0.08s linear;
-}
-
-.brand-wordmark {
+.calm-brand {
   font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 900;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: var(--color-primary-deep);
   text-decoration: none;
-  letter-spacing: -0.01em;
 }
 
-.brand-wordmark:hover {
+.calm-brand:hover {
   color: var(--color-primary);
 }
 
-.playful-toggler {
-  min-width: 44px;
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.85rem;
-  background-color: var(--color-primary-light);
-  color: var(--color-primary-deep);
+.calm-brand-icon {
+  border-radius: 8px;
+  object-fit: contain;
 }
 
-.playful-nav-link {
+.calm-nav-link {
   font-family: var(--font-display);
-  font-size: 0.96rem;
-  font-weight: 700;
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  color: var(--color-on-surface-variant) !important;
-  padding: 0.5rem 0.95rem !important;
-  border-radius: 999px;
-  transition: background-color 0.18s ease, color 0.18s ease;
-}
-
-.playful-nav-link:hover,
-.playful-nav-link.active {
-  background-color: var(--color-primary-light);
-  color: var(--color-primary-deep) !important;
-}
-
-.btn-nav-playful {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  min-height: 44px;
-  background-color: var(--color-play-green);
-  color: #ffffff;
-  font-family: var(--font-display);
-  font-weight: 900;
   font-size: 0.92rem;
-  padding: 0.55rem 1.2rem;
-  border-radius: 0.95rem;
-  border: 2px solid var(--color-play-green-shadow);
-  border-bottom: 4px solid var(--color-play-green-deep);
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform 0.14s ease, filter 0.16s ease;
+  font-weight: 700;
+  color: var(--color-on-surface-variant) !important;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px !important;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-.btn-nav-playful:hover {
+.calm-nav-link:hover,
+.calm-nav-link.active {
+  color: var(--color-primary-deep) !important;
+  border-bottom-color: var(--color-primary);
+}
+
+.btn-calm-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background-color: var(--color-primary);
   color: #ffffff;
-  filter: brightness(1.04);
-  transform: translateY(-1px);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.5rem 1.05rem;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 6px 16px -8px rgba(117, 132, 242, 0.6);
+  transition: background-color 0.2s ease, transform 0.16s ease;
 }
 
-.btn-nav-playful:active {
-  transform: translateY(2px);
-  border-bottom-width: 2px;
+.btn-calm-nav:hover {
+  background-color: var(--color-primary-deep);
+  color: #ffffff;
+  transform: translateY(-1px);
 }

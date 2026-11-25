@@ -6,31 +6,32 @@
 
 ## 1. Identidad y Filosofía Visual
 - **Tono**: Alegre, cercano, motivador, inclusivo y confiable.
-- **Enfoque**: Contraste accesible WCAG AA/AAA, lienzo cálido claro (`#FFFDF7` y `#F5F3FF`), formas orgánicas suaves, botones táctiles 3D ("chunky") con respuesta física al clic y práctica interactiva en vivo con cámara.
-- **Firma visual**: Títulos redondeados amigables en `Fredoka`, tarjetas con bordes de `2px` y esquinas generosas (`1.5rem`), pills coloridos de estado/nivel y botones 3D con sombra inferior sólida.
+- **Enfoque**: Contraste accesible WCAG AA/AAA, lienzo limpio (`#FAFCFF`), secciones alternadas en celeste suave (`#F3F8FE`) y lavanda suave (`#F5F1FF`), atmósfera inspirada en `bg_home_opt.xml` (`#D2B1FF → #9E6FFC → #7F63FF`), botones táctiles 3D con respuesta física al clic y práctica interactiva en vivo con cámara.
+- **Firma visual**: Tipografía limpia `Lato`, tarjetas con bordes de `2px` (`#DDE4FB`) y esquinas generosas (`1.5rem`), pills en paleta pastel oficial y botones 3D con sombra inferior sólida (periwinkle `#7584F2` para marca/descarga y verde `#4E9A7C` exclusivo para la práctica interactiva *"Probar la letra A ahora"* y aciertos).
 
 ---
 
-## 2. Paleta de Colores Oficial (Unificada con `Color.kt` de Android)
+## 2. Paleta de Colores Oficial (Unificada con `Color.kt` y `bg_home_opt.xml` de Android)
 
 | Token CSS | Hex / Valor | Rol / Uso |
 |---|---|---|
-| `--color-primary` | `#7584f2` | `primaryColorApp` — Azul-violeta periwinkle oficial (medallas y marca) |
+| `--color-primary` | `#7584f2` | `primaryColorApp` — Azul-violeta periwinkle oficial (marca, CTAs y medallas) |
 | `--color-primary-deep` | `#5262d6` | Sombra 3D y texto de alto contraste WCAG AA |
-| `--color-secondary` | `#8164ff` | `primaryBlackColorApp` — Violeta pastel secundario |
-| `--color-play-green` | `#4e9a7c` | Derivado accesible de `greenColorApp` (`#6aaf93`) para CTA "Jugar / ¡Correcto!" |
+| `--color-secondary` | `#8164ff` | `primaryBlackColorApp` — Violeta secundario |
+| `--app-lavender` | `#d2b1ff` | `bg_home_opt.xml` — Lavanda pastel del fondo oficial de la app |
+| `--app-violet-glow` | `#9e6ffc` | `bg_home_opt.xml` — Violeta brillante intermedio |
+| `--color-play-green` | `#4e9a7c` | Derivado accesible de `greenColorApp` (`#6aaf93`) exclusivo para "Probar la letra A ahora" y aciertos |
 | `--color-play-yellow` | `#f2d05c` | `cardColorCheckPoint` — Estrellas, logros y recompensas |
-| `--color-accent-magenta` | `#a275fd` | `violetGlow` — Lavanda brillante para acentos |
 | `--surface-canvas` | `#fafcff` | `backgroundColorTextField` — Lienzo principal limpio |
 | `--surface-subtle` | `#f3f8fe` | `cardInProgress` — Secciones alternadas en celeste muy suave |
+| `--surface-lavender` | `#f5f1ff` | Secciones alternadas en lavanda ultra-suave |
 | `--color-ink` | `#252525` | `blackColorApp` — Texto principal de alto contraste |
 | `--color-on-surface-variant` | `#52586e` | Texto secundario / párrafos |
 
 ---
 
 ## 3. Tipografía (Unificada con la App Android ComuSenias)
-- **Principal y Display**: `Lato` (`300`, `400`, `700`, `900`) — exactamente la misma tipografía oficial de la aplicación Android (`lato_regular`, `lato_bold`, `lato_black`).
-- **Acento manuscrito escolar**: `Marck Script` (`marck_script.ttf` en la app Android).
+- **Única familia tipográfica**: `Lato` (`300`, `400`, `700`, `900`) — exactamente la misma tipografía oficial de la aplicación Android (`lato_regular`, `lato_bold`, `lato_black`), priorizando pesos `400` y `700` para lectura abierta y amigable.
 - **Iconografía**: `Material Symbols Outlined` + medallas e ilustraciones oficiales de la app (`src/assets/vocales`).
 
 ---

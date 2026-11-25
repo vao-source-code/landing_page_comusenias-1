@@ -5,7 +5,7 @@
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
   background-color: rgba(117, 132, 242, 0.12);
-  color: #4a3b8d;
+  color: var(--color-primary-deep);
   font-size: 0.8rem;
   font-weight: 700;
 }
@@ -42,7 +42,7 @@
 
 .privacy-icon-violet {
   background-color: rgba(117, 132, 242, 0.16);
-  color: #4a3b8d;
+  color: var(--color-primary-deep);
 }
 
 .privacy-icon-green {

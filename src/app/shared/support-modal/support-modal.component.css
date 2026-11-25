@@ -17,10 +17,11 @@
   width: 100%;
   max-width: 460px;
   background: #ffffff;
-  border: 1px solid rgba(79, 53, 232, 0.14);
+  border: 2px solid var(--border-playful);
+  border-bottom-width: 5px;
   border-radius: 20px;
   padding: 1.75rem;
-  box-shadow: 0 24px 64px rgba(24, 18, 56, 0.24);
+  box-shadow: 0 24px 64px rgba(37, 37, 37, 0.22);
   animation: supportSlideUp 0.2s ease-out;
 }
 
@@ -31,9 +32,9 @@
   width: 34px;
   height: 34px;
   border-radius: 999px;
-  border: 1px solid rgba(79, 53, 232, 0.14);
+  border: 1.5px solid var(--border-playful);
   background: #ffffff;
-  color: #494551;
+  color: var(--color-on-surface-variant);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -42,20 +43,20 @@
 }
 
 .support-close-btn:hover {
-  background: rgba(79, 53, 232, 0.08);
-  color: #4f35e8;
+  background: var(--color-primary-light);
+  color: var(--color-primary-deep);
 }
 
 .support-option-card {
-  background: #faf9fe;
-  border: 1px solid rgba(79, 53, 232, 0.14);
+  background: var(--surface-canvas);
+  border: 1.5px solid var(--border-playful);
   border-radius: 14px;
   padding: 1rem;
 }
 
 .support-option-cafecito {
-  background: #fffaf0;
-  border-color: rgba(217, 119, 6, 0.24);
+  background: var(--color-play-yellow-soft);
+  border-color: rgba(242, 208, 92, 0.55);
 }
 
 .alias-row {
@@ -64,16 +65,16 @@
   justify-content: space-between;
   gap: 0.75rem;
   background: #ffffff;
-  border: 1px solid rgba(79, 53, 232, 0.2);
+  border: 1.5px solid var(--border-playful);
   border-radius: 10px;
   padding: 0.55rem 0.65rem 0.55rem 0.9rem;
 }
 
 .alias-value {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-sans);
   font-size: 1.05rem;
-  font-weight: 600;
-  color: #1c182c;
+  font-weight: 700;
+  color: var(--color-ink);
   letter-spacing: 0.02em;
   word-break: break-all;
 }
@@ -85,21 +86,22 @@
   padding: 0.48rem 0.85rem;
   border-radius: 8px;
   border: none;
-  background: #4f35e8;
+  background: var(--color-primary);
   color: #ffffff;
+  font-family: var(--font-display);
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   flex-shrink: 0;
   transition: background 0.15s ease, transform 0.15s ease;
 }
 
 .btn-copy-alias:hover {
-  background: #3d24cc;
+  background: var(--color-primary-deep);
 }
 
 .btn-copy-alias.copied {
-  background: #15803d;
+  background: var(--color-play-green);
 }
 
 .btn-cafecito-modal {
@@ -109,17 +111,19 @@
   gap: 8px;
   padding: 0.68rem 1rem;
   border-radius: 10px;
-  background: #d97706;
-  color: #ffffff;
+  background: var(--color-play-yellow);
+  color: var(--color-ink);
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.9rem;
   text-decoration: none;
-  transition: background 0.15s ease, transform 0.15s ease;
+  border-bottom: 3px solid var(--color-play-yellow-deep);
+  transition: filter 0.15s ease, transform 0.15s ease;
 }
 
 .btn-cafecito-modal:hover {
-  background: #b45309;
-  color: #ffffff;
+  filter: brightness(0.97);
+  color: var(--color-ink);
 }
 
 @keyframes supportFadeIn {

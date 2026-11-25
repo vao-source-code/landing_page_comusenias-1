@@ -1,17 +1,17 @@
 .playful-footer {
   background-color: #ffffff;
-  border-top: 2px solid #efe9fa;
+  border-top: 2px solid var(--border-playful);
 }
 
 .footer-divider {
-  border-bottom: 2px solid #f4f1fc;
+  border-bottom: 2px solid var(--color-primary-light);
 }
 
 .footer-brand-name {
   font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-primary-deep);
 }
 
 .footer-heading {
@@ -54,7 +54,7 @@
 
 .footer-law-badge {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.8rem;
   padding: 0.25rem 0.75rem;
   border-radius: 999px;

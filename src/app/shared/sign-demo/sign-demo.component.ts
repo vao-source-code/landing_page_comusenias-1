@@ -185,6 +185,13 @@ export class SignDemoComponent implements OnDestroy {
     return null;
   }
 
+  public selectSignById(id: string): void {
+    const found = this.challenges.find(c => c.id.toUpperCase() === id.toUpperCase());
+    if (found) {
+      this.selectChallenge(found);
+    }
+  }
+
   public selectChallenge(challenge: SignChallenge): void {
     this.selectedChallenge = challenge;
     this.medalPulse = false;

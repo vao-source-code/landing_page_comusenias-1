@@ -2,6 +2,13 @@ import { Component, OnInit, AfterViewInit, OnDestroy, ViewChild, ElementRef } fr
 import { ActivatedRoute } from '@angular/router';
 import { SupportModalService } from 'src/app/services/support-modal.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
+import { SignDemoComponent } from 'src/app/shared/sign-demo/sign-demo.component';
+
+export interface HeroVowel {
+  id: string;
+  label: string;
+  medal: string;
+}
 
 export interface Founder {
   name: string;
@@ -27,6 +34,16 @@ export interface PressItem {
 })
 export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('presentationVideo') presentationVideoRef?: ElementRef<HTMLVideoElement>;
+  @ViewChild(SignDemoComponent) signDemoComponent?: SignDemoComponent;
+
+  public readonly heroVowels: HeroVowel[] = [
+    { id: 'A', label: 'Vocal A', medal: 'assets/vocales/letra_a_preview.png' },
+    { id: 'E', label: 'Vocal E', medal: 'assets/vocales/letra_e_preview.png' },
+    { id: 'I', label: 'Vocal I', medal: 'assets/vocales/letra_i_preview.png' },
+    { id: 'O', label: 'Vocal O', medal: 'assets/vocales/letra_o_preview.png' },
+    { id: 'U', label: 'Vocal U', medal: 'assets/vocales/letra_u_preview.png' }
+  ];
+  public activeHeroVowel = 'A';
 
   private observer?: IntersectionObserver;
   private videoObserver?: IntersectionObserver;
@@ -51,12 +68,12 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
   public typedLine2 = '';
   public typingStage: 'line1' | 'line2' | 'done' = 'line1';
 
-  // Live friendly AI status on the face + hand overlay
+  // Live friendly game celebration messages on Hero badge
   public readonly telemetryStates: string[] = [
-    'ROSTRO + MANO · OK',
-    'LETRA A · DETECTADA',
-    '¡SEÑA CORRECTA! ✓',
-    'IA EN TIEMPO REAL'
+    '¡Muy bien! Hiciste la seña',
+    '¡Ganaste +30 XP jugando!',
+    '¡Nivel superado con 3 estrellas!',
+    'Tu cámara te guía en vivo'
   ];
   public telemetryIndex = 0;
 
@@ -67,15 +84,15 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
   public readonly founders: Founder[] = [
     {
       name: 'Víctor Orue',
-      role: 'Fundador & Ingeniero de Software',
-      bio: 'Creador y arquitecto técnico de Comuseñas: transforma la visión del proyecto en la app, la IA de reconocimiento de señas y toda la tecnología que la hace realidad.',
+      role: 'Co-fundador & Ingeniero de Software',
+      bio: 'Co-creador y arquitecto técnico de Comuseñas: transforma la visión del proyecto en la app, la IA de reconocimiento de señas y toda la tecnología que la hace realidad.',
       image: 'assets/fundadores/victor_orue.webp',
       linkedin: 'https://www.linkedin.com/in/victor-andrian-orue/'
     },
     {
       name: 'Juan Guerrero Aguilar',
-      role: 'Fundador & Impulsor del Proyecto',
-      bio: 'Inspirador de Comuseñas a partir de su vivencia con hipoacusia profunda bilateral, transformando barreras de comunicación en tecnología inclusiva.',
+      role: 'Co-fundador & Impulsor del Proyecto',
+      bio: 'Co-creador e inspirador de Comuseñas a partir de su vivencia con hipoacusia profunda bilateral, transformando barreras de comunicación en tecnología inclusiva.',
       image: 'assets/fundadores/juan_guerrero.webp',
       linkedin: 'https://www.linkedin.com/in/juan-matias-guerrero-aguilar-a8b389184/'
     }
@@ -166,6 +183,19 @@ export class LandingPageComponent implements OnInit, AfterViewInit, OnDestroy {
       this.iosStatus = 'error';
       this.iosFeedback = 'No pudimos guardar tu correo en este momento. Probá nuevamente en unos segundos.';
     }
+  }
+
+  public startHeroQuickPlay(): void {
+    this.activeHeroVowel = 'A';
+    this.signDemoComponent?.selectSignById('A');
+    this.signDemoComponent?.startCameraDemo();
+    this.scrollToInteractiveDemo();
+  }
+
+  public playVowelFromHero(vowelId: string): void {
+    this.activeHeroVowel = vowelId;
+    this.signDemoComponent?.selectSignById(vowelId);
+    this.scrollToInteractiveDemo();
   }
 
   public scrollToInteractiveDemo(): void {

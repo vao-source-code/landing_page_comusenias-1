@@ -1,10 +1,9 @@
 .demo-console {
-  background-color: #ffffff;
-  border: 2px solid var(--border-playful);
-  border-bottom-width: 6px;
+  background-color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(117, 132, 242, 0.18);
   border-radius: 1.75rem;
   padding: 1.75rem;
-  box-shadow: 0 20px 44px -24px rgba(117, 132, 242, 0.28);
+  box-shadow: 0 12px 32px -18px rgba(82, 98, 214, 0.22);
 }
 
 .demo-star-badge {
@@ -22,7 +21,7 @@
 
 .demo-kicker {
   font-family: var(--font-display);
-  font-weight: 900;
+  font-weight: 700;
   font-size: 1.02rem;
   color: var(--color-ink);
   line-height: 1.2;
@@ -155,7 +154,7 @@
   color: var(--color-ink);
   font-family: var(--font-display);
   font-size: 0.68rem;
-  font-weight: 900;
+  font-weight: 700;
   padding: 0.12rem 0.55rem;
   border-radius: 999px;
   border: 1.5px solid var(--color-play-yellow-deep);
@@ -216,7 +215,7 @@
 .demo-guide-title {
   font-family: var(--font-display);
   font-size: 1.55rem;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--color-ink);
 }
 
@@ -313,7 +312,7 @@
 .stage-title {
   font-family: var(--font-display);
   font-size: 1.45rem;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--color-ink);
 }
 
